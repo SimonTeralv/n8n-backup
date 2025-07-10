@@ -1,0 +1,70 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-09T16:08:08.400Z",
+  "id": "8gRagMKXvdHIE0xS",
+  "meta": null,
+  "name": "direc",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -280,
+        0
+      ],
+      "id": "aa352813-2987-4781-a815-560da8cb366a",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8964488f-7d1c-4bdf-b12a-a03131220e9e",
+              "name": "direc",
+              "value": "C:/Users/Uusario Nuevo Prueba",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -100,
+        0
+      ],
+      "id": "7f44d733-0b93-43f0-9bfd-0f2ef0c507b4",
+      "name": "Edit Fields3"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-05-09T16:08:25.000Z",
+  "versionId": "a4cb1ca3-c5b0-4e46-a6fa-d8b893587508"
+}

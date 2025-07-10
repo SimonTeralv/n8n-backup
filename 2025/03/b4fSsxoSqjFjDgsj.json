@@ -1,0 +1,3577 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Supabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Open to Browser": {
+      "main": [
+        [
+          {
+            "node": "Open Browser To",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Open Browser To": {
+      "main": [
+        []
+      ]
+    },
+    "Save Screenshot": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser4": {
+      "main": [
+        [
+          {
+            "node": "Click",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot1": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen1": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser": {
+      "main": [
+        [
+          {
+            "node": "Ingresa Secret",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click4": {
+      "main": [
+        [
+          {
+            "node": "Click28",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Close&Open",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Supabase7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Supabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click28": {
+      "main": [
+        [
+          {
+            "node": "Supabase3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Locate On Screen2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ingresa Secret": {
+      "main": [
+        [
+          {
+            "node": "Locate INICIAR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate INICIAR": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser2": {
+      "main": [
+        [
+          {
+            "node": "Click4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser15": {
+      "main": [
+        [
+          {
+            "node": "Execute Command2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click8": {
+      "main": [
+        [
+          {
+            "node": "Execute Command3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot3": {
+      "main": [
+        [
+          {
+            "node": "Click13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click13": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser15",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Scroll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command2": {
+      "main": [
+        [
+          {
+            "node": "Click9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser16": {
+      "main": [
+        [
+          {
+            "node": "Click8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scroll": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser17": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command3": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen10": {
+      "main": [
+        [
+          {
+            "node": "Click60",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser19": {
+      "main": [
+        [
+          {
+            "node": "Click24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click24": {
+      "main": [
+        [
+          {
+            "node": "Execute Command5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser20": {
+      "main": [
+        [
+          {
+            "node": "Click25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click25": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot15",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command5": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot15": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen14": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser21": {
+      "main": [
+        [
+          {
+            "node": "Click29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click29": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot16",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot16": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen16": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser22",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Coordinate Parser22": {
+      "main": [
+        [
+          {
+            "node": "Click30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click30": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot17",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot17": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen17": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser23": {
+      "main": [
+        [
+          {
+            "node": "Click31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click31": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot26",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot18": {
+      "main": [
+        [
+          {
+            "node": "Click11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser24": {
+      "main": [
+        [
+          {
+            "node": "Click32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click32": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot25",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot19": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen19": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser25": {
+      "main": [
+        [
+          {
+            "node": "Click33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click33": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot20",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot20": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen20": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser26": {
+      "main": [
+        [
+          {
+            "node": "Click34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click34": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser18": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click26": {
+      "main": [
+        [
+          {
+            "node": "Execute Command7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen11": {
+      "main": [
+        [
+          {
+            "node": "Execute Command6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser27": {
+      "main": [
+        [
+          {
+            "node": "Click26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser28": {
+      "main": [
+        [
+          {
+            "node": "Click27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click27": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot21",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command7": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot22": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen21": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser30": {
+      "main": [
+        [
+          {
+            "node": "Click36",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click36": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot23",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot23": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen22": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser31": {
+      "main": [
+        [
+          {
+            "node": "Click37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click37": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot27",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot24": {
+      "main": [
+        [
+          {
+            "node": "Click10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser32": {
+      "main": [
+        [
+          {
+            "node": "Click38",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click38": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot19",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen5": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click9": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser16",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Locate On Screen5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click10": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser32",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Locate On Screen6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen6": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot25": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click11": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser24",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Locate On Screen7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen7": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot26": {
+      "main": [
+        [
+          {
+            "node": "Click42",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser33": {
+      "main": [
+        [
+          {
+            "node": "Click41",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click41": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot28",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click42": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser33",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot27": {
+      "main": [
+        [
+          {
+            "node": "Click44",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser34": {
+      "main": [
+        [
+          {
+            "node": "Click43",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click43": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot29",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click44": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser34",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot28": {
+      "main": [
+        [
+          {
+            "node": "Click46",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser35": {
+      "main": [
+        [
+          {
+            "node": "Click45",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click45": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot28",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click46": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser35",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot29": {
+      "main": [
+        [
+          {
+            "node": "Click48",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser36": {
+      "main": [
+        [
+          {
+            "node": "Click47",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click47": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot29",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click48": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser36",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click60": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser19",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Execute Command6": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Screenshot21": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen15": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser29": {
+      "main": [
+        [
+          {
+            "node": "Click35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click35": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot22",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save Screenshot21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase2": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase7": {
+      "main": [
+        []
+      ]
+    },
+    "Locate On Screen2": {
+      "main": [
+        [
+          {
+            "node": "Save Screenshot1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Scroll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-11T15:03:44.162Z",
+  "id": "b4fSsxoSqjFjDgsj",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "N8N-LS-Polizas",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3175cbe8-ff9c-49ea-b946-a35de56db154",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6d5f9615-c1cd-4efa-8386-cb69a5f2574b",
+              "name": "Web Browser",
+              "value": "chrome",
+              "type": "string"
+            },
+            {
+              "id": "27b7a872-4ffe-4db1-beae-c364d274c8d0",
+              "name": "URL",
+              "value": "https://portalasegurado.papps.lasegunda.com.ar",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dcc483bd-83e4-4f48-a51f-b045641f0e64",
+      "name": "Open to Browser",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -700,
+        -280
+      ],
+      "notesInFlow": false,
+      "disabled": true,
+      "notes": "#Browser names: Edge=msedge Chrome=chrome Firefox=firefox"
+    },
+    {
+      "parameters": {
+        "command": "=powershell -Command \"Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' -ArgumentList '--remote-debugging-port=1313', '--user-data-dir=C:\\Usuarios\\UusarioNuevoPrueba\\.n8n\\chromeprofile', 'https://portalasegurado.papps.lasegunda.com.ar'; Start-Sleep -Seconds 5; $chromeProcess = Get-NetTCPConnection -LocalPort 1313; if ($chromeProcess) { Write-Host 'Chrome abierto correctamente'; exit 0 } else { Write-Host 'Error: No se pudo abrir Chrome o el puerto está ocupado.'; exit 1 }\""
+      },
+      "id": "91de8643-eab3-4fae-ae34-04bffa1d5bcf",
+      "name": "Open Browser To",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        -280
+      ],
+      "notesInFlow": true,
+      "notes": "New Window start \"\" {{ $json['Web Browser'] }} --new-window {{ $json.URL }}\n"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(5);from PIL import ImageGrab;direc = '{{$('Edit Fields').item.json.direc}}'; img = ImageGrab.grab(); img.save(fr'{direc}\\.n8n\\Screenshots\\LS\\WorkingScreen.png')\""
+      },
+      "id": "f4d54c11-ed0e-4ca1-a0ec-06cb9626b7e9",
+      "name": "Save Screenshot",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(1); direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Usuario-LS.png', grayscale=True, confidence=0.8))\"\n"
+      },
+      "id": "258aa286-00d0-4a33-9b9d-6d7a16220339",
+      "name": "Locate On Screen",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        300,
+        -120
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "e4bb01f4-09db-4187-9e6a-cf6c2bce9244",
+      "name": "Coordinate Parser4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        -120
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(0); pyautogui.doubleClick({{ $('Coordinate Parser4').item.json.x -130}}, {{ $('Coordinate Parser4').item.json.y}}); pyautogui.typewrite('{{ $('Supabase').item.json['Usuario LS']}}')\""
+      },
+      "id": "31a21f79-070e-48a4-bdf3-c529e33891ee",
+      "name": "Click",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        -120
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(3); img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}\\.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "32a3a75d-25f9-4404-b1cd-a34c3efd5975",
+      "name": "Save Screenshot1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        120,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Contrasena-LS.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "392f3037-3197-4573-ac0d-9c1a8c0fab79",
+      "name": "Locate On Screen1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        300,
+        100
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "1337cf04-86dc-4086-ad90-e72043a79d4e",
+      "name": "Coordinate Parser",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        100
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }},{{ $json.y }})\""
+      },
+      "id": "4168047c-3efb-4e28-a0c5-3e9420ed2fc2",
+      "name": "Click4",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        100
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Login\n**Ingresa Secreto y presiona\nIngresar**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "e2d4f836-64c6-404c-a3d4-6661af8cf847",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "40b652d3-1084-45fb-b8f3-c75804baaef8",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -700,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Usuarios-Personal"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        -120
+      ],
+      "id": "a3a0fdde-6c3f-4eea-9016-e48d083c6a18",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $('Supabase').item.json['Usuario LS'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "64cfe917-6ae9-4347-8ac4-af0952f5a7eb",
+              "leftValue": "={{ $('Supabase').item.json['Secret LS'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -500,
+        -100
+      ],
+      "id": "98164fe2-55a5-41b4-a79f-8a353f96dbbc",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1220,
+        -20
+      ],
+      "id": "3f260333-e324-4575-bd53-bb9dff054c34",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "content": "## Login\n**Ingresa Nombre de Usuario**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        -140
+      ],
+      "typeVersion": 1,
+      "id": "a15e090e-4ef5-448c-bf40-26b4fdeebe86",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {
+        "content": "## Usuario/Clave Incorrecto\n**En caso de que el usuario\no la contrasena no funcionen\nlo suma a la lista de errores**",
+        "height": 220,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        300
+      ],
+      "typeVersion": 1,
+      "id": "e1dff930-b1ab-48e6-b45e-b21ef32170cd",
+      "name": "Sticky Note16"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(2);direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Usuario-Contrasena-Incorrecto.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "fe6918f2-f9ad-499c-a798-6189021a9e44",
+      "name": "Click28",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        120,
+        360
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e77ba076-daba-41f9-ae1b-53ae25ee60f2",
+              "name": "message",
+              "value": "=Empleado: {{$('Loop Over Items').item.json['Nombre']}} - Error: Usuario/Contraseña Incorrecto",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        640,
+        360
+      ],
+      "id": "83f54f63-b87a-4d0c-a025-52a10af47ae3",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; import time; pyautogui.click({{ $json.x -130}},{{ $json.y +20}} ); time.sleep(3); pyautogui.typewrite(r'{{ $('Supabase').item.json['Secret LS']}}')\""
+      },
+      "id": "9e0c1661-8c4c-40b1-9979-39b714d423ff",
+      "name": "Ingresa Secret",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        640,
+        100
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Boton-Ingresar-LS.png', grayscale=True, confidence=0.6))\""
+      },
+      "id": "d08b0be5-df84-41e3-9f74-6017d15f31c6",
+      "name": "Locate INICIAR",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        800,
+        100
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "e06d0fe2-3b79-41c6-8b89-6415e1a8e07b",
+      "name": "Coordinate Parser2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        940,
+        100
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Bien-Asegurado-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "c4721a06-46ca-4cda-bf98-225f55945d7e",
+      "name": "Click13",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        600
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "865d0edc-9e54-4f9f-a21f-88ee121a71d1",
+      "name": "Coordinate Parser15",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        100,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Deslizo hacia abajo\n**Busca el Dropdown\nBien asegurado\ny lo presiona** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "99999687-082d-4266-b2fb-4cac930d7b8e",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "286813c4-e525-4223-8f3b-f2aa75a84a08",
+      "name": "Click8",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        820
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "40f3aaec-d9df-42fe-9d86-caeb27fbd266",
+      "name": "Save Screenshot3",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        600
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y +30}})\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        820
+      ],
+      "id": "e3388a28-2e1c-4053-a874-4afcb1efd2d7",
+      "name": "Execute Command2",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "57143238-97a9-46ad-b43f-0742d15cfe2f",
+      "name": "Coordinate Parser16",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(0); pyautogui.scroll(-500)\""
+      },
+      "id": "686affe5-d1bf-4c3f-9a8b-3a74f785bc05",
+      "name": "Scroll",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        600
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Seleccion Dropdown\n**Selecciona colectivo 24hs** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        780
+      ],
+      "typeVersion": 1,
+      "id": "5423009b-df36-43de-908b-25bb7be04bc5",
+      "name": "Sticky Note17"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "a5c52bc8-a7ea-41c3-85f5-07e811ca293e",
+      "name": "Coordinate Parser17",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        1020
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "331246aa-874d-4e66-ae61-c5f677a4581e",
+      "name": "Click24",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1020
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(0); direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Tipo-Documento-LS.png', grayscale=True, confidence=0.6))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1020
+      ],
+      "id": "8612053a-6716-4dd2-bd6a-032a5eb99f5b",
+      "name": "Execute Command3",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "bb24efc0-3c8e-4eb4-bb5c-281654cefbde",
+      "name": "Locate On Screen10",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        1020
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "1b846794-5d16-41ac-8436-1cf0279c87c5",
+      "name": "Coordinate Parser19",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        860,
+        1020
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Segundo Dropdown\n**Selecciona tipo\ny copia polisa** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        1000
+      ],
+      "typeVersion": 1,
+      "id": "f004715e-0a7f-491b-9830-418daf4219aa",
+      "name": "Sticky Note18"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "b98f7ceb-2f0a-4279-9ad6-46d849a5d8ba",
+      "name": "Coordinate Parser20",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        1240
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "1a726923-7051-4bf6-85aa-246c4f8c9b4a",
+      "name": "Click25",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1240
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(2); direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Boton-Imprimir-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1240
+      ],
+      "id": "f46f8332-1f4e-4d81-a229-83a21655c85a",
+      "name": "Execute Command5",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Boton Imprimir\n**Presiona Imprimir** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        1220
+      ],
+      "typeVersion": 1,
+      "id": "e579d585-06f5-40b3-90ab-04e6c292d382",
+      "name": "Sticky Note19"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "fb27100e-2b21-40a0-9178-8a6599e70e94",
+      "name": "Save Screenshot15",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Boton-Descargar-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "826fff6f-1844-4f50-8f58-5adbcb80f0c3",
+      "name": "Locate On Screen14",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        1480
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "8ee469d1-e275-42e9-a002-80e81aa55cbb",
+      "name": "Coordinate Parser21",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        1480
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "06f58497-42b5-4056-a903-f5aa492bed5e",
+      "name": "Click29",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1480
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Boton Descarga\n**Busca y presiona el \nbotón de descarga**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        1440
+      ],
+      "typeVersion": 1,
+      "id": "1b78af1f-fa05-427f-b5db-a40ae93e7541",
+      "name": "Sticky Note20"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; time.sleep(4);img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "b8b2180e-64d2-49dd-9019-d0efef13e5ce",
+      "name": "Save Screenshot16",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Barra-Guardar-Nombre.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "1c1ccf15-cd4e-4ca9-93bd-50fa41b5bd3f",
+      "name": "Locate On Screen16",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        1680
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "27e656f1-46be-441a-ba62-26909c37f764",
+      "name": "Coordinate Parser22",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        1680
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; import locale; import time; from datetime import datetime;locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8'); current_date = datetime.now(); current_date = datetime.now();year=current_date.strftime('%Y');mesdirec = current_date.strftime('%m - %B %Y'); mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize());nombre= '{{ $('Loop Over Items').item.json.Nombre }}'; pyautogui.doubleClick({{ $json.x +80}}, {{ $json.y -10}}); pyautogui.typewrite(['backspace']); time.sleep(2); pyautogui.typewrite(fr'G:\\.shortcut-targets-by-id\\1Og8spmPVbHsBTZ42rh-L5K9GOHJyggk9\\INGRESOS A PLANTA\\DOCUMENTOS DE INGRESO\\ARCA - SEGURO\\{year}\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf', interval=0.01)\""
+      },
+      "id": "ee1f6032-ea1b-4139-8b26-f2d6ff4f6e1f",
+      "name": "Click30",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1680
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar-Dirección\n**Ingresa la dirección \ndonde se va a guardar \nel archivo**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        1660
+      ],
+      "typeVersion": 1,
+      "id": "45427902-55c2-4aa3-a8ed-35a2f330cfda",
+      "name": "Sticky Note21"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "a9ee632c-12bd-42d1-bcac-f256d7631183",
+      "name": "Save Screenshot17",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Boton-Guardar-Guardar.png', grayscale=True, confidence=0.8))\"\n"
+      },
+      "id": "19aaa979-1216-46bb-a5f1-9501ed08b225",
+      "name": "Locate On Screen17",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        1900
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "aa05c7fa-8f84-484e-9068-87f4df9d1d5e",
+      "name": "Coordinate Parser23",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        1900
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser23').item.json.x }}, {{ $('Coordinate Parser23').item.json.y }})\""
+      },
+      "id": "cd4fd8f2-d3f4-4dc6-84ea-98fc4a3f08ff",
+      "name": "Click31",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1900
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar-Botón \n**Presiona el botón Guardar** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        1880
+      ],
+      "typeVersion": 1,
+      "id": "eebea585-1f2f-4005-ad7a-b95428736d77",
+      "name": "Sticky Note22"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "b820783d-efab-474c-a2d1-236f25cd799f",
+      "name": "Save Screenshot18",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "b93a014b-bc7e-4835-867d-91987d8be94c",
+      "name": "Coordinate Parser24",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        2560
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui, math; reference_point = ({{ $json.x +50}}, {{ $json.y}});direc = '{{$('Edit Fields').item.json.direc}}'; matches = list(pyautogui.locateAllOnScreen(fr'{direc}/.n8n\\\\Screenshots\\\\Boton-Close.png')); closest_match = min(matches, key=lambda match: math.sqrt((pyautogui.center(match)[0] - reference_point[0])**2 + (pyautogui.center(match)[1] - reference_point[1])**2)); pyautogui.click(pyautogui.center(closest_match))\""
+      },
+      "id": "9473be8d-88dd-486c-8b67-f5cfa0a1179f",
+      "name": "Click32",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2560
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Cerrar pestañas\n**Cierra la pestaña \nFormularios** ",
+        "height": 180,
+        "width": 1460,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        2540
+      ],
+      "typeVersion": 1,
+      "id": "820b2d76-1bd6-4f1b-9044-e0f82234e412",
+      "name": "Sticky Note23"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab(); img.save(r'C:\\\\Users\\\\Uusario Nuevo Prueba\\\\.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "30736153-fe9b-415a-871b-de057c35fb53",
+      "name": "Save Screenshot19",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        4560
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; print(pyautogui.locateCenterOnScreen(r'C:\\\\Users\\\\Uusario Nuevo Prueba\\\\.n8n\\\\Screenshots\\\\LS\\\\Boton-Perfil-LS.png', grayscale=True, confidence=0.3))\""
+      },
+      "id": "dcbd5edd-8c41-4383-9923-67c8fc0c5d80",
+      "name": "Locate On Screen19",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        4560
+      ],
+      "retryOnFail": true,
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "70fdf228-8b22-4543-a772-c9b9a65d9ef8",
+      "name": "Coordinate Parser25",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        4560
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(2); pyautogui.click(1735, 120)\""
+      },
+      "id": "cc3fd3f3-65e6-4c56-9ea5-071de94d2541",
+      "name": "Click33",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        4560
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Cerrar Sesion\n**Presiona el logo de \nPerrfil en ARCA**",
+        "height": 180,
+        "width": 1460,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        4540
+      ],
+      "typeVersion": 1,
+      "id": "9a70b570-39ca-4844-a22c-52e7952b4216",
+      "name": "Sticky Note24"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "b7c7e14f-0072-4162-a3eb-e3f1d2a320ec",
+      "name": "Save Screenshot20",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        4780
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\\\Screenshots\\\\LS\\\\Boton-Cerrarsesion-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "7a7aff02-b157-4615-a42c-69e2306e4327",
+      "name": "Locate On Screen20",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        4780
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "d850f155-80c2-497a-86c8-efb6acc904dc",
+      "name": "Coordinate Parser26",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        4780
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y}})\""
+      },
+      "id": "569d7323-3f56-49d9-a8e2-2cdd47a6e5cf",
+      "name": "Click34",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        4780
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Cerrar Sesion\n**Selecciona la opción \nCerrar Sesión**",
+        "height": 180,
+        "width": 1460,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        4760
+      ],
+      "typeVersion": 1,
+      "id": "efc5394b-2d03-4c15-b1ae-e408a64f2606",
+      "name": "Sticky Note25"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "438dd5f2-2873-4f76-9dfc-a1ea568eaba4",
+      "name": "Coordinate Parser18",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        2780
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "d04b0dae-91ca-46ce-92f1-a895f37aa51d",
+      "name": "Click26",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2780
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Tipo-Documento2-LS.png', grayscale=True, confidence=0.6))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        260,
+        2780
+      ],
+      "id": "e81310b9-e062-4e1b-8dee-0c35150c2a40",
+      "name": "Execute Command",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "58e75631-a020-4024-aa9d-5cbd3377f365",
+      "name": "Locate On Screen11",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        580,
+        2780
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "41dd2a39-92a6-4604-b9a3-02d4deca7c99",
+      "name": "Coordinate Parser27",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        900,
+        2780
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Segundo Dropdown\n**Selecciona tipo\ny copia polisa** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        2760
+      ],
+      "typeVersion": 1,
+      "id": "36555672-d290-4ad3-8a08-f31f9be79810",
+      "name": "Sticky Note26"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "bc72fac2-9d31-4302-8c12-731b0d4c0166",
+      "name": "Coordinate Parser28",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "0e93740d-bad2-4c19-95e5-8cd8ea86767c",
+      "name": "Click27",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        3000
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;from datetime import date; import datetime; import time; time.sleep(1); direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Boton-Imprimir-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3000
+      ],
+      "id": "ea0bb717-1b2c-41b3-b901-4e607dbc80f3",
+      "name": "Execute Command7",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Boton Imprimir\n**Selecciona tipo\ny copia polisa** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        2980
+      ],
+      "typeVersion": 1,
+      "id": "d410dc67-c600-47d0-8a25-4d45e96645fb",
+      "name": "Sticky Note27"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; time.sleep(4);img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "558851d8-27d3-4d11-a952-90664f9ef1c5",
+      "name": "Save Screenshot22",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3460
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Barra-Guardar-Nombre.png', grayscale=True, confidence=0.8))\"\n"
+      },
+      "id": "cd5a4b53-7906-4c6a-be26-fe0cefc5dca6",
+      "name": "Locate On Screen21",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        3460
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "cdb6ed7a-83ee-4931-a2e4-60611eb4661c",
+      "name": "Coordinate Parser30",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        3460
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; import locale; from datetime import datetime; locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now(); apellido = '{{ $('Loop Over Items').item.json.Apellido }}'; nombre = '{{ $('Loop Over Items').item.json.Nombre }}'; year=current_date.strftime('%Y'); mesdirec = current_date.strftime('%m - %B %Y'); mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); mes = current_date.strftime('%B'); pyautogui.doubleClick({{ $('Coordinate Parser22').item.json.x +80}}, {{ $('Coordinate Parser22').item.json.y -10}}); pyautogui.typewrite(['backspace']); pyautogui.typewrite(fr'G:\\.shortcut-targets-by-id\\1Og8spmPVbHsBTZ42rh-L5K9GOHJyggk9\\INGRESOS A PLANTA\\DOCUMENTOS DE INGRESO\\ARCA - SEGURO\\{year}\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginal-{nombre}-{mesdirec}.pdf', interval=0.01)\""
+      },
+      "id": "047fe857-2dac-477c-8d26-3ef187bbae22",
+      "name": "Click36",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        3460
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar-Dirección\n**Ingresa la dirección \ndonde se va a guardar \nel archivo**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        3440
+      ],
+      "typeVersion": 1,
+      "id": "c93964ee-9bcd-4ddc-89ce-503720cf468f",
+      "name": "Sticky Note29"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; time.sleep(2);img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "60872b77-6403-4699-b9e1-fbac6ce6eb44",
+      "name": "Save Screenshot23",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3680
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Boton-Guardar-Guardar.png', grayscale=True, confidence=0.8))\"\n"
+      },
+      "id": "f1b99a96-6180-44af-a010-71af93a18fb2",
+      "name": "Locate On Screen22",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        3680
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "8e4d6bb6-ceb7-4c32-9908-28f7ccc30a0b",
+      "name": "Coordinate Parser31",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        3680
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser31').item.json.x }}, {{ $('Coordinate Parser31').item.json.y }})\""
+      },
+      "id": "220ecff8-7bdd-4c05-ab4b-805b620d019f",
+      "name": "Click37",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        3680
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Guardar-Botón \n**Presiona el botón Guardar** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        3660
+      ],
+      "typeVersion": 1,
+      "id": "10274063-5b39-48be-a5b9-e1e8e327bc3a",
+      "name": "Sticky Note30"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "4d4627b7-38aa-4623-bfaf-74f648e65a44",
+      "name": "Save Screenshot24",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        4340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "ec706980-af3e-4ba1-ae34-a0624add7f7d",
+      "name": "Coordinate Parser32",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        4340
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;pyautogui.keyDown('ctrl');pyautogui.typewrite(['w']);pyautogui.keyUp('ctrl')\""
+      },
+      "id": "8d4c9f52-46fb-40b1-8e2c-ba54e2441ffe",
+      "name": "Click38",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        4340
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Cerrar pestañas\n**Cierra la pestaña \nFormularios** ",
+        "height": 180,
+        "width": 1460,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        4320
+      ],
+      "typeVersion": 1,
+      "id": "87bcc932-9269-4397-ae5f-74f4a0fa882a",
+      "name": "Sticky Note31"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Polisadegrupos-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "ecb183b5-72d7-49d4-a266-55d89009e6c5",
+      "name": "Locate On Screen5",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        680,
+        820
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Colectivo24hs-LS.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "8c3b1589-6cd4-4558-aaea-c99856c8904d",
+      "name": "Click9",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        820
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.hotkey('ctrl', 'w')\""
+      },
+      "id": "a9b29ce8-6f27-4ed2-a967-9be778b5de28",
+      "name": "Locate On Screen6",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        520,
+        4360
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Window-Documentosdelgrupo-LS.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "5ae21b8a-5262-47be-97c9-87d86ac44e0e",
+      "name": "Click10",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        320,
+        4340
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; time.sleep(2);img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "23933247-156b-4891-a263-501f28a5ca6e",
+      "name": "Save Screenshot25",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2780
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.hotkey('ctrl', 'w')\""
+      },
+      "id": "e42c163f-929d-47a2-882f-d1e47058348d",
+      "name": "Locate On Screen7",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        2560
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Window-Documentosdelgrupo-LS.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "f80b99e9-1963-42f3-841f-11a63584279b",
+      "name": "Click11",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        300,
+        2560
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "b49ecf5d-af0f-46c9-a0a9-37acc6972a8e",
+      "name": "Save Screenshot26",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "a2776c30-5b71-4436-8d62-2ab48b0d54b4",
+      "name": "Coordinate Parser33",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        2120
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser33').item.json.x }}, {{ $('Coordinate Parser33').item.json.y }})\""
+      },
+      "id": "77741490-e711-488c-8b5a-453174105a50",
+      "name": "Click41",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2120
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Desea Remplazar?\n**Presiona el botón Si** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        2100
+      ],
+      "typeVersion": 1,
+      "id": "2609133a-948c-4522-b48f-9e646e6fb1b8",
+      "name": "Sticky Note33"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Si-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "e7ba7f5c-5009-447d-919b-9bb2797ca457",
+      "name": "Click42",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        2120
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; time.sleep(5);img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "8e77e1e6-b864-487d-8b35-7ba06717262d",
+      "name": "Save Screenshot27",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3900
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "e3abf7cf-fd03-41db-8373-039d6b8047d7",
+      "name": "Coordinate Parser34",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        3900
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser34').item.json.x }}, {{ $('Coordinate Parser34').item.json.y }})\""
+      },
+      "id": "7b5ad777-9c2a-44cf-ad12-fe4df5587b7d",
+      "name": "Click43",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        3900
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Desea Remplazar?\n**Presiona el botón Si** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        3880
+      ],
+      "typeVersion": 1,
+      "id": "f819aeec-bea8-4b02-8528-1706c4e073e6",
+      "name": "Sticky Note34"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Si-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "4de0ea74-9e2b-4dc8-8659-96762e59fc5b",
+      "name": "Click44",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        3900
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "7532f61e-98b5-401e-b543-9cc905689975",
+      "name": "Save Screenshot28",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "a403889b-0cb6-4da9-b9c3-7137206c6896",
+      "name": "Coordinate Parser35",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        2340
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser35').item.json.x +100}}, {{ $('Coordinate Parser35').item.json.y }})\""
+      },
+      "id": "8c3e465a-28f7-45e8-a1b3-aa194c3cbe81",
+      "name": "Click45",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        2340
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## En caso de Loop\n**Cancela hasta que siga** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        2320
+      ],
+      "typeVersion": 1,
+      "id": "dca43cbb-f99d-4fff-a1bd-ad7eb93c9ada",
+      "name": "Sticky Note35"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Boton-Guardar-Guardar.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "3e7c7005-c041-4cbe-bf5f-7b2b52477888",
+      "name": "Click46",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        2340
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab(); direc = '{{$('Edit Fields').item.json.direc}}';img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "c4ff3121-5952-41d0-92b9-ebcb63f91d52",
+      "name": "Save Screenshot29",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        4120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "bfa67438-2df8-4f62-aaac-db51618eb71e",
+      "name": "Coordinate Parser36",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        4120
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $('Coordinate Parser36').item.json.x +100}}, {{ $('Coordinate Parser36').item.json.y }})\""
+      },
+      "id": "307cfe52-3e3c-4fa3-99c7-64a92ee702cf",
+      "name": "Click47",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        4120
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## En caso de Loop\n**Cancela hasta que siga** ",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        4100
+      ],
+      "typeVersion": 1,
+      "id": "8178ae47-8f58-490a-8ca5-8a6910cbc411",
+      "name": "Sticky Note36"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\ARCA\\Boton-Guardar-Guardar.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "ff09e514-c0df-4c4a-8754-4bf08b25bee7",
+      "name": "Click48",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        4120
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;direc = '{{$('Edit Fields').item.json.direc}}'; print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Copia-Polisa-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "35c38595-5cbb-4c71-848d-3312c285d16d",
+      "name": "Click60",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        680,
+        1020
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Copia-Polisa-Original-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        740,
+        2780
+      ],
+      "id": "191690de-60e6-40fc-bde3-73b6f4d8b369",
+      "name": "Execute Command6",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(2); img = ImageGrab.grab();direc = '{{$('Edit Fields').item.json.direc}}'; img.save(fr'{direc}/.n8n\\\\Screenshots\\\\ARCA\\\\WorkingScreen.png')\""
+      },
+      "id": "24ac11f1-4a45-427d-89fc-5048a85205a3",
+      "name": "Save Screenshot21",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        100,
+        3240
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Boton-Descargar-LS.png', grayscale=True, confidence=0.8))\""
+      },
+      "id": "8b894706-6639-44ca-afb3-157607bd03a2",
+      "name": "Locate On Screen15",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        280,
+        3240
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "3c8d78ef-07b0-48d2-bc57-90ee744a9ebe",
+      "name": "Coordinate Parser29",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        3240
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "7d55bf4e-c376-4d0d-8c39-bbf4219aedcd",
+      "name": "Click35",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        3240
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Boton Descarga\n**Busca y presiona el \nbotón de descarga**",
+        "height": 180,
+        "width": 1460,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -200,
+        3200
+      ],
+      "typeVersion": 1,
+      "id": "8ef5cc66-d62a-4ea0-8c92-e387ebef5c27",
+      "name": "Sticky Note28"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0d5d32a6-2424-4ad1-826a-79d4421e063b",
+              "name": "direc",
+              "value": "C:/Users/Uusario Nuevo Prueba",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        -120
+      ],
+      "id": "b7f598db-7b7c-4502-a728-b1f84b0db497",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1020,
+        -120
+      ],
+      "id": "9a26d9a9-5ffc-4f55-ae1b-9aba952fba79",
+      "name": "Supabase2",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        120
+      ],
+      "id": "662c2cd8-f22f-44c9-af06-43cf49f356c5",
+      "name": "Supabase7",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "={{ $('Supabase3').item.json.Texto }},{{ $json.message }}\n\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        800,
+        360
+      ],
+      "id": "8e723a4e-a2e6-4c91-bd73-24cbfdaebd95",
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        500,
+        360
+      ],
+      "id": "ea118862-f821-41d5-9bd5-1349e343be6d",
+      "name": "Supabase3",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui;import time; time.sleep(5); direc = '{{$('Edit Fields').item.json.direc}}';print(pyautogui.locateCenterOnScreen(fr'{direc}/.n8n\\Screenshots\\LS\\Contrasena-LS.png', grayscale=True, confidence=0.6))\"\n"
+      },
+      "id": "9781a71b-b60e-43a0-8a30-83b2ba3c4f3b",
+      "name": "Locate On Screen2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        300,
+        360
+      ],
+      "retryOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "command": "=powershell -Command \"$profilePath = 'C:\\Usuarios\\UusarioNuevoPrueba\\.n8n\\chromeprofile'; Get-CimInstance Win32_Process -Filter \\\"Name = 'chrome.exe'\\\" | Where-Object { $_.CommandLine -like \\\"*--user-data-dir=$profilePath*\\\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }; Start-Sleep -Seconds 2; Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' -ArgumentList '--remote-debugging-port=1313', \\\"--user-data-dir=$profilePath\\\", 'https://portalasegurado.papps.lasegunda.com.ar'; Start-Sleep -Seconds 5; $chromeProcess = Get-NetTCPConnection -LocalPort 1313; if ($chromeProcess) { Write-Host 'Chrome abierto correctamente'; exit 0 } else { Write-Host 'Error: No se pudo abrir Chrome o el puerto está ocupado.'; exit 1 }\""
+      },
+      "id": "832bcbe4-3b89-4ff0-8a6b-31d49e16cc8f",
+      "name": "Close&Open",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        -440
+      ],
+      "alwaysOutputData": true
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-02T13:15:13.000Z",
+  "versionId": "eef232bd-6edf-4c7a-97c1-8d4df7e1c09e"
+}

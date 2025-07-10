@@ -1,0 +1,409 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Carga Bunge": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PendEnvio": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PendRecep": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File exist": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pendientes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-31T11:50:51.492Z",
+  "id": "bqGmONpzQmNdZohL",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "BOT-Manager",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        660,
+        840
+      ],
+      "id": "1a4ba1bc-9fe1-4447-b0fa-d0bd8c8981f8",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "name": "Descarga",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "JQaUFfHy4jVE74HE",
+          "mode": "list",
+          "cachedResultName": "N8N-LS-CNRyLD"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        900,
+        1080
+      ],
+      "id": "466ce60e-5339-4309-b8d7-ef2998c40906",
+      "name": "Carga Bunge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu tarea es mantener actualizada la carga de documentanción.\nUSA UNA SOLA HERRAMIENTA A LA VEZ\nSI UNA DE ELLAS FALLA, DETENTE, no sigas sin toda la informacion necesaria, pero si si no existe un documento.\n* Tenés la herramienta \"Pendientes\" donde necesitas UNICAMENTE iniciar el RPA, sin mandarle nada.\nUna vez que tengas los documentos que se adeudan tu tarea es conseguirlos. Te interesan los documentos pago poliza acc personales, poliza acc personales e inscripcionautonomo. USA EXACTAMENTE ESTOS NOMBRES QUE TE DI!. SOLO TENES QUE AVANZAR CON LOS QUE VENCEN EN MENOS DE 10 DIAS.\n* Tenés la herramienta \"File existe\" para usarla tenés que mandarle los documentos pendientes si o si. De ella vas a recibir los que no existan,SI NO RECIBIS EL NOMBRE DE UN DOCUMENTO, ENTONCES EXISTE, SOLO IMPORTA LOS QUE TRAJISTE DE PENDIENTES, el resto no importa si le falta algo, no lo evalues.\nEn caso que algun documento no exista REALIZA SU DESCARGA.\n* Tenes la herramienta \"N8N-CNR-LD\" para descargar los documentos de CNR y Pago Poliza acc personales.\n* Tenes la herramienta \"PendRecepcion\" para ver que documentos ya se cargaron a planta y estan en proceso de aprobacion, estos no debemos volver a cargar, .\n* Tenes la herramienEN ESTE PROCESO TE DEVUELVEN SOLO LOS QUE ESTAN PENDIENTES DE APROBACIONta \"PendEnvio\" para ver que documentos tienen una solicitud de carga y asi saber cuales no debemos generar.\n* Tenés la herramienta \"Generar\" para poder generar las solicitudes de carga para los archivos que falten y no esten pendientes a recepcion. MANDA LA LISTA QUE CONSEGUISTE DE LA HERRAMINETA PENDIENTE, TANTO \"pagopolizaaccpersonales\" COMO TAMBIEN \"inscripcionautonomo\" ESCRIBILOS EXACTAMENTE ASI, exeptuando los que no existan, esten pendientes a recepcion o ya tengan una solicitud de carga generada. usa formato tipo {\n  \"query\": \"delpino nicolas abel, inscripcionautonomo, 20\\ndonaire pablo ruben, ppolizaaccpe, 12\\nferreyra julian andres, ppolizaaccpe, 18\"\n}\n \nEjecutalos en orden y 1 a la vez. Solo vas a ejecutarlos 1 vez así que manda todos los documentos a generar y todas las personas que lo necesitan JUNTOS.\nprimero pendientes, luego file exist, luego pendientes recepcion, luego pendientes envio y ultimo generar\nPOR ESTA VEZ PROBA LLAMAR AL GENERAR\nDa en el output la listas obtenidas de las diferentes hereamientas y como las analizaste.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        800,
+        840
+      ],
+      "id": "1305f18e-9fe6-446a-860e-77b39e286969",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        740,
+        1080
+      ],
+      "id": "8f7adcbe-6a62-48b5-b3b4-187095abd406",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "qlIkWQVxXLADKIor",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Descarga",
+        "description": "Call this workflow when you need to download CNR or Pago polisa acc personales documents for the personal, only when you are ask to upload the document and it doenst exist",
+        "workflowId": {
+          "__rl": true,
+          "value": "JQaUFfHy4jVE74HE",
+          "mode": "list",
+          "cachedResultName": "N8N-LS-CNRyLD"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        840,
+        640
+      ],
+      "id": "fac84e06-a92f-4570-923c-bde40404ee99",
+      "name": "N8N-CNR-LS"
+    },
+    {
+      "parameters": {
+        "name": "PendientesEnvio",
+        "description": "Call this tool to get a table of documents with generated solicitud to be uploaded in the site",
+        "workflowId": {
+          "__rl": true,
+          "value": "QBnriGcCTfdJDwXM",
+          "mode": "list",
+          "cachedResultName": "Pendientes-Recepcion-ControlDocumentario copy"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        500
+      ],
+      "id": "24cfce26-15b9-4291-893b-1f7e99080cd9",
+      "name": "PendEnvio"
+    },
+    {
+      "parameters": {
+        "name": "Generar",
+        "description": "Call this tool to create an upload document solicitud for the documents that have to be upload.\nSend the names of the personal that need their documents upload and the document in question",
+        "workflowId": {
+          "__rl": true,
+          "value": "DbwBS0zefv26xaJX",
+          "mode": "list",
+          "cachedResultName": "GenerarControlDocumentario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        500
+      ],
+      "id": "748f5831-d0de-4f0d-8dde-bc16ec7f0dcc",
+      "name": "Generar"
+    },
+    {
+      "parameters": {
+        "name": "PendientesRecepcion",
+        "description": "Call this tool to get a table of documents needed to be uploaded so our personal is able to work in diferent industrial sites",
+        "workflowId": {
+          "__rl": true,
+          "value": "QBnriGcCTfdJDwXM",
+          "mode": "list",
+          "cachedResultName": "Pendientes-Recepcion-ControlDocumentario copy"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        500
+      ],
+      "id": "0e4c7729-35ff-4d2f-9acc-bacdf2a3d1b6",
+      "name": "PendRecep"
+    },
+    {
+      "parameters": {
+        "name": "Fileexist",
+        "description": "Call this workflow when you know which documents need to be upload to check if they exist or we dont have them yet. \nAca usa los nombres PPolizaAccPe, PolizaAccPe, inscripcionautonomo",
+        "workflowId": {
+          "__rl": true,
+          "value": "1aJKQtkbFifzy717",
+          "mode": "list",
+          "cachedResultName": "File exist"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        900,
+        500
+      ],
+      "id": "84f33fa5-fa35-44e5-8804-140c5f199dc9",
+      "name": "File exist"
+    },
+    {
+      "parameters": {
+        "name": "Pendientes",
+        "description": "Call this tool to get a table of documents needed to be uploaded so our personal is able to work in diferent industrial sites",
+        "workflowId": {
+          "__rl": true,
+          "value": "aVIs8uvnkVfzIrDd",
+          "mode": "list",
+          "cachedResultName": "Pendientes ControlDocumentario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        800,
+        500
+      ],
+      "id": "9fca7bea-d72f-4dc9-94b7-99b1a65a9249",
+      "name": "Pendientes"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        500
+      ],
+      "id": "108bf57c-2f9c-425b-a13f-6bcf61f95c85",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "qlIkWQVxXLADKIor",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu tarea es mantener actualizada la carga de documentanción.\nUSA UNA SOLA HERRAMIENTA A LA VEZ\nSI UNA DE ELLAS FALLA, DETENTE, no sigas sin toda la informacion necesaria, pero si si no existe un documento.\n* Tenés la herramienta \"Pendientes\" donde necesitas UNICAMENTE iniciar el RPA, sin mandarle nada.\nUna vez que tengas los documentos que se adeudan tu tarea es conseguirlos. Te interesan los documentos pago poliza acc personales, poliza acc personales e inscripcionautonomo. USA EXACTAMENTE ESTOS NOMBRES QUE TE DI!. SOLO TENES QUE AVANZAR CON LOS QUE VENCEN EN MENOS DE 10 DIAS.\n* Tenés la herramienta \"File existe\" para usarla tenés que mandarle los documentos pendientes si o si. De ella vas a recibir los que no existan,SI NO RECIBIS EL NOMBRE DE UN DOCUMENTO, ENTONCES EXISTE, SOLO IMPORTA LOS QUE TRAJISTE DE PENDIENTES, el resto no importa si le falta algo, no lo evalues.\nEn caso que algun documento no exista REALIZA SU DESCARGA.\n* Tenes la herramienta \"N8N-CNR-LD\" para descargar los documentos de CNR y Pago Poliza acc personales.\n* Tenes la herramienta \"PendRecepcion\" para ver que documentos ya se cargaron a planta y estan en proceso de aprobacion, estos no debemos volver a cargar, .\n* Tenes la herramienEN ESTE PROCESO TE DEVUELVEN SOLO LOS QUE ESTAN PENDIENTES DE APROBACIONta \"PendEnvio\" para ver que documentos tienen una solicitud de carga y asi saber cuales no debemos generar.\n* Tenés la herramienta \"Generar\" para poder generar las solicitudes de carga para los archivos que falten y no esten pendientes a recepcion. MANDA LA LISTA QUE CONSEGUISTE DE LA HERRAMINETA PENDIENTE, TANTO \"pagopolizaaccpersonales\" COMO TAMBIEN \"inscripcionautonomo\" ESCRIBILOS EXACTAMENTE ASI, exeptuando los que no existan, esten pendientes a recepcion o ya tengan una solicitud de carga generada. usa formato tipo {\n  \"query\": \"delpino nicolas abel, inscripcionautonomo, 20\\ndonaire pablo ruben, ppolizaaccpe, 12\\nferreyra julian andres, ppolizaaccpe, 18\"\n}\n \nEjecutalos en orden y 1 a la vez. Solo vas a ejecutarlos 1 vez así que manda todos los documentos a generar y todas las personas que lo necesitan JUNTOS.\nprimero pendientes, luego file exist, luego pendientes recepcion, luego pendientes envio y ultimo generar\nPOR ESTA VEZ PROBA LLAMAR AL GENERAR\nDa en el output la listas obtenidas de las diferentes hereamientas y como las analizaste.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        780,
+        200
+      ],
+      "id": "72b48b56-25b2-4984-8ae7-764d04181062",
+      "name": "AI Agent"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-05-09T12:39:57.000Z",
+  "versionId": "61de022c-739a-4d66-8e01-6dd8685e29e4"
+}

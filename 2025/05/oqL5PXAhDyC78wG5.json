@@ -1,0 +1,622 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "N8N-LS-Polizas": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "N8N-LS-CNRyLD": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "N8N-CCMA-ARCA": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "N8N-Constancia-ARCA": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pendientes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File exist": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PendRecep": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PendEnvio": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Testing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-09T12:40:15.237Z",
+  "id": "oqL5PXAhDyC78wG5",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "BOT-Descargas",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        900
+      ],
+      "id": "40d28ba1-96c8-4df8-b9d6-94bff10d1570",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Sos un util asistente con la tarea de utilizar las herramientas de descarga de documentacion y notificar como salió su ejecucion.\nAsegurate de ejecutar una a la vez y solo una vez.\n\nContas con las siguientes herramientas:\n* Polizas: Descarga las polizas de La Segunda.\n* CNRyLD: Descarga las CNR y Libre Deuda de La Segunda.\n* CCMA: Descarga el CCMA de ARCA.\n* Constancia: Descarga las constancias de ARCA.\n\nEjecuta estas herramientas UNA A LA VEZ y SOLO UNA VEZ. Luego al recibir el output de cada una notifica si funcionaron correctamente o especifica los errores en caso de que existan.\n\nQuiero que devuelvas el texto con saltos de línea reales. NO uses \"\\n\", sino saltos de línea reales. Ejemplo de formato:\n\nAdjunto el reporte de cargas del día:\n- N8N-LS-Polizas: Error:\n         The 'JSON Output' in item 0 contains invalid JSON ❌\n- N8N-CCMA-ARCA: \n         Empleado: FERREYRA FACUNDO AMILCAR - Error: Captcha ❌\n         Empleado: QUIROZ JAMES - Error: Captcha ❌\n- N8N-LS-Polizas: Carga exitosa. ✅\n...\n\nPor favor, no dude en contactar el area de investigación y desarrollo si necesita más información.\n\nSaludos cordiales,\"\n\n* El output que des es el body del mail que se manda, estructuralo acorde",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        800,
+        840
+      ],
+      "id": "06aa1e3d-b999-435b-ad7b-d4ea6a24125d",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "name": "Polizas",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "b4fSsxoSqjFjDgsj",
+          "mode": "list",
+          "cachedResultName": "N8N-LS-Polizas"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        760,
+        1100
+      ],
+      "id": "1f99311f-ef93-4663-9ae9-f0a8e478be1c",
+      "name": "N8N-LS-Polizas"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        600,
+        1100
+      ],
+      "id": "f69a4873-ad8a-4d85-88ff-d0d688413c8c",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "qlIkWQVxXLADKIor",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "CNRyLD",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "JQaUFfHy4jVE74HE",
+          "mode": "list",
+          "cachedResultName": "N8N-LS-CNRyLD"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        900,
+        1100
+      ],
+      "id": "b8cfd9cd-dda2-40ec-b4d4-161898771a51",
+      "name": "N8N-LS-CNRyLD"
+    },
+    {
+      "parameters": {
+        "name": "CCMA",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "MU3ylDsM0vwHrbDf",
+          "mode": "list",
+          "cachedResultName": "N8N-CCMA-ARCA"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        1100
+      ],
+      "id": "7afbbe69-97ba-420a-bc1c-5c95b5f09428",
+      "name": "N8N-CCMA-ARCA"
+    },
+    {
+      "parameters": {
+        "name": "Constancia",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "dYVcl9OY8baVLRcL",
+          "mode": "list",
+          "cachedResultName": "N8N-Constancia-ARCA"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        1100
+      ],
+      "id": "82ef7820-0aaa-4139-95ae-3014c75baf08",
+      "name": "N8N-Constancia-ARCA"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu tarea es mantener actualizada la carga de documentanción.\nUSA UNA SOLA HERRAMIENTA A LA VEZ\nSI UNA DE ELLAS FALLA, DETENTE, no sigas sin toda la informacion necesaria, pero si si no existe un documento.\n* Tenés la herramienta \"Pendientes\" donde necesitas UNICAMENTE iniciar el RPA, sin mandarle nada.\nUna vez que tengas los documentos que se adeudan tu tarea es conseguirlos. Te interesan los documentos pago poliza acc personales, poliza acc personales e inscripcionautonomo. USA EXACTAMENTE ESTOS NOMBRES QUE TE DI!. SOLO TENES QUE AVANZAR CON LOS QUE VENCEN EN MENOS DE 10 DIAS.\n* Tenés la herramienta \"File existe\" para usarla tenés que mandarle los documentos pendientes si o si. De ella vas a recibir los que no existan,SI NO RECIBIS EL NOMBRE DE UN DOCUMENTO, ENTONCES EXISTE, SOLO IMPORTA LOS QUE TRAJISTE DE PENDIENTES, el resto no importa si le falta algo, no lo evalues.\nEn caso que algun documento no exista REALIZA SU DESCARGA.\n* Tenes la herramienta \"N8N-CNR-LD\" para descargar los documentos de CNR y Pago Poliza acc personales.\n* Tenes la herramienta \"PendRecepcion\" para ver que documentos ya se cargaron a planta y estan en proceso de aprobacion, estos no debemos volver a cargar, .\n* Tenes la herramienEN ESTE PROCESO TE DEVUELVEN SOLO LOS QUE ESTAN PENDIENTES DE APROBACIONta \"PendEnvio\" para ver que documentos tienen una solicitud de carga y asi saber cuales no debemos generar.\n* Tenés la herramienta \"Generar\" para poder generar las solicitudes de carga para los archivos que falten y no esten pendientes a recepcion. MANDA LA LISTA QUE CONSEGUISTE DE LA HERRAMINETA PENDIENTE, TANTO \"pagopolizaaccpersonales\" COMO TAMBIEN \"inscripcionautonomo\" ESCRIBILOS EXACTAMENTE ASI, exeptuando los que no existan, esten pendientes a recepcion o ya tengan una solicitud de carga generada. usa formato tipo {\n  \"query\": \"delpino nicolas abel, inscripcionautonomo, 20\\ndonaire pablo ruben, ppolizaaccpe, 12\\nferreyra julian andres, ppolizaaccpe, 18\"\n}\n \nEjecutalos en orden y 1 a la vez. Solo vas a ejecutarlos 1 vez así que manda todos los documentos a generar y todas las personas que lo necesitan JUNTOS.\nprimero pendientes, luego file exist, luego pendientes recepcion, luego pendientes envio y ultimo generar\nPOR ESTA VEZ PROBA LLAMAR AL GENERAR\nDa en el output la listas obtenidas de las diferentes hereamientas y como las analizaste.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        780,
+        200
+      ],
+      "id": "fbb1b277-78ca-4edc-a0dd-97b61ef43d29",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        500
+      ],
+      "id": "17c295f9-c717-4be2-a2a8-692da9fba8c7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "qlIkWQVxXLADKIor",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Pendientes",
+        "description": "Call this tool to get a table of documents needed to be uploaded so our personal is able to work in diferent industrial sites",
+        "workflowId": {
+          "__rl": true,
+          "value": "aVIs8uvnkVfzIrDd",
+          "mode": "list",
+          "cachedResultName": "Pendientes ControlDocumentario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        800,
+        500
+      ],
+      "id": "79953fe5-0f2e-4901-bb6d-1cc563d2ffd3",
+      "name": "Pendientes"
+    },
+    {
+      "parameters": {
+        "name": "Fileexist",
+        "description": "Call this workflow when you know which documents need to be upload to check if they exist or we dont have them yet. \nAca usa los nombres PPolizaAccPe, PolizaAccPe, inscripcionautonomo",
+        "workflowId": {
+          "__rl": true,
+          "value": "1aJKQtkbFifzy717",
+          "mode": "list",
+          "cachedResultName": "File exist"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        900,
+        500
+      ],
+      "id": "60a48afc-0244-4c7e-b5f0-471f15566003",
+      "name": "File exist"
+    },
+    {
+      "parameters": {
+        "name": "PendientesRecepcion",
+        "description": "Call this tool to get a table of documents needed to be uploaded so our personal is able to work in diferent industrial sites",
+        "workflowId": {
+          "__rl": true,
+          "value": "QBnriGcCTfdJDwXM",
+          "mode": "list",
+          "cachedResultName": "Pendientes-Recepcion-ControlDocumentario copy"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        500
+      ],
+      "id": "08177562-0e20-4bb7-a42d-030cf099d79f",
+      "name": "PendRecep"
+    },
+    {
+      "parameters": {
+        "name": "Generar",
+        "description": "Call this tool to create an upload document solicitud for the documents that have to be upload.\nSend the names of the personal that need their documents upload and the document in question",
+        "workflowId": {
+          "__rl": true,
+          "value": "DbwBS0zefv26xaJX",
+          "mode": "list",
+          "cachedResultName": "GenerarControlDocumentario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        500
+      ],
+      "id": "8154b32e-b5b9-4b5a-86a2-394157f434f9",
+      "name": "Generar"
+    },
+    {
+      "parameters": {
+        "name": "PendientesEnvio",
+        "description": "Call this tool to get a table of documents with generated solicitud to be uploaded in the site",
+        "workflowId": {
+          "__rl": true,
+          "value": "QBnriGcCTfdJDwXM",
+          "mode": "list",
+          "cachedResultName": "Pendientes-Recepcion-ControlDocumentario copy"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        500
+      ],
+      "id": "49671a5d-98dc-477e-b57a-e9de51a4a783",
+      "name": "PendEnvio"
+    },
+    {
+      "parameters": {
+        "name": "Descarga",
+        "description": "Call this workflow when you need to download CNR or Pago polisa acc personales documents for the personal, only when you are ask to upload the document and it doenst exist",
+        "workflowId": {
+          "__rl": true,
+          "value": "JQaUFfHy4jVE74HE",
+          "mode": "list",
+          "cachedResultName": "N8N-LS-CNRyLD"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        840,
+        640
+      ],
+      "id": "5c35d5e3-d01e-40c1-9b82-4c804b6aa281",
+      "name": "N8N-CNR-LS"
+    },
+    {
+      "parameters": {
+        "sendTo": "=simonteralv2@gmail.com, a.benitez@treeingenieria.com, administracion@treeingenieria.com",
+        "subject": "BOT-Descargas",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1360,
+        880
+      ],
+      "id": "ffbb946e-eecd-44bf-a058-aae1f175523a",
+      "name": "Gmail",
+      "webhookId": "6bc2c596-6b0a-4077-9a64-a43f3b27b4d7",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "NWtQUZYbGghGDkN1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "=simonteralv2@gmail.com",
+        "subject": "BOT-Descargas",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1360,
+        700
+      ],
+      "id": "1d445b3f-a9e0-427a-bcc1-53dd4513e677",
+      "name": "Testing",
+      "webhookId": "6bc2c596-6b0a-4077-9a64-a43f3b27b4d7",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "NWtQUZYbGghGDkN1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 0 2 16 05 fri"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        460,
+        740
+      ],
+      "id": "23d7819c-2638-42c0-b350-31a058c5398a",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-18T18:46:35.000Z",
+  "versionId": "e211ea11-e8e2-408a-972e-ede2eaf82c6c"
+}

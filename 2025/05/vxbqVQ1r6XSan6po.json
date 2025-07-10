@@ -1,0 +1,87 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-19T18:59:06.278Z",
+  "id": "vxbqVQ1r6XSan6po",
+  "meta": null,
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a2f5af79-5858-4eb5-a5f6-f5792e2c7a13",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "DbwBS0zefv26xaJX",
+          "mode": "list",
+          "cachedResultName": "GenerarControlDocumentario"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "=cespedes esteban, inscripcion autonomo, 15\\ndonaire pablo ruben, inscripcion autonomo, 15\\ncunningham martin, inscripcion autonomo, 15\\ndelpino nicolas abel, inscripcion autonomo, 15\\nferreyra amilcar, inscripcion autonomo, 15\\nferreyra julian andres, inscripcion autonomo, 15\\nmarcelo gamalero, inscripcion autonomo, 15\\nmassa agustin, inscripcion autonomo, 15\\ncespedes esteban, pago poliza acc. personales, 17\\ndonaire pablo ruben, pago poliza acc. personales, 6\\ncunningham martin, pago poliza acc. personales, 14\\ndelpino nicolas abel, pago poliza acc. personales, 14\\nferreyra amilcar, pago poliza acc. personales, 14\\nferreyra julian andres, pago poliza acc. personales, 12\\nmarcelo gamalero, pago poliza acc. personales, 15\\nmassa agustin, pago poliza acc. personales, 17"
+          },
+          "matchingColumns": [
+            "query"
+          ],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        0
+      ],
+      "id": "465d28c7-6308-4e86-9aca-b8e50b7869b4",
+      "name": "Execute Workflow"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-05-19T18:59:50.000Z",
+  "versionId": "885bcbc1-60e3-4708-bc49-444cc08f935a"
+}

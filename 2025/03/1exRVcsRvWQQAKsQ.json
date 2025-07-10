@@ -1,0 +1,1179 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Supabase3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CheckIfExist3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist2": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist3": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist4": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "PDF Merging Tool1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "PDF Merging Tool2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist5": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command4": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command2": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command3": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase2": {
+      "main": [
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase3": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDF Merging Tool1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDF Merging Tool2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Execute Command1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Supabase7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "PDF Merging Tool3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CheckIfExist6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "PDF Merging Tool4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist6": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command5": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase5": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase7": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDF Merging Tool3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PDF Merging Tool4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Supabase6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-12T17:28:49.489Z",
+  "id": "1exRVcsRvWQQAKsQ",
+  "meta": null,
+  "name": "N8N-Merges-ControlDocumentario",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        1620
+      ],
+      "id": "a6f5571f-27cd-4601-890c-7adb33eb19f2",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "batchSize": "=1",
+        "options": {}
+      },
+      "id": "2e7112eb-c57f-49fb-b058-887595994e81",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -620,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Usuarios-Personal"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1040
+      ],
+      "id": "bad14cd6-ca15-4567-8ad3-d31c13f4f6ec",
+      "name": "Supabase1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Merge LA SEGUNDA\nUne los pdfs en la forma\nque nos piden las plantas:\n* Polisa Original\n* Copia de Polisa\n* Todos los CNRs\n* Pago polisa acc personales",
+        "height": 800,
+        "width": 2040,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1280,
+        1020
+      ],
+      "typeVersion": 1,
+      "id": "affbdad1-117a-4520-acf9-fd2f0004b2c3",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -180,
+        1160
+      ],
+      "id": "75db01de-4cbc-4f40-9f11-a2334e07d6d7",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-BUNGE ARGENTINA S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-GENERACION LITORAL S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-PROMAIZ S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-STYROPEK S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-T6 INDUSTRIAL S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-TERMINAL 6 S.A.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        1160
+      ],
+      "id": "8184cf52-0491-403b-b014-75465b2f4708",
+      "name": "CheckIfExist2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -180,
+        1440
+      ],
+      "id": "ded58bdd-4c35-4183-8e07-ad6c9feebc70",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        1440
+      ],
+      "id": "69a6f7cf-a918-4dd0-b5c8-81899011c58f",
+      "name": "CheckIfExist3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginal-{nombre}-{mesdirec}.pdf', 'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Pago poliza acc personales\\Pago poliza acc personales-{nombre}-{mesdirec}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1160
+      ],
+      "id": "93232e22-7526-46bc-8456-c5f625f50483",
+      "name": "CheckIfExist4"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginal-{nombre}-{mesdirec}.pdf','G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Pago poliza acc personales\\Pago poliza acc personales-{nombre}-{mesdirec}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1440
+      ],
+      "id": "4c17b853-ce87-45d9-8ff7-366a3d531a3b",
+      "name": "CheckIfExist5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        120,
+        1160
+      ],
+      "id": "3ed9b5fb-c476-41c6-aa57-60ba48bcc382",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        120,
+        1440
+      ],
+      "id": "0a190b3a-15d5-436f-a4c5-49d41a01d32c",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('El usuario {{ $('Supabase1').item.json['Nombre']}}  no tiene CNR'); import json; print(json.dumps({'message': '{{ $('Supabase1').item.json['Nombre']}} no tiene CNR'}))\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        1600
+      ],
+      "id": "66c75b8a-d546-4218-931a-9efe1eac2afe",
+      "name": "Execute Command2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('El usuario {{ $('Supabase1').item.json['Nombre']}} no tiene alguna Poliza')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1600
+      ],
+      "id": "449c80fa-f6b4-4b7e-baae-83161c4bad29",
+      "name": "Execute Command3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('El usuario {{ $('Supabase1').item.json['Nombre']}} no tiene alguna Poliza')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1300
+      ],
+      "id": "ce6151a4-5ff1-4149-a7b2-d2fdebbfa07d",
+      "name": "Execute Command4"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('{{Errores}}')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1040
+      ],
+      "id": "f0ba9912-15f4-4543-904e-58398b150c13",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        1040
+      ],
+      "id": "2418d392-0f9d-468c-af90-db3f26ff06ce",
+      "name": "Supabase2",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "={{ $('Supabase3').item.json.Texto }},{{ JSON.parse($json.stdout).message }}\n\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1600
+      ],
+      "id": "b4d4542a-8dd7-4b11-bc40-64dd93d3130b",
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -440,
+        1160
+      ],
+      "id": "0ec688df-8018-4500-9f38-6fc5fb4fb271",
+      "name": "Supabase3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from pypdf import PdfWriter; merger = PdfWriter();import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}';mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-BUNGE ARGENTINA S.A.pdf'); merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-GENERACION LITORAL S.A.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-PROMAIZ S.A.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-STYROPEK S.A.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-T6 INDUSTRIAL S.A.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-TERMINAL 6 S.A.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginal-{nombre}-{mesdirec}.pdf');merger.append('G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Pago poliza acc personales\\Pago poliza acc personales-{nombre}-{mesdirec}.pdf');merger.write(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Merge La Segunda\\Poliza acc personales-{nombre}-{mesdirec}-TEST.pdf'); merger.close()\"\n\n\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1160
+      ],
+      "id": "d1ef3875-5a7a-40d9-8a16-21e5278de668",
+      "name": "PDF Merging Tool1"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from pypdf import PdfWriter; merger = PdfWriter();import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}';mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginal-{nombre}-{mesdirec}.pdf');merger.append('G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Pago poliza acc personales\\Pago poliza acc personales-{nombre}-{mesdirec}.pdf');merger.write(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Merge La Segunda\\Poliza acc personales-{nombre}-{mesdirec}-TEST.pdf'); merger.close()\"\n\n\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1460
+      ],
+      "id": "ea6a4b84-f227-425c-89d5-0f4142203a05",
+      "name": "PDF Merging Tool2"
+    },
+    {
+      "parameters": {
+        "batchSize": "=1",
+        "options": {}
+      },
+      "id": "6ca9723a-8473-4e84-bc49-efb5f690c917",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -300,
+        1940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Usuarios-Personal"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        1940
+      ],
+      "id": "b8d653d7-532b-4b96-982a-0d9fa68999ba",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Merge ARCA\nUne los pdfs en la forma\nque nos piden las plantas:\n* Insc Aut Monot\n* Estado de Cuenta\n* Pago Monotributo",
+        "height": 800,
+        "width": 2040,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1260,
+        1920
+      ],
+      "typeVersion": 1,
+      "id": "9cf3b08a-c322-4f1b-9b75-1482948ee65e",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        2060
+      ],
+      "id": "c77c1c82-fd8b-4c8d-adc3-124be3b60bf2",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Inscripcion Autonomo Monotributo\\Inscripcion Autonomo Monotributo-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Estado de Cuenta\\EstadoCuenta-ARCA-{nombre}-{mesdirec}.pdf',fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Pago Monotributo\\Pago Monotributo - {nombre}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        20,
+        2060
+      ],
+      "id": "c36f5021-00f4-4a88-8c0b-2486534f08eb",
+      "name": "CheckIfExist"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        140,
+        2340
+      ],
+      "id": "1a28c469-c8d8-4a53-a33c-e7d025288803",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;from dateutil.relativedelta import relativedelta;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize());nombre = '{{ $('Loop Over Items').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirecpasado = (current_date - relativedelta(months=1)).strftime('%m - %B %Y');mesdirecpasado = mesdirecpasado.replace(mesdirecpasado.split(' - ')[1], mesdirecpasado.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Inscripcion Autonomo Monotributo\\Inscripcion Autonomo Monotributo-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Estado de Cuenta\\EstadoCuenta-ARCA-{nombre}-{mesdirec}.pdf',fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirecpasado}\\ARCA\\Pago Monotributo\\Pago Monotributo - {nombre}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        0,
+        2340
+      ],
+      "id": "e9c0d9fc-510f-40f8-a94f-331213266a8e",
+      "name": "CheckIfExist6"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('{{ $('Supabase').item.json['Nombre']}}  no tiene algún documento p Monotributo y pago')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        300,
+        2540
+      ],
+      "id": "96f5d2ae-0620-48bf-b18c-16bac4c2c87c",
+      "name": "Execute Command5"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('{{Errores}}')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1940
+      ],
+      "id": "928c5491-0e9d-4689-8573-9264b0122e45",
+      "name": "Execute Command1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        1940
+      ],
+      "id": "125f5a06-65f0-44de-b5f2-ad486cd8ec95",
+      "name": "Supabase5",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "={{ $('Supabase7').item.json.Texto }},{{ $json.message }}\n\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        600,
+        2540
+      ],
+      "id": "d84b93b5-d80c-4389-93be-d8cb4025346c",
+      "name": "Supabase6",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        2060
+      ],
+      "id": "31585552-4b1d-4097-98ad-36afb014b56d",
+      "name": "Supabase7",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from pypdf import PdfWriter; merger = PdfWriter();import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items').item.json.Nombre }}';mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Inscripcion Autonomo Monotributo\\Inscripcion Autonomo Monotributo-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Estado de Cuenta\\EstadoCuenta-ARCA-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Pago Monotributo\\Pago Monotributo - {nombre}.pdf');merger.write(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Merge ARCA\\Monotributo y Pago-{nombre}-{mesdirec}-TEST.pdf'); merger.close()\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        420,
+        2060
+      ],
+      "id": "13418344-8675-4a2c-a3f0-eeee3bb0efd9",
+      "name": "PDF Merging Tool3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from pypdf import PdfWriter; merger = PdfWriter();import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now(); mesdirecpasado = (current_date - relativedelta(months=1)).strftime('%m - %B %Y');mesdirecpasado = mesdirecpasado.replace(mesdirecpasado.split(' - ')[1], mesdirecpasado.split(' - ')[1].capitalize());nombre = '{{ $('Loop Over Items').item.json.Nombre }}';mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Inscripcion Autonomo Monotributo\\Inscripcion Autonomo Monotributo-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Estado de Cuenta\\EstadoCuenta-ARCA-{nombre}-{mesdirec}.pdf');merger.append(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirecpasado}\\ARCA\\Pago Monotributo\\Pago Monotributo - {nombre}.pdf');merger.write(fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\ARCA\\Merge ARCA\\Monotributo y Pago-{nombre}-{mesdirec}.pdf')-TEST; merger.close()\"\n\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        420,
+        2340
+      ],
+      "id": "8f06a762-5a7b-4352-9b52-bcc68f654d7b",
+      "name": "PDF Merging Tool4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "097e697f-a8a9-4c0b-ac75-295163acb3c4",
+              "name": "message",
+              "value": "={{ $('Supabase').item.json['Nombre']}}  no tiene algún documento",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        460,
+        2540
+      ],
+      "id": "115bbdf0-b739-4485-9b13-b51cf902994a",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-05-23T19:54:42.000Z",
+  "versionId": "4fd23e2a-39ed-44ac-976d-27ba6e900ecc"
+}

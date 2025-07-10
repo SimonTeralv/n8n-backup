@@ -1,0 +1,960 @@
+{
+  "active": false,
+  "connections": {
+    "Locate On Screen": {
+      "main": [
+        [
+          {
+            "node": "Parse pixel coordinates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Anthropic Detection 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Take Screenshot2": {
+      "main": [
+        [
+          {
+            "node": "Format Screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Screenshot": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Screenshot": {
+      "main": [
+        [
+          {
+            "node": "Get Screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Take Screenshot2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find OCR Word Input": {
+      "main": [
+        [
+          {
+            "node": "OCR Word",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Detection 3": {
+      "main": [
+        [
+          {
+            "node": "Pixel Calculation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Local OCR Tesseract": {
+      "main": [
+        [
+          {
+            "node": "Find OCR Word Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pixel Calculation": {
+      "main": [
+        [
+          {
+            "node": "Click1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-25T17:38:47.330Z",
+  "id": "0SVyV5xHgrRtzZnv",
+  "meta": null,
+  "name": "RPA Library",
+  "nodes": [
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui, sys; x = {{ x pixel coordinate (ie. 100) }}; y = {{ y pixel coordinate (ie.200) }}; pyautogui.moveTo(x, y)\""
+      },
+      "id": "dd4177f6-2d69-4678-a160-6427d3afa1b6",
+      "name": "Move Mouse",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.doubleClick({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "fb3d5a6c-0c0d-4166-831e-d5febeb8d7d5",
+      "name": "Double Click",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.rightClick({{ $json.x }}, {{ $json.y }})\""
+      },
+      "id": "35c19de4-fc06-41cb-9abb-931d1fe480a8",
+      "name": "Right Click",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "command": "python -c \"import pyautogui, sys; pyautogui.typewrite(sys.argv[1])\" \"replace what you want typed here\""
+      },
+      "id": "fdd8aba6-ae21-443d-8801-2eba701e6590",
+      "name": "Type",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "command": "python -c \"import pyautogui, sys; pyautogui.press(sys.argv[1])\" \"replace this text with desired key (ie. enter)\"\n"
+      },
+      "id": "605a28ac-a7d1-4179-b3b7-c02e24687b9f",
+      "name": "Press Key",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Clicking\nMake sure the previous node outputs JSON of X and Y values",
+        "height": 757,
+        "width": 267
+      },
+      "id": "390d63b4-2c31-4f35-b16b-171884e400c6",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Movement\n",
+        "height": 557,
+        "width": 267
+      },
+      "id": "5e45e3cd-8b6c-4355-a3e1-794f56f684c3",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Keyboard\nReplace text between the ''s with your desired text or string expression",
+        "height": 757,
+        "width": 267,
+        "color": 5
+      },
+      "id": "5e4306d6-1788-4061-ba3c-fe1cdaae4dcd",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Screenshot",
+        "height": 557,
+        "width": 296.02659800115293,
+        "color": 6
+      },
+      "id": "830a6acd-b395-4fdb-ae8b-015ff2b20c59",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; print(pyautogui.locateCenterOnScreen(r'{{insert file path of image to be found on screen (ie. C:\\Convaiy Screenshot\\MainScreen.png)}}', grayscale=False, confidence=0.85))\""
+      },
+      "id": "5e410e94-8055-4534-a36f-db4946eca6a6",
+      "name": "Locate On Screen",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -80
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "## Utility/ Examples\n\nRead notes in node for use and additional instructions\n\n\n",
+        "height": 1095,
+        "width": 268,
+        "color": 3
+      },
+      "id": "9937bcde-5876-4e91-b2e5-84a2d13aedf8",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Convaiy N8N RPA Library\n## How to Use\n\nTo use this library simply import the file into a N8n workflow and follow the included Setup instructions to get the necessary dependencies working on your local device. \n\nThe nodes will then be conveniently available on your workflow ready to copy and paste whenever needed. Each node contains a {{ double curly brace }} expression with information about what sort of data they should contain and examples of what it should look like. Make sure to remove or replace the braces when filling in with your own data.\n\nThe code is all readily available through each node for further troubleshooting and your future customization. \n\n## How It Works\nThis library includes a variety of RPA tools to automate your digital tasks. Most ways you would interact with a computer are able to be simulated by this library such as moving the cursor, clicking, and typing.\n\nThese input features are empowered by multiple visual understanding strategies.\nTo know where to click and move, the interface needs to be detected and mapped. This is accomplished by:\n-Locating Images within the screen\n    Use a pre-saved image to detect that image on a new screenshot. (ie. a picture of a button can be located on your current screen) \n\n-Local OCR (text detector) with coordinates\n     Run AI on your own computer to have it find the words and locations of the words on your screen.\n\n-AI LLM image analysis\n     Have AI point to the location on a screen just by text prompting. This feature is ever improving with frontier models' updates.\n\nThis visual understanding toolset allows for more dynamic automations that are more reliable and fluid.\n\n \n## Setup Instructions\n### Required Downloads\nPython (latest version: https://www.python.org/downloads/)\n\nAdd pip directory to PATH environmental variables (ask AI for assistance)\n\nPip install Pyautogui\nPip install Pillow\nPip install opencv-python\n### Optional Features\n\n* LLM Dependencies\nhttps://imagemagick.org/ to format screenshots to proper resolution\n\n* Local OCR Nodes\n\nPip install pytesseract\nInstall Tesseract (https://github.com/tesseract-ocr/tesseract?tab=readme-ov-file)\n(If node doesn't work after installation with installer try pip install pytesseract pillow opencv-python numpy to get all dependencies)\n* Keep n8n running in the background without a keeping a terminal open\n\nPM2 (https://blog.n8n.io/how-to-set-up-n8n-via-pm2/#how-to-run-n8n-with-pm2-on-windows)\n\n* Make the window console smaller so it dosen't block your screenshots\n\nControl Panel, System, Developer Settings, Default Terminal: Set to Windows Console Host.\n\nUsing the execute node within n8n copy and paste in and run 'for /L %i in (1,1,10) do (echo %i & ping -n 2 127.0.0.1 >nul)' This will bring up the console long enough for you to do the next step.\n\nright click, settings, move startup location to 2000,0), right click window frame, properties, layout, \n\n### Further Reading\nPyAutoGUI documentation\nhttps://pyautogui.readthedocs.io/en/latest/",
+        "height": 1465,
+        "width": 707,
+        "color": 7
+      },
+      "id": "d8162d42-35a9-4f0f-8904-3eb632f9159b",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1640,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.hscroll({{scroll amount by click (ie. -10) [negative for left]}})\""
+      },
+      "id": "33fde1fe-bb03-4920-bf4d-f36f12bc3274",
+      "name": "Horizontal Scroll",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.scroll({{scroll amount by clicks (ie. -10) [negative for down]}})\""
+      },
+      "id": "92e53ca5-bd72-44e8-8a97-5594ca4aea8a",
+      "name": "Vertical Scroll",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "fileSelector": "C:/Users/Administrator/Screenshot/mainscreenshot.png",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "id": "0a40c97f-1594-4dc6-9fd1-bd68bfb77da4",
+      "name": "Read File",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -20
+      ],
+      "alwaysOutputData": false,
+      "notesInFlow": true,
+      "notes": "Turn files and images into binary that can be passed through n8n nodes and sent through other api's\n\nUse forwardslashes and save file in a high level folder outside of n8n\n"
+    },
+    {
+      "parameters": {
+        "command": "=start {{ your browser of choice Edge=msedge Chrome=chrome Firefox=firefox(ie. msedge) }} {{ the URL you would like the browser to open to (ie.https://www.linkedin.com/search) }}"
+      },
+      "id": "f9d23ab2-eec9-485f-b6b0-af551a80ec70",
+      "name": "Open Browser To",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -120
+      ],
+      "notesInFlow": true,
+      "notes": "New Window start \"\" {{ $json['Web Browser'] }} --new-window {{ $json.URL }}\n"
+    },
+    {
+      "parameters": {
+        "command": "python -c \"import pyautogui, sys; pyautogui.hotkey('replace this text between with desired first key (ie. ctrl)', 'replace this text between with desired second key (ie. w)')"
+      },
+      "id": "c11abfff-63f2-49f0-8c58-978e15a4d127",
+      "name": "Press Multikey",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "id": "6ae8c515-8ea4-429e-9108-e539f6214c6b",
+      "name": "Extract from File",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\" "
+      },
+      "id": "c3dd89f3-3db8-4080-b73c-9fb6ecea97b8",
+      "name": "Click1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        20,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab(); img.save(r'{{ your preffered file path to save the screenshot at (ie. C:\\Users\\Administrator\\.n8n\\Screenshots\\MainScreen.png) }}')\""
+      },
+      "id": "f0478f36-cc99-4c59-b9bc-c18f9352323a",
+      "name": "Take Screenshot2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ the updated file save path of your reformatted screenshot. make sure to use forward slashes and the file is outside of the n8n directory. ie. C:/Convaiy Screenshot/MainScreen.png }}",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "id": "7fd85c7b-2ea2-421b-9c7c-a0f12cf4afb5",
+      "name": "Get Screenshot",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        740
+      ],
+      "alwaysOutputData": false,
+      "notesInFlow": true,
+      "notes": "Use forwardslashes and save file in a high level folder outside of n8n"
+    },
+    {
+      "parameters": {
+        "command": "=\"{{ image magick .exe file path (ie. C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe) }}\" \"{{ image path of saved screenshot (ie C:\\Convaiy Screenshot\\MainScreen.png) }}\" -resize 1366x768 \"{{ desired output file path for formatted screenshot make. Make sure file is higher level than the n8n folder or else it will be restricted (ie. C:\\Convaiy Screenshot\\MainScreen.png) }}\"\n"
+      },
+      "id": "b3097e4c-fd51-4069-b81f-9a26c1cb147a",
+      "name": "Format Screenshot",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Example of Using Anthropic LLM image analysis to find X and y coordinates of a given prompt.",
+        "height": 480,
+        "width": 1128
+      },
+      "id": "7efbdb22-d4c2-4998-bd05-a651e17cf165",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        580
+      ],
+      "id": "2856c65b-712c-4496-bdef-66eed8d972a6",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab(); img.save(r'{{ Insert folder path to save screen shot using back slashes (ie. C:\\Convaiy Screenshot\\MainScreen.png) }}')\""
+      },
+      "id": "659e8c0e-5cd0-4202-97f7-060ce97c574c",
+      "name": "Save Screenshot",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "f89952b7-8009-4eb9-98e2-cba102ceca2e",
+      "name": "Parse pixel coordinates",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        -80
+      ],
+      "notesInFlow": true,
+      "notes": "Optional parser\n\nI've had errors with this code on multiple devices, so paste the code and input into gpt and have it update it to fix the error"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "the phrase you're looking for...",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cadd2449-dde1-4a88-842a-ac006719cbd0",
+      "name": "Find OCR Word Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        220
+      ],
+      "notesInFlow": false,
+      "notes": "Optional parser that helps manage the output of local ocr"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "1bd9beb4-d39d-45b7-a149-52b8ee2a38f1",
+      "name": "OCR Word",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        620,
+        220
+      ],
+      "notesInFlow": false,
+      "notes": "Required with Parser"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"model\": \"claude-3-5-sonnet-20241022\",\n    \"max_tokens\": 1000,\n    \"temperature\": 0,\n    \"system\": \"You are an expert at locating information on the screen and providing the corresponding x and y coordinates. You only respond with the coordinates and nothing else.\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": [\n                \n                {\n                    \"type\": \"text\",\n                    \"text\": \"provide the (x,y) coordinates for the {{ text prompt for the model to search for (ie. Spotify Icon) }}\"\n                },\n                {\n                    \"type\": \"image\",\n                    \"source\": {\n                        \"type\": \"base64\",\n                        \"media_type\": \"image/png\",\n                        \"data\": \"{{ $('Extract from File').item.json.data }}\"\n                    }\n                }\n            ]\n        }\n    ]\n}\n",
+        "options": {}
+      },
+      "id": "7b61c740-b710-43c3-976c-fd9ed878b8e1",
+      "name": "Anthropic Detection 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -260,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\" "
+      },
+      "id": "c98e85be-1b81-4b26-b5cf-14fb8c486603",
+      "name": "Click",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"model\": \"claude-3-5-sonnet-20241022\",\n    \"max_tokens\": 1000,\n    \"temperature\": 0,\n    \"system\": \"You are an expert at locating information on the screen and providing the corresponding x and y coordinates. You only respond with the coordinates and nothing else.\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": [\n                \n                {\n                    \"type\": \"text\",\n                    \"text\": \"provide the (x,y) coordinates for the {{ text prompt for the model to search for (ie. Spotify Icon) }}\"\n                },\n                {\n                    \"type\": \"image\",\n                    \"source\": {\n                        \"type\": \"base64\",\n                        \"media_type\": \"image/png\",\n                        \"data\": \"{{ $('Extract from File').item.json.data }}\"\n                    }\n                }\n            ]\n        }\n    ]\n}\n",
+        "options": {}
+      },
+      "id": "0c6f981f-0017-401c-b708-50c2e8b1d79e",
+      "name": "Anthropic Detection ",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        280,
+        500
+      ],
+      "notes": "example prompt and api call of how to get the anthropic claude 3.5 model to find x and y coordinates of a screenshot"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o-2024-08-06\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Extract Start, End, and Descriptions from the OCR results.Today's date for context of year {{ new Date().toISOString().slice(0, 10) }}.\" \n    },\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.content) }}\n    }\n  ],\n  \"response_format\": {\n    \"type\": \"json_schema\",\n    \"json_schema\": {\n      \"name\": \"events\",\n      \"description\": \"List of events with their details\",\n      \"strict\": true,\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"events\": {\n            \"type\": \"array\",\n            \"description\": \"List of events with their details\",\n            \"items\": {\n              \"type\": \"object\",\n              \"properties\": {\n                \"Start\": {\n                  \"type\": \"string\",\n                  \"description\": \"Start date and time of event in this format yyyy-mm-dd hh:mm:ss\"\n                },\n                \"End\": {\n                  \"type\": \"string\",\n                  \"description\": \"End date and time of event in this format yyyy-mm-dd hh:mm:ss\"\n                },\n                \"Description\": {\n                  \"type\": \"string\",\n                  \"description\": \"Additional details of the specific event like but not limited to accepted, keyman, and location\"\n                }\n              },\n              \"required\": [\"Start\", \"End\", \"Description\"],\n              \"additionalProperties\": false\n            }\n          }\n        },\n        \"required\": [\"events\"],\n        \"additionalProperties\": false\n      }\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "id": "f2f9e481-dfa2-4b40-8b9b-f8589c6ea1fe",
+      "name": "Open AI Structured Output Example",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        60
+      ],
+      "notes": "An example API call demonstrating how to use Open Ai's structured output function.\n\nUseful for parsing image analysis results"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pytesseract; from PIL import Image, ImageEnhance, ImageFilter; import cv2; import numpy as np; import json; pytesseract.pytesseract.tesseract_cmd = r'{{ tesseract.exe file path ie. C:\\Program Files\\Tesseract-OCR\\tesseract.exe }}'; image_path = r'{{ file path of image to be OCR'd ie. C:\\Users\\Administrator\\.n8n\\Screenshots\\MainScreen.png}}'; image = Image.open(image_path).convert('L'); image = ImageEnhance.Contrast(image).enhance(2).filter(ImageFilter.EDGE_ENHANCE); img_np = np.array(image); _, binary = cv2.threshold(img_np, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU); data = pytesseract.image_to_data(binary, output_type=pytesseract.Output.DICT, config=r'--oem 3 --psm 11'); results = [{'text': text, 'confidence': data['conf'][i], 'x': data['left'][i], 'y': data['top'][i], 'width': data['width'][i], 'height': data['height'][i]} for i, text in enumerate(data['text']) if text.strip() and data['conf'][i] > 60]; print(json.dumps(results, indent=2))\""
+      },
+      "id": "0258de34-552f-48e0-85da-a423e1db2cf1",
+      "name": "Local OCR Tesseract",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        260,
+        220
+      ],
+      "notesInFlow": false,
+      "notes": "Get Text and coordinates from Image using local OCR\n\nUses PyTesseract, an open source ocr software to detect the text of an image and the specific coordinates of that text"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4-1106-vision-preview",
+          "mode": "list",
+          "cachedResultName": "GPT-4-1106-VISION-PREVIEW"
+        },
+        "text": "You're provided a screenshot of a Calander with scheduled shifts for the upcoming month. Accurately return all the shifts listed. Make sure to include the Date, time range (usually provided in hham-hhpm format), location, and any labels such as keyman",
+        "inputType": "base64",
+        "options": {}
+      },
+      "id": "78f1808d-2718-441b-a2b5-6687ef4fccd8",
+      "name": "Chat GPT Non-Structured output OCR example",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.4,
+      "position": [
+        880,
+        300
+      ],
+      "notes": "Example of how to prompt GPT Vision to OCR an image and provide semi-structured output"
+    },
+    {
+      "parameters": {
+        "content": "## Visual Understanding Strategies\nThese are three methods to programmatically detect and specify the location of certain elements on the screen.\n\nSimply, they are methods to find the X and Y coordinates for a specific item.\n\nThese are listed in order of reliablility but not capability. \n\n\n\n\n\n\n\n\n\n\n\n\n\nLocate on Screen uses pyautogui's library to find a needle in the haystack. The needle is the image you're looking for (ie. a cropped image of the Spotify logo) and the hay is the screenshot of the entire screen. It compares the pixel values of the given needle image across the hay image until it finds a match. Consistent but sensitive to change and requires you to screen shot and crop the needle image you're looking for.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocal OCR uses an opensource software called py Tesseract that uses Computer Vision to detect text. It can run locally on your device and be run multiple times quickly if it dosen't find what you're looking for on the first pass. More compute intense than locate on screen and only works with text which is Locate on Screen's weakness. Scans the entire screen for text then the parser find you're desired phrase and the pixel location of that text. \n\n\n\n\n\n\n\n\n\n\n\n\n\nConstantly updating and possibly obsolete by the time of your reading this. As of Q4 2024 LLM's like Anthropic, Gemini, and Molmo are gaining pointing capabilities. This means you can describe and element and the LLM will provide the pixel coordinates for its location on the screen. It's reliability is improving and it's flexibility is tremendous. An example workflow for Anthropic's pointing feature is provided below",
+        "height": 1095.596502064548,
+        "width": 592.1010909632478,
+        "color": 2
+      },
+      "id": "0f0c892f-3d24-4620-9c8e-21cfa90b9dbf",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Access the content array and get the first item's text (e.g., \"(929,800)\")\nconst input = $json.content[0].text;\n\n// Ensure input is processed as a string and remove parentheses\nconst cleanedInput = input.replace(/[()]/g, \"\");\nconst [x, y] = cleanedInput.split(',').map(value => parseInt(value.trim(), 10));\n\n// Calculate the scaling ratios\nconst scaleX = 1920 / 1366;\nconst scaleY = 1080 / 768;\n\n// Convert the x and y coordinates to the 1920x1080 scale\nconst originalX = Math.round(x * scaleX);\nconst originalY = Math.round(y * scaleY);\n\n// Return adjusted x and y as separate objects\nreturn [\n  {\n    json: {\n      x: originalX,\n      y: originalY\n    }\n  }\n];\n"
+      },
+      "id": "1aa72509-cfcc-47a4-8942-c9c4c0f1a850",
+      "name": "Pixel Calculation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        580
+      ],
+      "notes": "Make sure to replace the resolution value to the monitor size your using ie. 1920x1080"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ x value ie 100 }}, {{ y value ie. 200 }}); pyautogui.typewrite('{{ what you want typed }}')\""
+      },
+      "id": "88ba7620-ba2e-4707-877f-5922335f3c39",
+      "name": "Click and Type",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "Use this if the type node is not registering"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui, math; reference_point = (960, 540); matches = list(pyautogui.locateAllOnScreen(r'C:\\\\Users\\\\simon\\\\.n8n\\\\Screenshots\\\\Boton-Close.png')); closest_match = min(matches, key=lambda match: math.sqrt((pyautogui.center(match)[0] - reference_point[0])**2 + (pyautogui.center(match)[1] - reference_point[1])**2)); pyautogui.click(pyautogui.center(closest_match))\"\n"
+      },
+      "id": "6542b982-3047-4360-8f8e-f1ec4b384a27",
+      "name": "Closest Close 'X'",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        -140
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "## Modulo Close Tab\nEste modulo busca la X mas cercada a la mitad derecha de la pestaña que se quiere cerrar, necesita su imagen",
+        "height": 277,
+        "width": 387,
+        "color": 4
+      },
+      "id": "101927f5-efd2-4ebb-a4f7-006cfd85686f",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from pypdf import PdfWriter; merger = PdfWriter(); merger.append(r'{{pdf route 1}}'); merger.append(r'{{pdf route 2}}');merger.write(r'{{pdf destination}}'); merger.close()\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        160
+      ],
+      "id": "ffd00537-d52d-4532-8a41-852d43ba0838",
+      "name": "PDF Merging Tool"
+    },
+    {
+      "parameters": {
+        "content": "## PDF Merging Tool\nEste modulo une los diferentes pdf que el usuario ingrese y lo descarga en la dirección especificada",
+        "height": 277,
+        "width": 387,
+        "color": 4
+      },
+      "id": "5a47157a-3bc0-412e-bdf9-7e5cf84ab071",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Get Table Tool\nEste modulo permite acceder a la informacion de una tabla html en una pagina web, si la misma requiere loggin se necesita crear una secion de google. Se agrega una version con una columna especifica.",
+        "height": 437,
+        "width": 427,
+        "color": 4
+      },
+      "id": "7a14d9fd-e75f-4e4c-8e74-893cef607690",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Get Table Tool\nEste modulo permite dividir una tabla para trabajar con cada uno de sus celdas por separado. \nLa otra cuenta la cantidad de filas.",
+        "height": 437,
+        "width": 407,
+        "color": 4
+      },
+      "id": "f8009463-ea25-4155-9c03-626d78d8fdfe",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import time, json; from selenium import webdriver; from selenium.webdriver.chrome.options import Options; from selenium.webdriver.common.by import By; time.sleep(2); opt = Options(); opt.add_experimental_option('debuggerAddress', 'localhost:1313'); driver = webdriver.Chrome(options=opt); active_tab = driver.window_handles[0]; driver.switch_to.window(active_tab);driver.switch_to.window(driver.current_window_handle); time.sleep(1); table = driver.find_element(By.ID, 'tblRequerimientos'); rows = table.find_elements(By.TAG_NAME, 'tr'); data = [row.find_elements(By.TAG_NAME, 'td')[3].text.replace('\\n', ' ').strip().encode('ascii', 'ignore').decode('ascii') for row in rows if len(row.find_elements(By.TAG_NAME, 'td')) > 3 and row.find_elements(By.TAG_NAME, 'td')[3].text.strip()]; [print(json.dumps({'columna_4': item})) for item in data]\""
+      },
+      "id": "56a06eb5-d44b-4bf8-a0fc-87d253559a22",
+      "name": "Get Column (Ej.3)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener el texto desde el nodo anterior\nconst rawData = $json[\"stdout\"];\n\n// Separar las líneas\nconst lines = rawData.split(\"\\n\").map(line => {\n  // Procesar cada línea como un objeto\n  try {\n    const parsedLine = JSON.parse(line);\n    return parsedLine;  // Puedes procesar más si es necesario\n  } catch (e) {\n    return null;  // Manejo de error si una línea no es JSON válido\n  }\n}).filter(line => line !== null);  // Filtramos valores nulos si no se pudo parsear alguna línea\n\n// Establecer la salida como el número de items\nreturn [\n  {\n    json: {\n      itemCount: lines.length  // Devolvemos el número de objetos procesados\n    }\n  }\n];\n"
+      },
+      "id": "30025a46-3436-4f98-ae70-2b560d768338",
+      "name": "ItemCount html columns",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener el texto desde el nodo anterior\nconst rawData = $json[\"stdout\"];\n\n// Separar las líneas\nconst lines = rawData.split(\"\\n\").map(line => {\n  // Procesar cada línea como un objeto\n  const parsedLine = JSON.parse(line);\n  return parsedLine;  // Puedes procesar más si es necesario\n});\n\n// Establecer la salida como el array de objetos\nreturn lines.map(line => {\n  return { json: line };  // Formateamos cada línea como un objeto JSON\n});"
+      },
+      "id": "942da866-f7ce-4397-8df0-0877bec899a3",
+      "name": "Divide html columns",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import time, json; from selenium import webdriver; from selenium.webdriver.chrome.options import Options; from selenium.webdriver.common.by import By; time.sleep(2); opt = Options(); opt.add_experimental_option('debuggerAddress', 'localhost:1313'); driver = webdriver.Chrome(options=opt); active_tab = driver.window_handles[0]; driver.switch_to.window(active_tab); driver.switch_to.window(driver.current_window_handle); time.sleep(1); table = driver.find_element(By.ID, 'tblRequerimientos'); rows = table.find_elements(By.TAG_NAME, 'tr'); data = [[cell.text.replace('\\n', ' ').strip().encode('ascii', 'ignore').decode('ascii') for cell in row.find_elements(By.TAG_NAME, 'td')] for row in rows if row.find_elements(By.TAG_NAME, 'td')]; [print(json.dumps({'fila': item})) for item in data]\""
+      },
+      "id": "39d1be8d-8a87-430b-b73c-d66f13ff495f",
+      "name": "Get Table - V1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import time, json; from selenium import webdriver; from selenium.webdriver.chrome.options import Options; from selenium.webdriver.common.by import By; time.sleep(2); opt = Options(); opt.add_experimental_option('debuggerAddress', 'localhost:1313'); driver = webdriver.Chrome(options=opt); active_tab = driver.window_handles[0]; driver.switch_to.window(active_tab); driver.switch_to.window(driver.current_window_handle); time.sleep(1); table = driver.find_element(By.ID, 'tblRequerimientos'); rows = table.find_elements(By.TAG_NAME, 'tr'); data = [[cell.text.replace('\\n', ' ').strip().encode('ascii', 'ignore').decode('ascii') for cell in row.find_elements(By.TAG_NAME, 'td')] for row in rows if row.find_elements(By.TAG_NAME, 'td')]; print(json.dumps(data, indent=2))\""
+      },
+      "id": "fc481bfe-ec4c-4f51-8c60-3263bd1a57e0",
+      "name": "Get Table - V2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=start \"\" \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --remote-debugging-port=1313 --user-data-dir=\"C:\\Users\\simon\\.n8n\\chromeprofile\" https://controldocumentario.com/Login.aspx"
+      },
+      "id": "c509791a-2502-46c0-b626-9adaa75a5826",
+      "name": "OpenBrowserCmd",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -140
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "## Modulo Open Browser Sesion \nEste modulo abre una pestaña de google de una sesion especifica para pasar Logins",
+        "height": 277,
+        "width": 387,
+        "color": 4
+      },
+      "id": "78a9aae2-6df2-4cb2-b1c4-f1aaba0717c6",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Get Table Tool\nEste modulo permite dividir una tabla para trabajar con cada uno de sus celdas por separado. \nLa otra cuenta la cantidad de filas.",
+        "height": 437,
+        "width": 407,
+        "color": 4
+      },
+      "id": "bd640178-7ad9-4797-bbe7-f85889ed7e85",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        -260
+      ]
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-25T13:53:03.729Z",
+      "updatedAt": "2025-02-25T13:53:03.729Z",
+      "id": "9fssgBnptdZHZ04W",
+      "name": "updated library"
+    },
+    {
+      "createdAt": "2025-02-25T13:53:03.740Z",
+      "updatedAt": "2025-02-25T13:53:03.740Z",
+      "id": "f0G6tZbPfSP7GNtT",
+      "name": "Testing"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-30T16:12:56.000Z",
+  "versionId": "c09b5424-3de2-4a9a-a8b0-300197c9bd26"
+}

@@ -1,0 +1,701 @@
+{
+  "active": false,
+  "connections": {
+    "Input": {
+      "main": [
+        [
+          {
+            "node": "Supabase5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Supabase3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CheckIfExist3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist3": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist4": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist5": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Command3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command2": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command3": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command4": {
+      "main": [
+        [
+          {
+            "node": "Supabase4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase3": {
+      "main": [
+        [
+          {
+            "node": "CheckIfExist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckIfExist": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Supabase5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase5": {
+      "main": [
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-08T13:10:03.438Z",
+  "id": "1aJKQtkbFifzy717",
+  "meta": null,
+  "name": "File exist",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -2280,
+        1120
+      ],
+      "id": "02b42a13-d537-4e67-a9ef-3e94b87d1d5a",
+      "name": "Input"
+    },
+    {
+      "parameters": {
+        "batchSize": "=1",
+        "options": {}
+      },
+      "id": "27133fea-792e-4f34-88d9-0fe95d32749a",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1680,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1240,
+        1240
+      ],
+      "id": "a2ee6050-9e9e-43e7-9b29-de9226adcdc7",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();from pypdf import PdfWriter; merger = PdfWriter();apellido = '{{ $('Loop Over Items1').item.json.Apellido }}';nombre = '{{ $('Loop Over Items1').item.json.Nombre }}';mes = current_date.strftime('%m - %B %Y');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\Polisa\\\\CopiaPolisa-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\Polisa\\\\PolisaOriginal-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-BUNGE ARGENTINA S.A '+nombre+' '+apellido+'-marzo.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-GENERACION LITORAL S.A '+nombre+' '+apellido+'-marzo.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-PROMAIZ S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-STYROPEK S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-T6 INDUSTRIAL S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-TERMINAL 6 S.A '+nombre+' '+apellido+'-marzo.pdf');merger.write(r'C:/Users/simon/Desktop/'+mes+'/Control Documentario/Polisa acc. personales/Polisa acc. personales-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.close()\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1240
+      ],
+      "id": "47456d7b-5bf3-4823-9311-e323b1a525df",
+      "name": "Fin.3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1240,
+        1520
+      ],
+      "id": "95a04744-c0f5-4d57-8d31-88ac81fc31eb",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now(); mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        1520
+      ],
+      "id": "c8012d38-b7eb-49cb-ad03-90cfd0caa2a4",
+      "name": "CheckIfExist3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();apellido = '{{ $('Loop Over Items1').item.json.Apellido }}';nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginalLS-{nombre}-{mesdirec}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        1240
+      ],
+      "id": "67d310e0-15c4-44c2-a436-fe3aea5b61b1",
+      "name": "CheckIfExist4"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaLS-{nombre}-{mesdirec}.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\Poliza\\PolizaOriginalLS-{nombre}-{mesdirec}.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        1520
+      ],
+      "id": "9ec87850-843e-4324-a7be-cd39157f0587",
+      "name": "CheckIfExist5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -940,
+        1240
+      ],
+      "id": "8c0568ae-1fcb-4ef3-887f-e9c46410a041",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();from pypdf import PdfWriter; merger = PdfWriter();apellido = '{{ $('Loop Over Items1').item.json.Apellido }}';nombre = '{{ $('Loop Over Items1').item.json.Nombre }}';mes = current_date.strftime('%m - %B %Y');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\Polisa\\\\CopiaPolisa-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\Polisa\\\\PolisaOriginal-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-BUNGE ARGENTINA S.A '+nombre+' '+apellido+'-marzo.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-GENERACION LITORAL S.A '+nombre+' '+apellido+'-marzo.pdf'); merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-PROMAIZ S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-STYROPEK S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-T6 INDUSTRIAL S.A '+nombre+' '+apellido+'-marzo.pdf');merger.append(r'C:\\\\Users\\\\simon\\\\Desktop\\\\'+current_date.strftime('%m - %B %Y')+'\\\\Descargas\\\\LaSegunda\\\\CNR\\\\CNR-TERMINAL 6 S.A '+nombre+' '+apellido+'-marzo.pdf');merger.write(r'C:/Users/simon/Desktop/'+mes+'/Control Documentario/Polisa acc. personales/Polisa acc. personales-'+nombre+' '+apellido+'-'+current_date.strftime('%B')+'.pdf'); merger.close()\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1520
+      ],
+      "id": "f90a9736-50bd-44af-962e-e85a8fd0ced3",
+      "name": "Fin.4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5314cb79-8c92-4c1a-90e7-4156ca2a00b4",
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "Todos los archivos existen.",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -940,
+        1520
+      ],
+      "id": "3ef89cfc-9571-4adf-a3d3-6dc295b70bbe",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; msg = 'El usuario {{ $('Loop Over Items1').item.json['Nombre']}} no tiene CNR'; print(msg)\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        1680
+      ],
+      "id": "6f18989b-8ce0-4a03-96f8-d66c946f840d",
+      "name": "Execute Command2"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('El usuario {{ $('Loop Over Items1').item.json['Nombre']}} no tiene alguna Poliza')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1680
+      ],
+      "id": "d11e6048-e371-44df-85b1-d1495fab9958",
+      "name": "Execute Command3"
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.alert('El usuario {{ $('Supabase1').item.json['Nombre']}} no tiene alguna Poliza')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1380
+      ],
+      "id": "06ffbbfb-d65d-47a2-9ffa-dc328e892402",
+      "name": "Execute Command4"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "={{ $('Supabase3').item.json.Texto }},{{ $json.stdout }}\n\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1780
+      ],
+      "id": "1fcf7d36-5523-4907-9f43-6dd73064e7c1",
+      "name": "Supabase4",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        1240
+      ],
+      "id": "4ed8deab-d4a2-4325-9239-e1eb4f9c2ad1",
+      "name": "Supabase3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os;import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now();apellido = '{{ $('Loop Over Items1').item.json.Apellido }}';nombre = '{{ $('Loop Over Items1').item.json.Nombre }}'; mes=current_date.strftime('%B'); mesdirec=current_date.strftime('%m - %B %Y');mesdirec = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); archivos = [fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-BUNGE ARGENTINA S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-GENERACION LITORAL S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-PROMAIZ S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-STYROPEK S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-T6 INDUSTRIAL S.A.pdf', fr'G:\\.shortcut-targets-by-id\\1sZgSJL9I6E0GB6QzaugDq_JoUz5E7Mae\\09 - Documentos Ingreso\\{mesdirec}\\LA SEGUNDA\\CNR\\CNR-{nombre}-TERMINAL 6 S.A.pdf']; print('Todos los archivos existen.' if all(os.path.exists(f) for f in archivos) else 'Al menos un archivo no existe.')\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        1240
+      ],
+      "id": "ec549566-aae2-4a95-a00a-76f0f2fbf674",
+      "name": "CheckIfExist"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Usuarios-Personal"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1260
+      ],
+      "id": "2142bbed-d84c-482d-92f7-8564333931cd",
+      "name": "Supabase1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2280,
+        1260
+      ],
+      "id": "3e0a780a-5aa8-451c-b95c-059aec833131",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "Errores"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        1100
+      ],
+      "id": "fc336efd-b64e-4d0a-bf2d-d357d6f68851",
+      "name": "Supabase",
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "Errores"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "=,"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -2100,
+        1260
+      ],
+      "id": "0665e70b-be13-43dc-8ded-dd78e9f728da",
+      "name": "Supabase5",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-05-08T19:47:17.000Z",
+  "versionId": "87fd5289-374b-4d28-ae40-58626cd53941"
+}

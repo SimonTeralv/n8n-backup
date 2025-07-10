@@ -1,0 +1,1457 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Open to Browser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Open Browser To1": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Open to Browser": {
+      "main": [
+        [
+          {
+            "node": "Open Browser To1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get RPA Data": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates": {
+      "main": [
+        [
+          {
+            "node": "Click5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click5": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Take Screenshot11": {
+      "main": [
+        [
+          {
+            "node": "OCR10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR10": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse7": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates7": {
+      "main": [
+        [
+          {
+            "node": "Click11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click11": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse1": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates1": {
+      "main": [
+        [
+          {
+            "node": "Click6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse2": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates2": {
+      "main": [
+        [
+          {
+            "node": "Click7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click7": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse3": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates3": {
+      "main": [
+        [
+          {
+            "node": "Click8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click8": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse4": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates4": {
+      "main": [
+        [
+          {
+            "node": "Click9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click9": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR Find Email & Parse5": {
+      "main": [
+        [
+          {
+            "node": "Add Values to coordinates5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Values to coordinates5": {
+      "main": [
+        [
+          {
+            "node": "Click10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click10": {
+      "main": [
+        [
+          {
+            "node": "Locate On Screen1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "OCR Find Email & Parse5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen1": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser": {
+      "main": [
+        [
+          {
+            "node": "Click1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Locate On Screen2": {
+      "main": [
+        [
+          {
+            "node": "Coordinate Parser4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coordinate Parser4": {
+      "main": [
+        [
+          {
+            "node": "Click2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click2": {
+      "main": [
+        [
+          {
+            "node": "Get RPA Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Click6": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Take Screenshot11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-25T15:19:31.231Z",
+  "id": "H3RFGADo3fmarsRD",
+  "meta": null,
+  "name": "Challenge Original File",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f00a2297-8631-4d11-962c-852d802b40aa",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=start {{ $json['Web Browser'] }} {{ $json.URL }}"
+      },
+      "id": "9e7036a0-ee11-458d-875c-f018bce7cf2b",
+      "name": "Open Browser To1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        180
+      ],
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "html",
+        "options": {}
+      },
+      "id": "58801b29-afee-42d9-b869-b6439a7cad38",
+      "name": "Extract from File",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "91f68523-b40a-48d5-a98e-0d74c93d4e91",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6d5f9615-c1cd-4efa-8386-cb69a5f2574b",
+              "name": "Web Browser",
+              "value": "msedge",
+              "type": "string"
+            },
+            {
+              "id": "27b7a872-4ffe-4db1-beae-c364d274c8d0",
+              "name": "URL",
+              "value": "https://rpachallenge.com/",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b0007bcb-2a8d-44b3-bdb8-cacb45f5d08c",
+      "name": "Open to Browser",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1080,
+        160
+      ],
+      "notesInFlow": false,
+      "notes": "#Browser names: Edge=msedge Chrome=chrome Firefox=firefox"
+    },
+    {
+      "parameters": {
+        "url": "https://rpachallenge.com/assets/downloadFiles/challenge.xlsx",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "d69f14d7-b6ca-4706-8943-1eb9c5a16f69",
+      "name": "Get RPA Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -340,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Email",
+        "height": 343.0861018728989,
+        "width": 1082.1595090310907
+      },
+      "id": "0be3c0e2-e67d-4519-95dc-9f7410bff0e4",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "93d1f823-82c5-4a47-9adc-49615815f1fe",
+      "name": "OCR Find Email & Parse",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e9ff54a7-b831-4287-895f-94f6894dbc3f",
+      "name": "Add Values to coordinates",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json['First Name'] }}')\""
+      },
+      "id": "30d4e130-b13e-4d0d-b9d8-4ca495bb4e74",
+      "name": "Click5",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        540
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "content": "## First Name\n",
+        "height": 343.0861018728989,
+        "width": 1077.5774118855604
+      },
+      "id": "99e91bb6-f5c0-4c18-85ba-e05678c3690d",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Last Name\n\n",
+        "height": 343.0861018728989,
+        "width": 1087.8026955349853
+      },
+      "id": "dd4d005f-b9cd-458a-ab9b-f6276ed10202",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Company Name\n",
+        "height": 343.0861018728989,
+        "width": 1078.4475887120027
+      },
+      "id": "3d543c30-8d95-4dc3-9d1e-2525d6101f9a",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Phone Number\n",
+        "height": 343.0861018728989,
+        "width": 1083.573208068673
+      },
+      "id": "9a8b1a13-8e4d-488a-8f13-aedb3b3f6f73",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Role In Company",
+        "height": 343.0861018728989,
+        "width": 1081.4584643355167
+      },
+      "id": "969d4f02-1e77-4b59-8c0b-e878eb488143",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Address",
+        "height": 343.0861018728989,
+        "width": 1072.999489402891
+      },
+      "id": "a0df173a-335a-473e-a29b-0007d121fbb6",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        320,
+        2280
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "First Name",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "129fc727-61c4-45e9-a05a-ce28aac37420",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"from PIL import ImageGrab; img = ImageGrab.grab(); img.save(r'C:\\Users\\Dell\\.n8n\\Screenshots\\MainScreen.png')\""
+      },
+      "id": "4c1cbdd3-ccac-414f-ba06-192c10ffff12",
+      "name": "Take Screenshot11",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        40,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pytesseract; from PIL import Image, ImageEnhance, ImageFilter; import cv2; import numpy as np; import json; pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'; image_path = r'C:\\Users\\Dell\\.n8n\\Screenshots\\MainScreen.png'; image = Image.open(image_path).convert('L'); image = ImageEnhance.Contrast(image).enhance(2).filter(ImageFilter.EDGE_ENHANCE); img_np = np.array(image); _, binary = cv2.threshold(img_np, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU); data = pytesseract.image_to_data(binary, output_type=pytesseract.Output.DICT, config=r'--oem 3 --psm 11'); results = [{'text': text, 'confidence': data['conf'][i], 'x': data['left'][i], 'y': data['top'][i], 'width': data['width'][i], 'height': data['height'][i]} for i, text in enumerate(data['text']) if text.strip() and data['conf'][i] > 60]; print(json.dumps(results, indent=2))\""
+      },
+      "id": "9e0a106b-d4bb-45c1-98f3-c0ffc70bd34f",
+      "name": "OCR10",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        160,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "a859d5ab-8c98-4d8f-a4c8-e2d8a6d03eae",
+      "name": "OCR Find Email & Parse7",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d4bcb544-3f4a-4994-9aac-d32be8c346f0",
+      "name": "Add Values to coordinates7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json.Email }}')\""
+      },
+      "id": "b4d94c2b-053a-4017-9ad3-eca4786a24e0",
+      "name": "Click11",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        220
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Email",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "71fc7af4-6276-474b-b806-25d61c4a1460",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        580,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "91b0afa6-6f1b-4142-9b92-35e8bbf154d7",
+      "name": "OCR Find Email & Parse1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        740,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "eb56a52d-87ef-4ac9-9870-8b9977a70df1",
+      "name": "Add Values to coordinates1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Last Name",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "84e07826-2e3f-45cc-9b12-a571088b8b4a",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "25613b65-8925-4e4a-97a1-88c231f72a8d",
+      "name": "OCR Find Email & Parse2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "96fb4ed9-596f-4701-9839-e5adbe09fd2b",
+      "name": "Add Values to coordinates2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        900,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json['Company Name'] }}')\""
+      },
+      "id": "9e5e4c74-442a-474b-8079-cb7b37efb8ce",
+      "name": "Click7",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        1300
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Company Name",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "679ac4ed-0213-47fa-8d00-dc4e72c50d5f",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        620,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "e6a72066-667a-46af-b8f4-62458d4eb891",
+      "name": "OCR Find Email & Parse3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        740,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1f8aabc3-9ccb-41b0-ad4a-0b622c99e1fe",
+      "name": "Add Values to coordinates3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json['Phone Number'] }}')\""
+      },
+      "id": "34401df2-fead-4ceb-9062-b3e4aa087999",
+      "name": "Click8",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        1680
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Phone Number",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3607e72-7f3c-4b6e-9d76-b4d9bb297754",
+      "name": "Edit Fields4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "565198af-7ee2-4f8e-987f-a2d8fa50ac96",
+      "name": "OCR Find Email & Parse4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        740,
+        2060
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c7e06ea4-1589-455a-9314-052852eee1af",
+      "name": "Add Values to coordinates4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        2060
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json['Role in Company'] }}')\""
+      },
+      "id": "82294e2c-3f9d-4972-b87d-7b936aabdd8a",
+      "name": "Click9",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        2060
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Role In Company",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e3e8ce1e-578c-48b7-bd45-3ac291d950d6",
+      "name": "Edit Fields5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        2060
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to normalize text for case-insensitive comparison\nfunction normalizeText(text) {\n  return String(text).toLowerCase().trim();\n}\n\n// Function to check if a word matches at word boundaries\nfunction isWordBoundaryMatch(searchWord, textWord) {\n  const normalizedSearchWord = normalizeText(searchWord);\n  const normalizedTextWord = normalizeText(textWord);\n  \n  // Check if the search word is at the start of the text word\n  if (normalizedTextWord.startsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is at the end of the text word\n  if (normalizedTextWord.endsWith(normalizedSearchWord)) {\n    return true;\n  }\n  \n  // Check if the search word is a whole word within the text word\n  const regex = new RegExp(`\\\\b${normalizedSearchWord}\\\\b`);\n  return regex.test(normalizedTextWord);\n}\n\n// Function to calculate distance between two points\nfunction distance(x1, y1, x2, y2) {\n  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));\n}\n\n// Function to find words close to each other\nfunction findCloseWords(data, searchWords, maxDistance = 100) {\n  const normalizedSearchWords = searchWords.map(normalizeText);\n  const wordMatches = normalizedSearchWords.map(word => []);\n\n  // Find all matches for each search word\n  data.forEach(item => {\n    normalizedSearchWords.forEach((searchWord, index) => {\n      if (isWordBoundaryMatch(searchWord, item.text)) {\n        wordMatches[index].push(item);\n      }\n    });\n  });\n\n  // Find the best combination of matches\n  const combinations = cartesianProduct(wordMatches);\n  let bestMatch = null;\n  let minTotalDistance = Infinity;\n\n  combinations.forEach(combo => {\n    if (combo.every(item => item)) {\n      const totalDistance = calculateTotalDistance(combo);\n      if (totalDistance < minTotalDistance && totalDistance <= maxDistance * (combo.length - 1)) {\n        minTotalDistance = totalDistance;\n        bestMatch = combo;\n      }\n    }\n  });\n\n  return bestMatch;\n}\n\n// Helper function to calculate total distance between a set of words\nfunction calculateTotalDistance(words) {\n  let totalDistance = 0;\n  for (let i = 1; i < words.length; i++) {\n    totalDistance += distance(words[i-1].x, words[i-1].y, words[i].x, words[i].y);\n  }\n  return totalDistance;\n}\n\n// Helper function to generate cartesian product of arrays\nfunction cartesianProduct(arrays) {\n  return arrays.reduce((acc, array) => \n    acc.flatMap(x => array.map(y => [...x, y])),\n    [[]]\n  );\n}\n\n// Get the input from the previous node\nconst input = $input.all()[0].json;\n\n// The phrase we're searching for (accessed from the input)\nconst searchPhrase = input['Find Phrase'];\n\n// Maximum distance between words (adjust as needed)\nconst maxDistance = 100;\n\nlet parsedData, result;\n\ntry {\n  // Parse the OCR data from the stdout field\n  parsedData = JSON.parse(input.stdout);\n  const searchWords = searchPhrase.split(' ');\n  const foundItems = findCloseWords(parsedData, searchWords, maxDistance);\n  \n  if (foundItems) {\n    result = {\n      phrase: searchPhrase,\n      words: foundItems\n    };\n  } else {\n    result = { error: `Phrase \"${searchPhrase}\" not found in OCR results` };\n  }\n} catch (error) {\n  result = { error: 'Failed to parse OCR results or find phrase', details: error.message };\n}\n\nreturn {\n  json: {\n    foundPhrase: result\n  }\n};"
+      },
+      "id": "667e792e-5419-4b11-b92c-cfe4de460b65",
+      "name": "OCR Find Email & Parse5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        740,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d0c9069-5508-4905-ba7c-493d0fbbfb29",
+              "name": "foundWord.x",
+              "value": "={{ $json.foundPhrase.words[0].x+40 }}",
+              "type": "number"
+            },
+            {
+              "id": "c69d8e56-3060-4648-85d7-30b706ee9348",
+              "name": "foundWord.y",
+              "value": "={{ $json.foundPhrase.words[0].y+40 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "71079bcf-927d-4f1b-a578-19231452a542",
+      "name": "Add Values to coordinates5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        2480
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json.Address }}')\""
+      },
+      "id": "a47af6cf-55df-4ef8-8018-4401267d2c36",
+      "name": "Click10",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        2460
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3daf3ec7-8025-458d-99d5-4ae8e8dced72",
+              "name": "Find Phrase",
+              "value": "Address",
+              "type": "string"
+            },
+            {
+              "id": "9a6e51c9-6c5b-4df1-acbc-3f4e70de4399",
+              "name": "stdout",
+              "value": "={{ $('OCR10').first().json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0b8a124e-a93e-4cc2-ae67-8f07208f0108",
+      "name": "Edit Fields6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; print(pyautogui.locateCenterOnScreen(r'C:\\Users\\Dell\\.n8n\\Screenshots\\submit button.PNG', grayscale=False, confidence=0.85))\" #Make sure Pillow is installed Use r prefix so backslash is used as character"
+      },
+      "id": "6f549d3a-5df7-4889-96a6-254c7423b662",
+      "name": "Locate On Screen1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        2460
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\" "
+      },
+      "id": "f4f51cd3-153e-4637-bf0a-9d6aaf224eef",
+      "name": "Click1",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "d03e91cb-6a1f-455d-a696-ad5fe889a731",
+      "name": "Coordinate Parser",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1680,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $json[\"stdout\"];\n\n// Adjusted regex to match the new input format\nconst regex = /Point\\(x=(\\d+),\\s*y=(\\d+)\\)/;\nconst match = output.match(regex);\n\nconsole.log(\"Input:\", output);\nconsole.log(\"Regex match:\", match);\n\nif (match) {\n    const x = parseInt(match[1], 10);\n    const y = parseInt(match[2], 10);\n    console.log(\"Extracted values:\", { x, y });\n    return [{ x, y }];\n} else {\n    console.error(\"No match found. Invalid input format.\");\n    throw new Error('Invalid input format');\n}\n"
+      },
+      "id": "ebc22405-64e2-4eca-9016-d9ab75b274fd",
+      "name": "Coordinate Parser4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; print(pyautogui.locateCenterOnScreen(r'C:\\Users\\Dell\\.n8n\\Screenshots\\Start button.PNG', grayscale=False, confidence=0.85))\" #Make sure Pillow is installed Use r prefix so backslash is used as character"
+      },
+      "id": "9373f1f1-75cc-40ad-a648-45113eb05675",
+      "name": "Locate On Screen2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        180
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.x }}, {{ $json.y }})\" "
+      },
+      "id": "88e1be26-0a9d-485b-8dea-4fb883aed636",
+      "name": "Click2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import pyautogui; pyautogui.click({{ $json.foundWord.x }}, {{ $json.foundWord.y }}); pyautogui.typewrite('{{ $('Extract from File').item.json['Last Name '] }}')\""
+      },
+      "id": "a1f0b7a2-ec94-4ceb-aa06-05301175c859",
+      "name": "Click6",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        960
+      ],
+      "onError": "continueErrorOutput"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-25T13:53:03.729Z",
+      "updatedAt": "2025-02-25T13:53:03.729Z",
+      "id": "9fssgBnptdZHZ04W",
+      "name": "updated library"
+    },
+    {
+      "createdAt": "2025-02-25T13:53:03.740Z",
+      "updatedAt": "2025-02-25T13:53:03.740Z",
+      "id": "f0G6tZbPfSP7GNtT",
+      "name": "Testing"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-25T15:28:21.000Z",
+  "versionId": "68881ffc-9921-4e95-91bf-744af1ac3168"
+}

@@ -1,0 +1,455 @@
+{
+  "active": true,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Google Drive4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Google Drive3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Drive4": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-05-20T13:58:32.775Z",
+  "id": "dC0EMtFTAfqS6CMv",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Form-Carga",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Carga Pagos Monotributo",
+        "formDescription": "Seleccione su nombre y aprete siguiente, luego podrá cargar su archivo.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Nombre",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Pago Monotributo - DELPINO NICOLAS ABEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - ROBLEDO DANIEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - QUIROZ JAMES"
+                  },
+                  {
+                    "option": "Pago Monotributo - FERREYRA JULIAN ANDRES"
+                  },
+                  {
+                    "option": "Pago Monotributo - MARCELO GAMALERO"
+                  },
+                  {
+                    "option": "Pago Monotributo - DONAIRE PABLO RUBEN"
+                  },
+                  {
+                    "option": "Pago Monotributo - RUSSO FEDERICO MANUEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - CHIAVON GERARDO XAVIER"
+                  },
+                  {
+                    "option": "Pago Monotributo - FERREYRA FACUNDO AMILCAR"
+                  },
+                  {
+                    "option": "Pago Monotributo - CUNNINGHAM MARTIN"
+                  },
+                  {
+                    "option": "Pago Monotributo - MASSA AGUSTIN"
+                  },
+                  {
+                    "option": "Pago Monotributo - GOROSITO AGUSTIN"
+                  },
+                  {
+                    "option": "Pago Monotributo - AGUSTIN BENITEZ"
+                  },
+                  {
+                    "option": "Pago Monotributo - SCAGLIA ROMINA"
+                  },
+                  {
+                    "option": "Pago Monotributo - VARGAS JUAN MANUEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - GONZALEZ TOMAS FRANCISCO"
+                  },
+                  {
+                    "option": "Pago monotributo - DELPINO NICOLÁS ABEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - CESPEDES ESTEBAN"
+                  },
+                  {
+                    "option": "Pago Monotributo - BONVECHI AGUSTIN ANDRES"
+                  },
+                  {
+                    "option": "Pago Monotributo - CARRIZO JUAN MANUEL"
+                  },
+                  {
+                    "option": "Pago Monotributo - LEUNDA NOELI"
+                  },
+                  {
+                    "option": "Pago Monotributo - TERAN ALVARENGA SIMON"
+                  },
+                  {
+                    "option": "Pago Monotributo - ACEVEDO JONATHAN"
+                  },
+                  {
+                    "option": "Pago Monotributo - SOSO ALVARO"
+                  },
+                  {
+                    "option": "Pago Monotributo - SAAVEDRA ELIAS"
+                  },
+                  {
+                    "option": "Pago Monotributo - GONZZALES TOMAS"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        380,
+        -220
+      ],
+      "id": "74632823-527d-40e1-a06f-8507bd925959",
+      "name": "On form submission",
+      "webhookId": "f86d789b-9d69-4ba1-9c63-e15b94c6a3e0"
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "IMPORTANTE: SUBIR ÚNICAMENTE COMPROBANTES DE PAGO DEL MES CORRIENTE Y EN FORMATO PDF",
+              "fieldType": "file",
+              "multipleFiles": false,
+              "acceptFileTypes": "pdf, .pdf",
+              "requiredField": true
+            }
+          ]
+        },
+        "limitWaitTime": true,
+        "resumeAmount": 5,
+        "resumeUnit": "minutes",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        560,
+        -220
+      ],
+      "id": "f1c75f06-7fc6-42a1-8c77-dd7ba4fe9212",
+      "name": "Form",
+      "webhookId": "e36d8db2-0d1d-4bb6-a74f-dfe986c90c52"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "=IMPORTANTE__SUBIR__NICAMENTE_COMPROBANTES_DE_PAGO_DEL_MES_CORRIENTE_Y_EN_FORMATO_PDF",
+        "name": "={{ $('On form submission').item.json.Nombre }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Google Drive3').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        900,
+        -200
+      ],
+      "id": "dbd3b0dd-0fc0-4c9d-892e-4e0603668859",
+      "name": "Google Drive1",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "bqi6TTRaGBJIhFFV",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "command": "=python -c \"import os; import locale;from datetime import datetime;locale.setlocale(locale.LC_TIME, 'es_ES'); current_date = datetime.now(); from datetime import datetime; mesdirec = current_date.strftime('%m - %B %Y'); year=current_date.strftime('%Y');stdout = mesdirec.replace(mesdirec.split(' - ')[1], mesdirec.split(' - ')[1].capitalize()); mes = current_date.strftime('%B'); print(fr'{stdout}')\""
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        80,
+        -20
+      ],
+      "id": "3433ccee-3ee1-47e1-97f9-f58eed1dce82",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "={{ $('Execute Command').item.json.stdout }}",
+        "limit": 1,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "={{ $json.id }}",
+            "mode": "id"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        400,
+        -20
+      ],
+      "id": "2e5e367d-4870-4383-885e-e03eb84b04aa",
+      "name": "Google Drive",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "bqi6TTRaGBJIhFFV",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "=ARCA",
+        "limit": 1,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "={{ $json.id }}",
+            "mode": "id"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        560,
+        -20
+      ],
+      "id": "a6dbacb1-dd71-4179-ab5e-bb287dbb5fbe",
+      "name": "Google Drive2",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "bqi6TTRaGBJIhFFV",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "=Pago Monotributo",
+        "limit": 1,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "={{ $json.id }}",
+            "mode": "id"
+          }
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        720,
+        -20
+      ],
+      "id": "44571cc8-9c5f-4371-bb88-f28b5b1c98a2",
+      "name": "Google Drive3",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "bqi6TTRaGBJIhFFV",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "={{ new Date().getFullYear() }}",
+        "limit": 1,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1a1zOitMYUE3_2FrKggj3qxQ_0B92izXx",
+            "mode": "id"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        240,
+        -20
+      ],
+      "id": "e273165a-54f4-420c-9758-9e7f6ee33975",
+      "name": "Google Drive4",
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "bqi6TTRaGBJIhFFV",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        760,
+        -200
+      ],
+      "id": "6364673f-aa94-416a-838a-e82745c7ff81",
+      "name": "Merge"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 600
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-18T18:08:04.000Z",
+  "versionId": "b333f8b7-c95f-4b63-b4cd-f673444fb8f1"
+}

@@ -1,0 +1,303 @@
+{
+  "active": true,
+  "connections": {
+    "Carga Bunge": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "T6": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ALBANESI": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-04T12:15:21.164Z",
+  "id": "Qobx9rfrSdBPTUsu",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "BOT-Carga-Solicitudes (Sin exactian)",
+  "nodes": [
+    {
+      "parameters": {
+        "name": "Descarga",
+        "description": "Call this workflow when you are ready to upload the documents",
+        "workflowId": {
+          "__rl": true,
+          "value": "TaSDog5NBZvvPBkt",
+          "mode": "list",
+          "cachedResultName": "ControlDocumentario-Carga-BUNGE"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        80,
+        260
+      ],
+      "id": "4482d5d4-5ad1-478d-86e4-bfecf266d82d",
+      "name": "Carga Bunge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Sos un util asistente con la tarea de utilizar las herramientas de carga de documentacion y notificar como salió su ejecucion.\nAsegurate de ejecutar UNA A LA VEZ, Y SOLO UNA VEZ CADA UNA..\nContas con las siguientes herramientas:\n* Carga Bunge: Carga de documentación solicitada a la planta.\n* T6: Carga de documentación solicitada a la planta.\nEjecuta estas herramientas una a la vez y al recibir el output de todas notifica si funcionaron correctamente o alguna tuvo un error.\nRecibis de las herramientas \n  {\n    \"variable\": \"Documentos\",\n    \"valor\": null,\n    \"Texto\": \"0\"\n  }\nSi {Texto}=0. Cargada correctamente\nUtiliza el fomrato: \n\nAdjunto el reporte de cargas del día\n\n- Carga Bunge: Cargada correctamente. ✅\n- Carga T6: Error {Texto} ❌\n- Carga Albanesi: Esta sección está desactivada\n  \n\nPor favor, no dude en contactar el area de investigación y desarrollo si necesita más información.\n\nSaludos cordiales,\"\n\n* El output que des es el body del mail que se manda, estructuralo acorde.\n* No hay herramienta de Albanesi simplemente escribí lo que está en el ejemplo de formato.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "eac8f9e1-c16b-4238-b8d3-fa53c4d1dfa2",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        260
+      ],
+      "id": "468c8742-d6ed-4c80-baec-ef85e00ad9c4",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "qlIkWQVxXLADKIor",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "T6",
+        "workflowId": {
+          "__rl": true,
+          "value": "sf6Q8o3rnLdk87WT",
+          "mode": "list",
+          "cachedResultName": "ControlDocumentario-Carga-Terminal 6"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        180,
+        260
+      ],
+      "id": "553aebf1-9a5c-4472-a482-19e0e84fd3ed",
+      "name": "T6"
+    },
+    {
+      "parameters": {
+        "sendTo": "=simonteralv2@gmail.com, a.benitez@treeingenieria.com, administracion@treeingenieria.com",
+        "subject": "BOT-Carga-Solicitudes",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        420,
+        0
+      ],
+      "id": "2260b1ef-f14c-41a5-be2e-3fd3462e9a3e",
+      "name": "Gmail",
+      "webhookId": "f65931f7-5299-4a64-b109-d1162cafda7c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "NWtQUZYbGghGDkN1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 5,
+              "triggerAtMinute": null
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -280,
+        0
+      ],
+      "id": "866c91dc-a773-47b9-977d-fabe042251c8",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "name": "ALBANESI",
+        "workflowId": {
+          "__rl": true,
+          "value": "UWxZmdL6sIYT0Xdn",
+          "mode": "list",
+          "cachedResultName": "Carga-Albanesi-Exactian"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        280,
+        260
+      ],
+      "id": "f648c3f7-476e-4c14-8846-f0ff4aa4f66b",
+      "name": "ALBANESI"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        -160
+      ],
+      "id": "48f9917a-6114-4f0d-984b-e407209d2467",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "=simonteralv2@gmail.com",
+        "subject": "BOT-Carga-Solicitudes",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        420,
+        -160
+      ],
+      "id": "7c294b56-d2ce-4fb2-88d5-dc6f624937ff",
+      "name": "Testing",
+      "webhookId": "86fb4aef-7f14-46b3-b9cc-e647070aeb8f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "NWtQUZYbGghGDkN1",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 3600
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-10T11:35:16.000Z",
+  "versionId": "b82ef608-60b0-43aa-8fc8-0379d2787aff"
+}

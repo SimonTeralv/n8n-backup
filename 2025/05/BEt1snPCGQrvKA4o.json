@@ -564,7 +564,7 @@
     {
       "parameters": {
         "resource": "fileFolder",
-        "queryString": "=Año {{ $json.stdout }}",
+        "queryString": "={{ $json.stdout }}",
         "limit": 1,
         "filter": {},
         "options": {}
@@ -667,6 +667,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-01T17:19:34.000Z",
-  "versionId": "5eb3c669-a093-403b-8ec7-87f82c22265c"
+  "updatedAt": "2025-07-11T13:46:44.000Z",
+  "versionId": "65ca39da-8c1e-47e9-86ff-ddc395cc4cf5"
 }

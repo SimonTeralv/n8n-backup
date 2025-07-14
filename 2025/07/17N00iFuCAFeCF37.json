@@ -1,0 +1,480 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Supabase2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-14T13:03:07.924Z",
+  "id": "17N00iFuCAFeCF37",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Sincronización-Sheets-Supabase",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        -400
+      ],
+      "id": "1ee429d2-fa01-4acc-9b8a-63f23c22a163",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -900,
+        -280
+      ],
+      "id": "b9fbb8e1-8cd7-446a-8e4b-490560a81e29",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "PruebaSincronizacionUsuarios",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "Nombre en portales",
+              "keyValue": "={{ $json['NOMBRE EN PORTALES'] }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        -280
+      ],
+      "id": "0041dd9d-4957-4825-98b9-4dd4e53f17ca",
+      "name": "Supabase",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1ejt9pbirVSipWiIABlhbup_za3_P8rdMEoJlFV-VEqs/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hoja 1",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -1120,
+        -280
+      ],
+      "id": "a43cceeb-8e0f-4184-aee4-3b85e172814c",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "PruebaSincronizacionUsuarios",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Nombre en portales",
+              "fieldValue": "={{ $('Loop Over Items').item.json['NOMBRE EN PORTALES'] }}"
+            },
+            {
+              "fieldId": "La Segunda",
+              "fieldValue": "={{ $('Loop Over Items').item.json['LA SEGUNDA (ADM)'] }}"
+            },
+            {
+              "fieldId": "OLS-Secret",
+              "fieldValue": "={{ $('Loop Over Items').item.json.PASS }}"
+            },
+            {
+              "fieldId": "CUIL",
+              "fieldValue": "={{ $('Loop Over Items').item.json.CUIL }}"
+            },
+            {
+              "fieldId": "ClaveFiscal",
+              "fieldValue": "={{ $('Loop Over Items').item.json['CLAVE FISCAL'] }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -280
+      ],
+      "id": "5f6c87c6-4c97-402f-a907-4db08e59723a",
+      "name": "Supabase1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "PruebaSincronizacionUsuarios",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "Nombre en portales",
+              "condition": "eq",
+              "keyValue": "={{ $('Loop Over Items').item.json['NOMBRE EN PORTALES'] }}"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Nombre en portales",
+              "fieldValue": "={{ $('Loop Over Items').item.json['NOMBRE EN PORTALES'] }}"
+            },
+            {
+              "fieldId": "La Segunda",
+              "fieldValue": "={{ $('Loop Over Items').item.json['LA SEGUNDA (ADM)'] }}"
+            },
+            {
+              "fieldId": "OLS-Secret",
+              "fieldValue": "={{ $('Loop Over Items').item.json.PASS }}"
+            },
+            {
+              "fieldId": "CUIL",
+              "fieldValue": "={{ $('Loop Over Items').item.json.CUIL }}"
+            },
+            {
+              "fieldId": "ClaveFiscal",
+              "fieldValue": "={{ $('Loop Over Items').item.json['CLAVE FISCAL'] }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -280
+      ],
+      "id": "d58dbc09-af43-4e69-bd0b-a72c2d1745e4",
+      "name": "Supabase2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "77cc0d01-86be-46ce-a13d-1ea19620c416",
+              "leftValue": "={{ $('Supabase').item.json['Nombre en portales'] }}",
+              "rightValue": "={{ $('Loop Over Items').item.json['NOMBRE EN PORTALES'] }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "8e952d4b-d412-4902-b371-1a2512d7591d",
+              "leftValue": "={{ $('Supabase').item.json['La Segunda'] }}",
+              "rightValue": "={{ $('Loop Over Items').item.json['LA SEGUNDA (ADM)'] }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "0f46be1f-fcb3-4ce8-8949-51fa689145ec",
+              "leftValue": "={{ $('Supabase').item.json['OLS-Secret'] }}",
+              "rightValue": "={{ $('Loop Over Items').item.json.PASS }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "b99e99f8-5d3a-40e4-9e01-db61a6bb476e",
+              "leftValue": "={{ $('Supabase').item.json.CUIL }}",
+              "rightValue": "={{ $('Loop Over Items').item.json.CUIL }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "537ff66e-3fea-459a-98a8-8cad9037e832",
+              "leftValue": "={{ $('Supabase').item.json.ClaveFiscal }}",
+              "rightValue": "={{ $('Loop Over Items').item.json['CLAVE FISCAL'] }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -360,
+        -280
+      ],
+      "id": "03f1d09a-761f-40c2-8d08-2a2105c68f44",
+      "name": "If",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "77cc0d01-86be-46ce-a13d-1ea19620c416",
+              "leftValue": "={{ $('Supabase').item.json['Nombre en portales'] }}",
+              "rightValue": "={{ $('Loop Over Items').item.json['NOMBRE EN PORTALES'] }}",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -540,
+        -280
+      ],
+      "id": "d1e14c3d-04bd-4582-ba7c-ac906aaf7b2a",
+      "name": "If1",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1DJfD4FwW540qXmTvlYxnzZfyjIVMKl-kez3cNnrZaXg/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "ALTAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1DJfD4FwW540qXmTvlYxnzZfyjIVMKl-kez3cNnrZaXg/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        -160
+      ],
+      "id": "73f3f9d5-ac79-4ae8-a45f-b47f98788612",
+      "name": "Google Sheets Trigger1",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "btUedw3LgjvUsSFh",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Google Sheets Trigger1": {
+      "documentId": "1DJfD4FwW540qXmTvlYxnzZfyjIVMKl-kez3cNnrZaXg",
+      "sheetId": 0,
+      "lastRevision": 2391,
+      "lastRevisionLink": "https://docs.google.com/spreadsheets/export?id=1DJfD4FwW540qXmTvlYxnzZfyjIVMKl-kez3cNnrZaXg&revision=2391&exportFormat=xlsx"
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-14T13:46:29.000Z",
+  "versionId": "66acf2f2-a30f-4710-ae1f-e7245024b326"
+}

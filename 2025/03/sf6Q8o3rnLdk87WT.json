@@ -1420,12 +1420,6 @@
         ]
       ]
     },
-    "Ruta Mono y Pago1": {
-      "main": [
-        [],
-        []
-      ]
-    },
     "Save Screenshot28": {
       "main": [
         [
@@ -1562,22 +1556,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Local OCR Tesseract1": {
-      "main": [
-        [
-          {
-            "node": "OCR Word",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Save Screenshot18": {
-      "main": [
-        []
       ]
     },
     "When Executed by Another Workflow": {
@@ -2576,7 +2554,7 @@
     },
     {
       "parameters": {
-        "content": "## Boton seleccionar Archivo\n**Ingresa Nombre de Usuario**",
+        "content": "## Boton seleccionar Archivo\n**Presiona el botón**",
         "height": 180,
         "width": 1600,
         "color": 4
@@ -2736,7 +2714,7 @@
     },
     {
       "parameters": {
-        "content": "## Boton Adjuntar Archivo\n**Ingresa Nombre de Usuario**",
+        "content": "## Boton Adjuntar Archivo\n**Intenta presionar el botón Adjuntar archivo,\nEn caso que no pueda significa\nque no está en una tarea,\nPor lo que sigue con el siguiente documento**",
         "height": 180,
         "width": 1600,
         "color": 4
@@ -3757,20 +3735,6 @@
     },
     {
       "parameters": {
-        "command": "=python -c \"import pyautogui; from datetime import date; import datetime; import time; import pyautogui; time.sleep(5); pyautogui.click(962, 610)\""
-      },
-      "id": "11fda24e-6b1b-443f-a75b-c4dfa4c57e14",
-      "name": "Ruta Mono y Pago1",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        3360,
-        4940
-      ],
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
         "command": "=python -c \"from PIL import ImageGrab;from datetime import date; import datetime; import time; time.sleep(3); direc = '{{$('Edit Fields').item.json.direc}}';img = ImageGrab.grab(); img.save(fr'{direc}\\.n8n\\Screenshots\\ControlDocumentario\\WorkingScreen-CD.png')\""
       },
       "id": "e10d0a96-3ceb-4365-b5fd-562f0e2bc6d7",
@@ -3975,62 +3939,6 @@
       "position": [
         1260,
         2400
-      ]
-    },
-    {
-      "parameters": {
-        "command": "=python -c \"import pytesseract; from PIL import Image, ImageEnhance, ImageFilter; import cv2; import numpy as np; import json; pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'; image_path = r'C:\\Users\\Uusario Nuevo Prueba\\.n8n\\Screenshots\\ControlDocumentario\\WorkingScreen.png'; image = Image.open(image_path).convert('L'); image = ImageEnhance.Contrast(image).enhance(5).filter(ImageFilter.EDGE_ENHANCE); img_np = np.array(image); _, binary = cv2.threshold(img_np, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU); data = pytesseract.image_to_data(binary, output_type=pytesseract.Output.DICT, config=r'--oem 3 --psm 3'); results = [{'text': text, 'confidence': data['conf'][i], 'x': data['left'][i], 'y': data['top'][i], 'width': data['width'][i], 'height': data['height'][i]} for i, text in enumerate(data['text']) if text.strip() and data['conf'][i] > 60]; print(json.dumps(results, indent=2))\""
-      },
-      "id": "7a7a129a-73bd-4ea0-96fd-b6d0531bb963",
-      "name": "Local OCR Tesseract1",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        3660,
-        2680
-      ],
-      "notesInFlow": false,
-      "notes": "Get Text and coordinates from Image using local OCR\n\nUses PyTesseract, an open source ocr software to detect the text of an image and the specific coordinates of that text"
-    },
-    {
-      "parameters": {
-        "command": "=python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; import pyautogui; time.sleep(5); img = pyautogui.screenshot(region=(320,470, 200, 50)); img.save(r'C:\\Users\\Uusario Nuevo Prueba\\.n8n\\Screenshots\\ControlDocumentario\\WorkingScreen.png')\""
-      },
-      "id": "3234b0a8-1ca3-422d-afa1-db277122b077",
-      "name": "Save Screenshot18",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        3500,
-        2680
-      ]
-    },
-    {
-      "parameters": {
-        "jsCode": "// Obtener la entrada desde el nodo anterior\nconst input = $input.all()[0].json;\n\n// Convertir el campo 'stdout' en un JSON válido\nlet parsedData;\ntry {\n  // Reemplazar las secuencias de escape (\\n) y otros caracteres para convertirlo en un JSON válido\n  const validJsonString = input.stdout.replace(/\\\\n/g, \"\").replace(/\\\\\"/g, '\"');\n  \n  // Parsear el string a JSON\n  parsedData = JSON.parse(validJsonString);\n} catch (error) {\n  return {\n    json: {\n      error: 'Error al convertir el string a JSON',\n      details: error.message,\n    }\n  };\n}\n\n// Asegurarnos de que el JSON tiene al menos un elemento\nif (Array.isArray(parsedData) && parsedData.length >= 1) {\n  // Extraer la primera palabra (suponiendo que está en la propiedad 'text')\n  const primeraPalabra = parsedData[0].text;\n\n  return {\n    json: {\n      Nombre: primeraPalabra,\n    }\n  };\n} else {\n  return {\n    json: {\n      error: 'No se encontraron elementos en el JSON de entrada',\n    }\n  };\n}"
-      },
-      "id": "dd630ca6-9fb5-4eb2-9e18-1839da1cc02f",
-      "name": "OCR Word",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        3800,
-        2680
-      ],
-      "notesInFlow": false,
-      "notes": "Required with Parser"
-    },
-    {
-      "parameters": {
-        "command": "=  python -c \"from PIL import ImageGrab; from datetime import date; import datetime; import time; import pyautogui; time.sleep(5); pyautogui.doubleClick(1773, 422);pyautogui.click(1773, 422); pyautogui.typewrite('backspace')\""
-      },
-      "id": "94ffd7bd-c12e-4431-83bc-36b2f165eb5d",
-      "name": "Save Screenshot24",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [
-        3320,
-        2440
       ]
     },
     {
@@ -4287,22 +4195,6 @@
     },
     {
       "parameters": {
-        "jsCode": "// Obtener la entrada desde el nodo anterior\nconst input = $input.all()[0].json;\n\n// Convertir el campo 'stdout' en un JSON válido\nlet parsedData;\ntry {\n  // Reemplazar las secuencias de escape (\\n) y otros caracteres para convertirlo en un JSON válido\n  const validJsonString = input.stdout.replace(/\\\\n/g, \"\").replace(/\\\\\"/g, '\"');\n  \n  // Parsear el string a JSON\n  parsedData = JSON.parse(validJsonString);\n} catch (error) {\n  return {\n    json: {\n      error: 'Error al convertir el string a JSON',\n      details: error.message,\n    }\n  };\n}\n\n// Asegurarnos de que el JSON es un array y tiene al menos dos elementos\nif (Array.isArray(parsedData) && parsedData.length >= 2) {\n  // Extraer el campo 'text' de los dos primeros objetos\n  const primeraPalabra = parsedData[0].text;\n  const segundaPalabra = parsedData[1].text;\n\n  // Combinar las dos palabras en una sola cadena\n  const nombreCompleto = `${primeraPalabra} ${segundaPalabra}`;\n\n  return {\n    json: {\n      Nombre: nombreCompleto,\n    }\n  };\n} else {\n  return {\n    json: {\n      error: 'No se encontraron al menos dos elementos en el JSON de entrada',\n    }\n  };\n}"
-      },
-      "id": "b22697e2-6471-454e-a7ab-693264ef9e56",
-      "name": "OCR Word4",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        3340,
-        2680
-      ],
-      "notesInFlow": false,
-      "onError": "continueRegularOutput",
-      "notes": "Required with Parser"
-    },
-    {
-      "parameters": {
         "jsCode": "// Este nodo procesa un array de items\nreturn items.map(item => {\n  const texto = item.json.Texto;\n\n  // Verifica si el texto solo contiene puntos, comas o espacios\n  const soloPuntosYComas = /^\\s*[.,]+\\s*$/.test(texto);\n\n  // Si cumple la condición, reemplaza con 0\n  item.json.Texto = soloPuntosYComas ? 0 : texto;\n\n  return item;\n});\n"
       },
       "id": "ea01dd0e-f5a6-453e-897c-d7e04672893e",
@@ -4332,6 +4224,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-14T20:09:57.000Z",
-  "versionId": "98e98761-ccce-4fae-9c6f-7aa3379989f0"
+  "updatedAt": "2025-07-15T12:11:07.000Z",
+  "versionId": "62344527-8e12-4abd-903d-22290c9618a6"
 }

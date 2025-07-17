@@ -2247,7 +2247,7 @@
     },
     {
       "parameters": {
-        "command": "=python -c \"import pyautogui; from datetime import date; import datetime; import time; time.sleep(0);pyautogui.doubleClick({{ $('Coordinate Parser9').item.json.x}}, {{ $('Coordinate Parser9').item.json.y }}); pyautogui.typewrite('TR33Ingresos*')\""
+        "command": "=python -c \"import pyautogui; from datetime import date; import datetime; import time; time.sleep(0);pyautogui.doubleClick({{ $('Coordinate Parser9').item.json.x}}, {{ $('Coordinate Parser9').item.json.y }}); pyautogui.typewrite('TR33Ingresos#')\""
       },
       "id": "fe7dad2d-30a6-4348-a8b8-d75203142e5b",
       "name": "Click8",
@@ -3056,6 +3056,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-02T11:45:51.000Z",
-  "versionId": "b5302cd6-b314-4d6f-9dcb-d9f13e24fbfd"
+  "updatedAt": "2025-07-16T12:21:00.000Z",
+  "versionId": "8bb7f552-a523-489d-b440-cb22d9d332a0"
 }

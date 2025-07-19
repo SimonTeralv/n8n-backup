@@ -2772,7 +2772,7 @@
     },
     {
       "parameters": {
-        "command": "=python -c \"import pyautogui; from datetime import date; import datetime; import time; time.sleep(0);pyautogui.doubleClick({{ $('Coordinate Parser17').item.json.x +50}}, {{ $('Coordinate Parser17').item.json.y }}); pyautogui.typewrite('{{ $('Loop Over Items3').item.json.documento }}'); time.sleep(5);pyautogui.doubleClick(300,450);pyautogui.click(300,450)\""
+        "command": "=python -c \"import pyautogui; from datetime import date; import datetime; import time; time.sleep(0);pyautogui.doubleClick({{ $('Coordinate Parser17').item.json.x +50}}, {{ $('Coordinate Parser17').item.json.y }});pyautogui.click({{ $('Coordinate Parser17').item.json.x +50}}, {{ $('Coordinate Parser17').item.json.y }}); pyautogui.typewrite('{{ $('Loop Over Items3').item.json.documento }}'); time.sleep(5);pyautogui.doubleClick(300,450);pyautogui.click(300,450)\""
       },
       "id": "cc52c29d-3e6a-4527-aa6e-4c501461189d",
       "name": "Click16",
@@ -4224,6 +4224,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-15T12:11:07.000Z",
-  "versionId": "62344527-8e12-4abd-903d-22290c9618a6"
+  "updatedAt": "2025-07-17T11:36:45.000Z",
+  "versionId": "4026b78a-fe2b-45f3-8566-7ae01d4fb742"
 }

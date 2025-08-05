@@ -586,7 +586,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 0 2 16 05 fri"
+              "expression": "0 0 2 1 *"
             }
           ]
         }
@@ -617,6 +617,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-06-18T18:46:35.000Z",
-  "versionId": "e211ea11-e8e2-408a-972e-ede2eaf82c6c"
+  "updatedAt": "2025-08-04T17:30:14.000Z",
+  "versionId": "f17e9a24-c766-4a25-8949-2568bf215ac4"
 }

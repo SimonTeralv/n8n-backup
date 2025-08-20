@@ -1,0 +1,434 @@
+{
+  "active": false,
+  "connections": {
+    "Odoo": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Opcional, FiltroPersonalizado": {
+      "main": [
+        [
+          {
+            "node": "Odoo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test": {
+      "main": [
+        [
+          {
+            "node": "Opcional, FiltroPersonalizado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-19T13:41:08.674Z",
+  "id": "GuvzZ9UnxJAbLD1s",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Cambios de estado-Proyectos-Odoo",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_registro_relacionado",
+            "x_studio_log_ubicacionfinal"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.endOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.startOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        160
+      ],
+      "id": "6f6f33f0-edd1-4823-b2d1-c60d0b9736aa",
+      "name": "Odoo",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        120,
+        160
+      ],
+      "id": "43983fe1-c8dd-47f8-9fac-f3cbf254c1dc",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1ixgdZmCh789cknygDjPpyrB8sRmnmJyUoXs0YNR-SBE/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hoja 1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "Name": "={{ $json.x_name }}",
+            "x_studio_log_estadoanterior": "={{ $json.x_studio_log_estadoanterior }}",
+            "x_studio_log_estadonuevo": "={{ $json.x_studio_log_estadonuevo }}",
+            "x_studio_log_fecha_y_hora": "={{ $json.x_studio_log_fecha_y_hora }}",
+            "x_studio_log_registro_relacionado": "=",
+            "x_studio_log_ubicacionfinal": "="
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Origen",
+              "displayName": "Origen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Destino",
+              "displayName": "Destino",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_name",
+              "displayName": "x_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_studio_log_estadoanterior",
+              "displayName": "x_studio_log_estadoanterior",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_studio_log_estadonuevo",
+              "displayName": "x_studio_log_estadonuevo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_studio_log_fecha_y_hora",
+              "displayName": "x_studio_log_fecha_y_hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_studio_log_registro_relacionado",
+              "displayName": "x_studio_log_registro_relacionado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "x_studio_log_ubicacionfinal",
+              "displayName": "x_studio_log_ubicacionfinal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        300,
+        260
+      ],
+      "id": "4383cffa-94dd-433a-b9e2-45863eb5dd23",
+      "name": "Google Sheets",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_registro_relacionado",
+            "x_studio_log_ubicacionfinal"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.endOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.startOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        320
+      ],
+      "id": "86cb967c-a307-456a-8353-3d8e11ad0b48",
+      "name": "Odoo3",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Cambios de Estado del día\nChequea los cambios de estados\nde los productos y carga en sheets \nlos que sean de hoy",
+        "height": 420,
+        "width": 1120,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        60
+      ],
+      "id": "aea941c0-ed30-4b20-879a-86820d4a7f78",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "aada2151-665c-465f-b422-a2ca55180ffe",
+              "name": "yesterday",
+              "value": "2025-08-17T02:59:59",
+              "type": "string"
+            },
+            {
+              "id": "3cb275d2-c59c-441e-a9a6-4749cf9a617d",
+              "name": "Comienzo del día",
+              "value": "={{ $now.endOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -180,
+        160
+      ],
+      "id": "508dbb0e-0921-4bd5-a930-79d06e44262e",
+      "name": "Opcional, FiltroPersonalizado"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        160
+      ],
+      "id": "8eba8c02-efeb-414c-be55-01986c12f199",
+      "name": "Test"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "operation": "getAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -100
+      ],
+      "id": "654c48a7-19cf-49b9-89a0-daec7eca8242",
+      "name": "Odoo1",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-19T16:15:59.000Z",
+  "versionId": "2b0ac56b-4aad-48ea-9a2b-87a71e9985c4"
+}

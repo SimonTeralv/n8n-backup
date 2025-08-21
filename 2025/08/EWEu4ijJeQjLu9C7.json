@@ -17,7 +17,7 @@
         [],
         [
           {
-            "node": "Edit Fields",
+            "node": "Convert to File",
             "type": "main",
             "index": 0
           }
@@ -141,7 +141,7 @@
         ]
       ]
     },
-    "Edit Fields": {
+    "Convert to File": {
       "main": [
         [
           {
@@ -470,34 +470,28 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        620,
-        520
+        540,
+        480
       ],
       "id": "5660632e-d213-4b90-b8f7-5dee40981ae0",
       "name": "Read/Write Files from Disk"
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "081c194d-54cb-418c-a501-f92b4bad45ae",
-              "name": "url",
-              "value": "={{ $json.download_url }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
+        "operation": "toJson",
+        "options": {
+          "format": true,
+          "fileName": "={{ $json.name + \".json\" }} "
+        }
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "id": "e1f2af84-d5fd-4cf6-a6d3-ee2cead904bc",
+      "name": "Convert to File",
+      "type": "n8n-nodes-base.convertToFile",
       "position": [
-        360,
-        380
+        320,
+        460
       ],
-      "id": "08c69fee-ea5d-41d3-b986-37396e531287",
-      "name": "Edit Fields"
+      "typeVersion": 1.1
     }
   ],
   "pinData": {
@@ -61701,6 +61695,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-08-20T17:31:17.000Z",
-  "versionId": "f615f6b5-7e9e-4097-9fd6-2e385b911714"
+  "updatedAt": "2025-08-20T19:16:51.000Z",
+  "versionId": "4f3def93-fd30-4426-9ceb-35f974fbe964"
 }

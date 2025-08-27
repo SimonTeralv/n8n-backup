@@ -441,17 +441,7 @@
       "name": "Merge"
     }
   ],
-  "pinData": {
-    "On form submission": [
-      {
-        "json": {
-          "Nombre": "Pago Monotributo - GONZZALES TOMAS",
-          "submittedAt": "2025-07-14T06:56:47.177-04:00",
-          "formMode": "production"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "repo_name": "n8n-backup",
   "repo_owner": "SimonTeralv",
   "repo_path": "",
@@ -463,6 +453,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-18T14:45:10.000Z",
-  "versionId": "5f94cfbb-4bcb-448e-8df2-9b7bee2b5dd6"
+  "updatedAt": "2025-08-26T14:24:23.000Z",
+  "versionId": "1dd1c129-fd4e-407b-a1b6-fc3a388abd3a"
 }

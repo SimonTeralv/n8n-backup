@@ -1,0 +1,21 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-09-12T15:47:20.889Z",
+  "id": "DTl6EZygI94BKth9",
+  "meta": null,
+  "name": "Prueba-API-Odoo-Comunity",
+  "nodes": [],
+  "pinData": {},
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-12T15:47:20.889Z",
+  "versionId": "8d355417-3a18-483c-b696-ff09767cf3a0"
+}

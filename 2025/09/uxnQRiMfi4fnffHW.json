@@ -1,0 +1,1260 @@
+{
+  "active": false,
+  "connections": {
+    "Odoo": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Odoo",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-23T19:46:02.059Z",
+  "id": "uxnQRiMfi4fnffHW",
+  "meta": null,
+  "name": "HistorialEstadosSheets",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "limit": 100,
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_tag",
+            "create_date",
+            "write_date",
+            "x_studio_log_fecha_y_hora"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.setZone('America/Argentina/Buenos_Aires').startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.setZone('America/Argentina/Buenos_Aires').minus({ days: 1 }).startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -260
+      ],
+      "id": "16057a3a-d0c5-41f7-a234-86a7ff2255a0",
+      "name": "Odoo",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1369918086,
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=1369918086"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Descripción": "={{ $json.x_name }}",
+            "Log_TAG": "={{ $json.x_studio_log_tag }}",
+            "Log_EstadoAnterior": "={{ $json.x_studio_log_estadoanterior }}",
+            "Log_EstadoNuevo": "={{ $json.x_studio_log_estadonuevo }}",
+            "Created on": "={{ $json.create_date_arg }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Descripción",
+              "displayName": "Descripción",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_TAG",
+              "displayName": "Log_TAG",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_EstadoAnterior",
+              "displayName": "Log_EstadoAnterior",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_EstadoNuevo",
+              "displayName": "Log_EstadoNuevo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Created on",
+              "displayName": "Created on",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        460,
+        -80
+      ],
+      "id": "e2d73b08-9011-4884-a448-0ebb51ff5a53",
+      "name": "Google Sheets",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        80,
+        -200
+      ],
+      "id": "44251bec-72ae-4451-bef8-0e096007920e",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1369918086,
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=1369918086"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -480,
+        -140
+      ],
+      "id": "0a82e6ff-e106-4e31-a8df-4c09ebc16396",
+      "name": "Google Sheets2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleApi": {
+          "id": "lyhQPnn1SI74SiUK",
+          "name": "Google Sheets - Service account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -300,
+        -200
+      ],
+      "id": "89b1cb5e-241d-4346-978f-574ba315c659",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Creamos un array con todas las Descripción válidas de Sheets\nconst descripcionList = items\n  .map(item => {\n    const desc = item.json.Descripción;\n    if (!desc || desc === \"[undefined]\") return null;\n    return desc.toString().trim().toLowerCase();\n  })\n  .filter(desc => desc); // eliminamos null/undefined\n\n// Filtramos los registros de Odoo que NO existen en Sheets y que tengan x_name válido\nconst notInSheets = items\n  .map(item => item.json)\n  .filter(json => {\n    const x_name = json.x_name;\n    if (!x_name || x_name === \"[undefined]\") return false; // descartamos undefined\n    return !descripcionList.includes(x_name.toString().trim().toLowerCase());\n  })\n  .map(json => {\n    // Convertimos create_date a hora Argentina y mantenemos formato YYYY-MM-DD HH:mm:ss\n    let create_date_arg = null;\n    if (json.create_date) {\n      const dateUTC = new Date(json.create_date + 'Z'); // UTC\n      // Convertimos a hora Argentina usando toLocaleString\n      const argDate = new Date(dateUTC.toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' }));\n      const yyyy = argDate.getFullYear();\n      const MM = String(argDate.getMonth() + 1).padStart(2, '0');\n      const dd = String(argDate.getDate()).padStart(2, '0');\n      const hh = String(argDate.getHours()).padStart(2, '0');\n      const mm = String(argDate.getMinutes()).padStart(2, '0');\n      const ss = String(argDate.getSeconds()).padStart(2, '0');\n      create_date_arg = `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;\n    }\n\n    return {\n      json: {\n        id: json.id,\n        x_name: json.x_name,\n        x_studio_log_estadoanterior: json.x_studio_log_estadoanterior,\n        x_studio_log_estadonuevo: json.x_studio_log_estadonuevo,\n        x_studio_log_tag: json.x_studio_log_tag,\n        create_date: json.create_date,\n        write_date: json.write_date,\n        x_studio_log_fecha_y_hora: json.x_studio_log_fecha_y_hora,\n        create_date_arg: create_date_arg\n      }\n    };\n  });\n\nreturn notInSheets;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        -200
+      ],
+      "id": "a3ae377c-f2dd-4cb6-ab2b-6b46d592bc4e",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Creamos un array con todas las Descripción válidas de Sheets\nconst descripcionList = items\n  .map(item => {\n    const desc = item.json.Descripción;\n    if (!desc || desc === \"[undefined]\") return null;\n    return desc.toString().trim().toLowerCase();\n  })\n  .filter(desc => desc); // eliminamos null/undefined\n\n// Filtramos los registros de Odoo que NO existen en Sheets y que tengan x_name válido\nconst notInSheets = items\n  .map(item => item.json)\n  .filter(json => {\n    const x_name = json.x_name;\n    if (!x_name || x_name === \"[undefined]\") return false; // descartamos undefined\n    return !descripcionList.includes(x_name.toString().trim().toLowerCase());\n  })\n  .map(json => ({\n    json: {\n      id: json.id,\n      x_name: json.x_name,\n      x_studio_log_estadoanterior: json.x_studio_log_estadoanterior,\n      x_studio_log_estadonuevo: json.x_studio_log_estadonuevo,\n      x_studio_log_tag: json.x_studio_log_tag,\n      create_date: json.create_date,\n      write_date: json.write_date,\n      x_studio_log_fecha_y_hora: json.x_studio_log_fecha_y_hora\n    }\n  }));\n\nreturn notInSheets;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        -60
+      ],
+      "id": "656d2d1b-de3c-4b34-bdab-0591f496e776",
+      "name": "Code4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        -200
+      ],
+      "id": "10ed0b9e-5ccf-4abf-b0a7-c17972263d05",
+      "name": "When clicking ‘Test workflow’"
+    }
+  ],
+  "pinData": {
+    "Odoo": [
+      {
+        "json": {
+          "id": 288,
+          "x_name": "LOG/0271 - 70-PT-12304-01 - 2025-09-22 11:10:25",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-12304-01",
+          "create_date": "2025-09-22 11:10:25",
+          "write_date": "2025-09-22 11:10:25",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:10:25"
+        }
+      },
+      {
+        "json": {
+          "id": 289,
+          "x_name": "LOG/0272 - 70-TT-A20100-32 - 2025-09-22 11:12:42",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-A20100-32",
+          "create_date": "2025-09-22 11:12:42",
+          "write_date": "2025-09-22 11:12:42",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:12:42"
+        }
+      },
+      {
+        "json": {
+          "id": 290,
+          "x_name": "LOG/0273 - 70-TT-36104-02 - 2025-09-22 11:13:14",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-36104-02",
+          "create_date": "2025-09-22 11:13:14",
+          "write_date": "2025-09-22 11:13:14",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:13:14"
+        }
+      },
+      {
+        "json": {
+          "id": 291,
+          "x_name": "LOG/0274 - 70-TT-A40100-09 - 2025-09-22 11:13:41",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-A40100-09",
+          "create_date": "2025-09-22 11:13:41",
+          "write_date": "2025-09-22 11:13:41",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:13:41"
+        }
+      },
+      {
+        "json": {
+          "id": 292,
+          "x_name": "LOG/0275 - PIAL 0860511 - 2025-09-22 11:23:54",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "PIAL 0860511",
+          "create_date": "2025-09-22 11:23:54",
+          "write_date": "2025-09-22 11:23:54",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:23:54"
+        }
+      },
+      {
+        "json": {
+          "id": 293,
+          "x_name": "LOG/0276 - 70-PT-A40100-37 - 2025-09-22 11:48:52",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A40100-37",
+          "create_date": "2025-09-22 11:48:52",
+          "write_date": "2025-09-22 11:48:52",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:48:52"
+        }
+      },
+      {
+        "json": {
+          "id": 294,
+          "x_name": "LOG/0277 - 70-PT-A40100-37 - 2025-09-22 11:49:04",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A40100-37",
+          "create_date": "2025-09-22 11:49:04",
+          "write_date": "2025-09-22 11:49:04",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:49:04"
+        }
+      },
+      {
+        "json": {
+          "id": 295,
+          "x_name": "LOG/0278 - 70-PT-A20100-12 - 2025-09-22 11:54:35",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A20100-12",
+          "create_date": "2025-09-22 11:54:35",
+          "write_date": "2025-09-22 11:54:35",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:54:35"
+        }
+      },
+      {
+        "json": {
+          "id": 296,
+          "x_name": "LOG/0279 - 70-PT-A20100-04 - 2025-09-22 11:55:14",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A20100-04",
+          "create_date": "2025-09-22 11:55:14",
+          "write_date": "2025-09-22 11:55:14",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:55:14"
+        }
+      },
+      {
+        "json": {
+          "id": 297,
+          "x_name": "LOG/0280 - 70-PT-A40100-04 - 2025-09-22 11:56:43",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A40100-04",
+          "create_date": "2025-09-22 11:56:43",
+          "write_date": "2025-09-22 11:56:43",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:56:43"
+        }
+      },
+      {
+        "json": {
+          "id": 298,
+          "x_name": "LOG/0281 - 70-PT-A40101-04 - 2025-09-22 11:58:32",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A40101-04",
+          "create_date": "2025-09-22 11:58:32",
+          "write_date": "2025-09-22 11:58:32",
+          "x_studio_log_fecha_y_hora": "2025-09-22 11:58:32"
+        }
+      },
+      {
+        "json": {
+          "id": 299,
+          "x_name": "LOG/0282 - 70-PT-A20101-04 - 2025-09-22 12:24:05",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A20101-04",
+          "create_date": "2025-09-22 12:24:05",
+          "write_date": "2025-09-22 12:24:05",
+          "x_studio_log_fecha_y_hora": "2025-09-22 12:24:05"
+        }
+      },
+      {
+        "json": {
+          "id": 300,
+          "x_name": "LOG/0283 - 70-TT-36809-08 - 2025-09-22 12:40:11",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36809-08",
+          "create_date": "2025-09-22 12:40:11",
+          "write_date": "2025-09-22 12:40:11",
+          "x_studio_log_fecha_y_hora": "2025-09-22 12:40:11"
+        }
+      },
+      {
+        "json": {
+          "id": 301,
+          "x_name": "LOG/0284 - 70-PT-50302-09 - 2025-09-22 12:41:58",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-50302-09",
+          "create_date": "2025-09-22 12:41:58",
+          "write_date": "2025-09-22 12:41:58",
+          "x_studio_log_fecha_y_hora": "2025-09-22 12:41:58"
+        }
+      },
+      {
+        "json": {
+          "id": 302,
+          "x_name": "LOG/0285 - 70-TT-34301-02 - 2025-09-22 12:51:24",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34301-02",
+          "create_date": "2025-09-22 12:51:24",
+          "write_date": "2025-09-22 12:51:24",
+          "x_studio_log_fecha_y_hora": "2025-09-22 12:51:24"
+        }
+      },
+      {
+        "json": {
+          "id": 303,
+          "x_name": "LOG/0286 - 70-PT-A40100-37 - 2025-09-22 13:00:49",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A40100-37",
+          "create_date": "2025-09-22 13:00:49",
+          "write_date": "2025-09-22 13:00:49",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:00:49"
+        }
+      },
+      {
+        "json": {
+          "id": 304,
+          "x_name": "LOG/0287 - 70-PT-A20101-04 - 2025-09-22 13:01:02",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A20101-04",
+          "create_date": "2025-09-22 13:01:02",
+          "write_date": "2025-09-22 13:01:02",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:01:02"
+        }
+      },
+      {
+        "json": {
+          "id": 305,
+          "x_name": "LOG/0288 - 70-TT-36106-07 - 2025-09-22 13:04:18",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36106-07",
+          "create_date": "2025-09-22 13:04:18",
+          "write_date": "2025-09-22 13:04:18",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:04:18"
+        }
+      },
+      {
+        "json": {
+          "id": 306,
+          "x_name": "LOG/0289 - 70-TT-34100-05B - 2025-09-22 13:12:40",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34100-05B",
+          "create_date": "2025-09-22 13:12:40",
+          "write_date": "2025-09-22 13:12:40",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:12:40"
+        }
+      },
+      {
+        "json": {
+          "id": 307,
+          "x_name": "LOG/0290 - 70-PT-A40100-06 - 2025-09-22 13:15:06",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A40100-06",
+          "create_date": "2025-09-22 13:15:06",
+          "write_date": "2025-09-22 13:15:06",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:15:06"
+        }
+      },
+      {
+        "json": {
+          "id": 308,
+          "x_name": "LOG/0291 - 70-TT-33503-05 - 2025-09-22 13:26:26",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-33503-05",
+          "create_date": "2025-09-22 13:26:26",
+          "write_date": "2025-09-22 13:26:26",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:26:26"
+        }
+      },
+      {
+        "json": {
+          "id": 309,
+          "x_name": "LOG/0292 - 70-TT-A20101-11 - 2025-09-22 13:40:36",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-A20101-11",
+          "create_date": "2025-09-22 13:40:36",
+          "write_date": "2025-09-22 13:40:36",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:40:36"
+        }
+      },
+      {
+        "json": {
+          "id": 310,
+          "x_name": "LOG/0293 - 70-TT-12305-03 - 2025-09-22 13:44:13",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-12305-03",
+          "create_date": "2025-09-22 13:44:13",
+          "write_date": "2025-09-22 13:44:13",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:44:13"
+        }
+      },
+      {
+        "json": {
+          "id": 311,
+          "x_name": "LOG/0294 - 70-PT-36800-15 - 2025-09-22 13:56:35",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36800-15",
+          "create_date": "2025-09-22 13:56:35",
+          "write_date": "2025-09-22 13:56:35",
+          "x_studio_log_fecha_y_hora": "2025-09-22 13:56:35"
+        }
+      },
+      {
+        "json": {
+          "id": 312,
+          "x_name": "LOG/0295 - 70-PT-12304-01 - 2025-09-22 14:14:17",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-12304-01",
+          "create_date": "2025-09-22 14:14:17",
+          "write_date": "2025-09-22 14:14:17",
+          "x_studio_log_fecha_y_hora": "2025-09-22 14:14:17"
+        }
+      },
+      {
+        "json": {
+          "id": 313,
+          "x_name": "LOG/0296 - 70-TT-A20100-09 - 2025-09-22 14:34:53",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-A20100-09",
+          "create_date": "2025-09-22 14:34:53",
+          "write_date": "2025-09-22 14:34:53",
+          "x_studio_log_fecha_y_hora": "2025-09-22 14:34:53"
+        }
+      },
+      {
+        "json": {
+          "id": 314,
+          "x_name": "LOG/0297 - 70-TT-36104-02 - 2025-09-22 14:48:09",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36104-02",
+          "create_date": "2025-09-22 14:48:09",
+          "write_date": "2025-09-22 14:48:09",
+          "x_studio_log_fecha_y_hora": "2025-09-22 14:48:09"
+        }
+      },
+      {
+        "json": {
+          "id": 315,
+          "x_name": "LOG/0298 - 70-TT-33510-01 - 2025-09-22 15:00:06",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-33510-01",
+          "create_date": "2025-09-22 15:00:06",
+          "write_date": "2025-09-22 15:00:06",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:00:06"
+        }
+      },
+      {
+        "json": {
+          "id": 316,
+          "x_name": "LOG/0299 - 70-PT-33503-07 - 2025-09-22 15:03:50",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-33503-07",
+          "create_date": "2025-09-22 15:03:50",
+          "write_date": "2025-09-22 15:03:50",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:03:50"
+        }
+      },
+      {
+        "json": {
+          "id": 317,
+          "x_name": "LOG/0300 - 70-PT-50302-09 - 2025-09-22 15:18:00",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-50302-09",
+          "create_date": "2025-09-22 15:18:00",
+          "write_date": "2025-09-22 15:18:00",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:18:00"
+        }
+      },
+      {
+        "json": {
+          "id": 318,
+          "x_name": "LOG/0301 - 07-TT-03017 - 2025-09-22 15:18:59",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-03017",
+          "create_date": "2025-09-22 15:18:59",
+          "write_date": "2025-09-22 15:18:59",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:18:59"
+        }
+      },
+      {
+        "json": {
+          "id": 319,
+          "x_name": "LOG/0302 - 70-PT-36802-04 - 2025-09-22 15:45:19",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36802-04",
+          "create_date": "2025-09-22 15:45:19",
+          "write_date": "2025-09-22 15:45:19",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:45:19"
+        }
+      },
+      {
+        "json": {
+          "id": 320,
+          "x_name": "LOG/0303 - 07-TT-29001 - 2025-09-22 15:45:48",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-29001",
+          "create_date": "2025-09-22 15:45:48",
+          "write_date": "2025-09-22 15:45:48",
+          "x_studio_log_fecha_y_hora": "2025-09-22 15:45:48"
+        }
+      },
+      {
+        "json": {
+          "id": 321,
+          "x_name": "LOG/0304 - 70-PT-34102-01B - 2025-09-22 16:47:30",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-34102-01B",
+          "create_date": "2025-09-22 16:47:30",
+          "write_date": "2025-09-22 16:47:30",
+          "x_studio_log_fecha_y_hora": "2025-09-22 16:47:30"
+        }
+      },
+      {
+        "json": {
+          "id": 322,
+          "x_name": "LOG/0305 - 70-TT-36802-01 - 2025-09-22 17:16:29",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-36802-01",
+          "create_date": "2025-09-22 17:16:29",
+          "write_date": "2025-09-22 17:16:29",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:16:29"
+        }
+      },
+      {
+        "json": {
+          "id": 323,
+          "x_name": "LOG/0306 - 70-TT-12301-03 - 2025-09-22 17:18:22",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-12301-03",
+          "create_date": "2025-09-22 17:18:22",
+          "write_date": "2025-09-22 17:18:22",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:18:22"
+        }
+      },
+      {
+        "json": {
+          "id": 324,
+          "x_name": "LOG/0307 - 70-TT-34106-07 - 2025-09-22 17:21:10",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-34106-07",
+          "create_date": "2025-09-22 17:21:10",
+          "write_date": "2025-09-22 17:21:10",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:21:10"
+        }
+      },
+      {
+        "json": {
+          "id": 325,
+          "x_name": "LOG/0308 - 70-PT-A40100-12 - 2025-09-22 17:22:28",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A40100-12",
+          "create_date": "2025-09-22 17:22:28",
+          "write_date": "2025-09-22 17:22:28",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:22:28"
+        }
+      },
+      {
+        "json": {
+          "id": 326,
+          "x_name": "LOG/0309 - 07-TT-29001 - 2025-09-22 17:23:01",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-29001",
+          "create_date": "2025-09-22 17:23:01",
+          "write_date": "2025-09-22 17:23:01",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:23:01"
+        }
+      },
+      {
+        "json": {
+          "id": 327,
+          "x_name": "LOG/0310 - 07-TT-11001 - 2025-09-22 17:24:14",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-11001",
+          "create_date": "2025-09-22 17:24:14",
+          "write_date": "2025-09-22 17:24:14",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:24:14"
+        }
+      },
+      {
+        "json": {
+          "id": 328,
+          "x_name": "LOG/0311 - 07-TT-28005 - 2025-09-22 17:25:51",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-28005",
+          "create_date": "2025-09-22 17:25:51",
+          "write_date": "2025-09-22 17:25:51",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:25:51"
+        }
+      },
+      {
+        "json": {
+          "id": 329,
+          "x_name": "LOG/0312 - 07-TT-40010 - 2025-09-22 17:26:30",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-40010",
+          "create_date": "2025-09-22 17:26:30",
+          "write_date": "2025-09-22 17:26:30",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:26:30"
+        }
+      },
+      {
+        "json": {
+          "id": 330,
+          "x_name": "LOG/0313 - 07-TT-18003 - 2025-09-22 17:27:04",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-18003",
+          "create_date": "2025-09-22 17:27:04",
+          "write_date": "2025-09-22 17:27:04",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:27:04"
+        }
+      },
+      {
+        "json": {
+          "id": 331,
+          "x_name": "LOG/0314 - 70-PT-36805-17 - 2025-09-22 17:37:05",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-36805-17",
+          "create_date": "2025-09-22 17:37:05",
+          "write_date": "2025-09-22 17:37:05",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:37:05"
+        }
+      },
+      {
+        "json": {
+          "id": 332,
+          "x_name": "LOG/0315 - 70-PT-36805-12 - 2025-09-22 17:38:17",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36805-12",
+          "create_date": "2025-09-22 17:38:17",
+          "write_date": "2025-09-22 17:38:17",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:38:17"
+        }
+      },
+      {
+        "json": {
+          "id": 333,
+          "x_name": "LOG/0316 - 70-TT-34104-02 - 2025-09-22 17:46:51",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-34104-02",
+          "create_date": "2025-09-22 17:46:51",
+          "write_date": "2025-09-22 17:46:51",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:46:51"
+        }
+      },
+      {
+        "json": {
+          "id": 334,
+          "x_name": "LOG/0317 - 70-TT-34104-02 - 2025-09-22 17:49:21",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-34104-02",
+          "create_date": "2025-09-22 17:49:21",
+          "write_date": "2025-09-22 17:49:21",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:49:21"
+        }
+      },
+      {
+        "json": {
+          "id": 335,
+          "x_name": "LOG/0318 - 07-TT-32003 - 2025-09-22 17:49:59",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-32003",
+          "create_date": "2025-09-22 17:49:59",
+          "write_date": "2025-09-22 17:49:59",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:49:59"
+        }
+      },
+      {
+        "json": {
+          "id": 336,
+          "x_name": "LOG/0319 - 07-TT-32001 - 2025-09-22 17:50:31",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "07-TT-32001",
+          "create_date": "2025-09-22 17:50:31",
+          "write_date": "2025-09-22 17:50:31",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:50:31"
+        }
+      },
+      {
+        "json": {
+          "id": 337,
+          "x_name": "LOG/0320 - 70-TT-A20100-11 - 2025-09-22 17:52:40",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-A20100-11",
+          "create_date": "2025-09-22 17:52:39",
+          "write_date": "2025-09-22 17:52:39",
+          "x_studio_log_fecha_y_hora": "2025-09-22 17:52:40"
+        }
+      },
+      {
+        "json": {
+          "id": 338,
+          "x_name": "LOG/0321 - 70-PT-A20100-16 - 2025-09-22 18:03:18",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A20100-16",
+          "create_date": "2025-09-22 18:03:18",
+          "write_date": "2025-09-22 18:03:18",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:03:18"
+        }
+      },
+      {
+        "json": {
+          "id": 339,
+          "x_name": "LOG/0322 - 70-TT-34106-07 - 2025-09-22 18:04:12",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34106-07",
+          "create_date": "2025-09-22 18:04:12",
+          "write_date": "2025-09-22 18:04:12",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:04:12"
+        }
+      },
+      {
+        "json": {
+          "id": 340,
+          "x_name": "LOG/0323 - 70-PT-36805-12 - 2025-09-22 18:16:45",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-36805-12",
+          "create_date": "2025-09-22 18:16:45",
+          "write_date": "2025-09-22 18:16:45",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:16:45"
+        }
+      },
+      {
+        "json": {
+          "id": 341,
+          "x_name": "LOG/0324 - 70-PT-A40100-12 - 2025-09-22 18:20:58",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-A40100-12",
+          "create_date": "2025-09-22 18:20:58",
+          "write_date": "2025-09-22 18:20:58",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:20:58"
+        }
+      },
+      {
+        "json": {
+          "id": 342,
+          "x_name": "LOG/0325 - 70-PT-37310-03 - 2025-09-22 18:26:04",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-37310-03",
+          "create_date": "2025-09-22 18:26:04",
+          "write_date": "2025-09-22 18:26:04",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:26:04"
+        }
+      },
+      {
+        "json": {
+          "id": 343,
+          "x_name": "LOG/0326 - 70-TT-34100-05A - 2025-09-22 18:46:45",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34100-05A",
+          "create_date": "2025-09-22 18:46:45",
+          "write_date": "2025-09-22 18:46:45",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:46:45"
+        }
+      },
+      {
+        "json": {
+          "id": 344,
+          "x_name": "LOG/0327 - 70-TT-A20100-11 - 2025-09-22 18:50:55",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-TT-A20100-11",
+          "create_date": "2025-09-22 18:50:55",
+          "write_date": "2025-09-22 18:50:55",
+          "x_studio_log_fecha_y_hora": "2025-09-22 18:50:55"
+        }
+      },
+      {
+        "json": {
+          "id": 345,
+          "x_name": "LOG/0328 - 70-TT-34104-02 - 2025-09-22 19:04:34",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34104-02",
+          "create_date": "2025-09-22 19:04:34",
+          "write_date": "2025-09-22 19:04:34",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:04:34"
+        }
+      },
+      {
+        "json": {
+          "id": 346,
+          "x_name": "LOG/0329 - 70-PT-12301-02 - 2025-09-22 19:05:41",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-12301-02",
+          "create_date": "2025-09-22 19:05:41",
+          "write_date": "2025-09-22 19:05:41",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:05:41"
+        }
+      },
+      {
+        "json": {
+          "id": 347,
+          "x_name": "LOG/0330 - 70-TT-50302-01 - 2025-09-22 19:11:23",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-50302-01",
+          "create_date": "2025-09-22 19:11:23",
+          "write_date": "2025-09-22 19:11:23",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:11:23"
+        }
+      },
+      {
+        "json": {
+          "id": 348,
+          "x_name": "LOG/0331 - 70-TT-50301-05 - 2025-09-22 19:31:27",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-50301-05",
+          "create_date": "2025-09-22 19:31:27",
+          "write_date": "2025-09-22 19:31:27",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:31:27"
+        }
+      },
+      {
+        "json": {
+          "id": 349,
+          "x_name": "LOG/0332 - 70-PT-38300-14 - 2025-09-22 19:37:39",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-38300-14",
+          "create_date": "2025-09-22 19:37:39",
+          "write_date": "2025-09-22 19:37:39",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:37:39"
+        }
+      },
+      {
+        "json": {
+          "id": 350,
+          "x_name": "LOG/0333 - 70-PT-A20100-37 - 2025-09-22 19:59:22",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-A20100-37",
+          "create_date": "2025-09-22 19:59:22",
+          "write_date": "2025-09-22 19:59:22",
+          "x_studio_log_fecha_y_hora": "2025-09-22 19:59:22"
+        }
+      },
+      {
+        "json": {
+          "id": 351,
+          "x_name": "LOG/0334 - 70-TT-36100-05B - 2025-09-22 20:03:06",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36100-05B",
+          "create_date": "2025-09-22 20:03:06",
+          "write_date": "2025-09-22 20:03:06",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:03:06"
+        }
+      },
+      {
+        "json": {
+          "id": 352,
+          "x_name": "LOG/0335 - 70-PT-33503-07 - 2025-09-22 20:05:33",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-33503-07",
+          "create_date": "2025-09-22 20:05:33",
+          "write_date": "2025-09-22 20:05:33",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:05:33"
+        }
+      },
+      {
+        "json": {
+          "id": 353,
+          "x_name": "LOG/0336 - 70-TT-36100-05A - 2025-09-22 20:05:50",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36100-05A",
+          "create_date": "2025-09-22 20:05:50",
+          "write_date": "2025-09-22 20:05:50",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:05:50"
+        }
+      },
+      {
+        "json": {
+          "id": 354,
+          "x_name": "LOG/0337 - 70-PT-36802-04 - 2025-09-22 20:18:42",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-36802-04",
+          "create_date": "2025-09-22 20:18:42",
+          "write_date": "2025-09-22 20:18:42",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:18:42"
+        }
+      },
+      {
+        "json": {
+          "id": 355,
+          "x_name": "LOG/0338 - 70-PT-34102-01A - 2025-09-22 20:22:31",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-34102-01A",
+          "create_date": "2025-09-22 20:22:31",
+          "write_date": "2025-09-22 20:22:31",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:22:31"
+        }
+      },
+      {
+        "json": {
+          "id": 356,
+          "x_name": "LOG/0339 - 70-PT-36800-15 - 2025-09-22 20:26:03",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-36800-15",
+          "create_date": "2025-09-22 20:26:03",
+          "write_date": "2025-09-22 20:26:03",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:26:03"
+        }
+      },
+      {
+        "json": {
+          "id": 357,
+          "x_name": "LOG/0340 - 70-TT-36802-01 - 2025-09-22 20:26:24",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-36802-01",
+          "create_date": "2025-09-22 20:26:24",
+          "write_date": "2025-09-22 20:26:24",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:26:24"
+        }
+      },
+      {
+        "json": {
+          "id": 358,
+          "x_name": "LOG/0341 - 70-PT-36102-01B - 2025-09-22 20:45:15",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36102-01B",
+          "create_date": "2025-09-22 20:45:15",
+          "write_date": "2025-09-22 20:45:15",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:45:15"
+        }
+      },
+      {
+        "json": {
+          "id": 359,
+          "x_name": "LOG/0342 - 70-PT-36102-01B - 2025-09-22 20:45:25",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36102-01B",
+          "create_date": "2025-09-22 20:45:25",
+          "write_date": "2025-09-22 20:45:25",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:45:25"
+        }
+      },
+      {
+        "json": {
+          "id": 360,
+          "x_name": "LOG/0343 - 70-TT-34102-23 - 2025-09-22 20:49:47",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-34102-23",
+          "create_date": "2025-09-22 20:49:47",
+          "write_date": "2025-09-22 20:49:47",
+          "x_studio_log_fecha_y_hora": "2025-09-22 20:49:47"
+        }
+      },
+      {
+        "json": {
+          "id": 361,
+          "x_name": "LOG/0344 - 70-PT-34102-01B - 2025-09-22 21:01:29",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-PT-34102-01B",
+          "create_date": "2025-09-22 21:01:29",
+          "write_date": "2025-09-22 21:01:29",
+          "x_studio_log_fecha_y_hora": "2025-09-22 21:01:29"
+        }
+      },
+      {
+        "json": {
+          "id": 362,
+          "x_name": "LOG/0345 - 70-PT-36102-01A - 2025-09-22 21:06:52",
+          "x_studio_log_estadoanterior": "Sin empezar",
+          "x_studio_log_estadonuevo": "Calibrado",
+          "x_studio_log_tag": "70-PT-36102-01A",
+          "create_date": "2025-09-22 21:06:52",
+          "write_date": "2025-09-22 21:06:52",
+          "x_studio_log_fecha_y_hora": "2025-09-22 21:06:52"
+        }
+      },
+      {
+        "json": {
+          "id": 363,
+          "x_name": "LOG/0346 - 70-TT-12301-03 - 2025-09-22 21:10:50",
+          "x_studio_log_estadoanterior": "Calibrado",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_tag": "70-TT-12301-03",
+          "create_date": "2025-09-22 21:10:50",
+          "write_date": "2025-09-22 21:10:50",
+          "x_studio_log_fecha_y_hora": "2025-09-22 21:10:50"
+        }
+      }
+    ]
+  },
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-23T19:46:24.000Z",
+  "versionId": "8aeb09d6-3b91-4462-8fc6-5bfff56f027a"
+}

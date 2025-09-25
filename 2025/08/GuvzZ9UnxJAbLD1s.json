@@ -50,7 +50,7 @@
       "main": [
         [
           {
-            "node": "Odoo4",
+            "node": "Odoo1",
             "type": "main",
             "index": 0
           }
@@ -136,13 +136,7 @@
     },
     "Code": {
       "main": [
-        [
-          {
-            "node": "Google Sheets1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Odoo1": {
@@ -267,10 +261,10 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": 2100414345,
+          "value": "gid=0",
           "mode": "list",
-          "cachedResultName": "TestIngresos-N8N",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=2100414345"
+          "cachedResultName": "Parte Diario",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=0"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -459,13 +453,13 @@
       "parameters": {
         "content": "## Cambios de Estado del día\nChequea los cambios de estados\nde los productos y carga en sheets \nlos que sean de hoy",
         "height": 460,
-        "width": 1700,
+        "width": 1720,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -660,
+        -680,
         640
       ],
       "id": "0b1890c7-5bf2-4e41-9b1d-745c7ff18e4d",
@@ -792,6 +786,157 @@
       ],
       "id": "451a5d0f-a7d6-4170-a52c-6a85b1f11433",
       "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2100414345,
+          "mode": "list",
+          "cachedResultName": "TestIngresos-N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=2100414345"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Descripción de la tarea": "={{ $json.message }}",
+            "Lugar de trabajo": "Planta",
+            "Hora Inicio": "8:00:00 ",
+            "Hora Fin": "17:00:00 ",
+            "Categoría": "Interno"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha \n(mes/día/año)",
+              "displayName": "Fecha \n(mes/día/año)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Se autocompleta \n(solo aclarar si es Feriado)",
+              "displayName": "Se autocompleta \n(solo aclarar si es Feriado)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Descripción de la tarea",
+              "displayName": "Descripción de la tarea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lugar de trabajo",
+              "displayName": "Lugar de trabajo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hora Inicio",
+              "displayName": "Hora Inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hora Fin",
+              "displayName": "Hora Fin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Horas extra\n(pasadas a Hs normales)",
+              "displayName": "Horas extra\n(pasadas a Hs normales)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Horas normales",
+              "displayName": "Horas normales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Total Horas",
+              "displayName": "Total Horas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Equipo de trabajo",
+              "displayName": "Equipo de trabajo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Categoría",
+              "displayName": "Categoría",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        880,
+        480
+      ],
+      "id": "bb6749b5-84f8-4027-a492-dd267eb88a68",
+      "name": "Google Sheets",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {
@@ -866,6 +1011,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-09-23T19:47:14.000Z",
-  "versionId": "ae44aab8-6e71-44e0-aeb7-169c3619383e"
+  "updatedAt": "2025-09-24T11:35:49.000Z",
+  "versionId": "7ab02694-b175-480d-8d09-0b056f94312c"
 }

@@ -83,6 +83,22 @@
           }
         ]
       ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Odoo",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-23T19:46:02.059Z",
@@ -126,7 +142,7 @@
       "typeVersion": 1,
       "position": [
         -480,
-        -260
+        -280
       ],
       "id": "16057a3a-d0c5-41f7-a234-86a7ff2255a0",
       "name": "Odoo",
@@ -222,8 +238,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        460,
-        -80
+        220,
+        -200
       ],
       "id": "e2d73b08-9011-4884-a448-0ebb51ff5a53",
       "name": "Google Sheets",
@@ -242,7 +258,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        80,
+        20,
         -200
       ],
       "id": "44251bec-72ae-4451-bef8-0e096007920e",
@@ -269,7 +285,7 @@
       "typeVersion": 4.5,
       "position": [
         -480,
-        -140
+        -120
       ],
       "id": "0a82e6ff-e106-4e31-a8df-4c09ebc16396",
       "name": "Google Sheets2",
@@ -324,14 +340,80 @@
       "typeVersion": 1,
       "position": [
         -700,
-        -200
+        -320
       ],
       "id": "10ed0b9e-5ccf-4abf-b0a7-c17972263d05",
       "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -700,
+        -120
+      ],
+      "id": "6d6a24d6-200d-431a-ba1a-c96e4ff049a9",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "limit": 100,
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_tag",
+            "create_date",
+            "write_date",
+            "x_studio_log_fecha_y_hora"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.setZone('America/Argentina/Buenos_Aires').startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.setZone('America/Argentina/Buenos_Aires').minus({ days: 1 }).startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -440
+      ],
+      "id": "2d852547-692f-4f1a-ae86-03fd4a1971ea",
+      "name": "Odoo1",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
     }
   ],
   "pinData": {
-    "Odoo": [
+    "Odoo1": [
       {
         "json": {
           "id": 288,
@@ -1252,9 +1334,13 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-09-23T19:46:24.000Z",
-  "versionId": "8aeb09d6-3b91-4462-8fc6-5bfff56f027a"
+  "triggerCount": 1,
+  "updatedAt": "2025-09-24T14:05:21.000Z",
+  "versionId": "76b2f584-a7e9-4c10-93b8-1be4c38fee4b"
 }

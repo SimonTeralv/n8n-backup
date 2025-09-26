@@ -1,0 +1,1018 @@
+{
+  "active": true,
+  "connections": {
+    "Test": {
+      "main": [
+        [
+          {
+            "node": "Supabase5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Odoo1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Opcional, FiltroPersonalizado1": {
+      "main": [
+        [
+          {
+            "node": "Odoo2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Supabase7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase5": {
+      "main": [
+        [
+          {
+            "node": "Supabase9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase7": {
+      "main": [
+        [
+          {
+            "node": "Supabase6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase8": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase9": {
+      "main": [
+        [
+          {
+            "node": "Opcional, FiltroPersonalizado1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Supabase8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Supabase5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Odoo2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-25T12:54:12.627Z",
+  "id": "7l90J4a0yzKqHLsd",
+  "meta": null,
+  "name": "PR-0515-CambiosEstadosOdoo",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1520,
+        300
+      ],
+      "id": "990567d5-f8ee-4b7f-b62b-7cc31cccb479",
+      "name": "Test"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_registro_relacionado",
+            "x_studio_log_ubicacionfinal",
+            "x_studio_log_numerodeserie",
+            "x_studio_log_tag"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserThen",
+              "value": "={{ $now.endOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        220
+      ],
+      "id": "cef2850e-0202-411e-af5d-b4e6380b4a04",
+      "name": "Odoo1",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -740,
+        300
+      ],
+      "id": "535a502f-7c11-4e3e-ab8e-4f143961a8a8",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1vSOdaOhmDfKsMNzOEhS5Odh-ns0uHpdQH6u1tPFyzZA/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Parte Diario",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Descripción de la tarea": "={{ $json.message }}",
+            "Lugar de trabajo": "Planta",
+            "Hora Inicio": "8:00:00 ",
+            "Hora Fin": "17:00:00 ",
+            "Categoría": "Interno",
+            "Fecha": "={{ $now.minus({ days: 1 }).setZone('America/Argentina/Buenos_Aires').endOf('day').toFormat(\"MM-dd-yyyy'\") }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Descripción de la tarea",
+              "displayName": "Descripción de la tarea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Lugar de trabajo",
+              "displayName": "Lugar de trabajo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hora Inicio",
+              "displayName": "Hora Inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hora Fin",
+              "displayName": "Hora Fin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Categoría",
+              "displayName": "Categoría",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        0,
+        180
+      ],
+      "id": "8f479fdc-dd2e-4106-8194-df260f1ca2e5",
+      "name": "Google Sheets1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleApi": {
+          "id": "lyhQPnn1SI74SiUK",
+          "name": "Google Sheets - Service account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Cambios de Estado del día\nChequea los cambios de estados\nde los productos y carga en sheets \nlos que sean de hoy",
+        "height": 460,
+        "width": 1720,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1560,
+        160
+      ],
+      "id": "db084ae2-ea59-44ec-b96d-9eb2429507c7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "aada2151-665c-465f-b422-a2ca55180ffe",
+              "name": "yesterday",
+              "value": "2025-08-17T02:59:59",
+              "type": "string"
+            },
+            {
+              "id": "3cb275d2-c59c-441e-a9a6-4749cf9a617d",
+              "name": "Comienzo del día",
+              "value": "={{ $now.endOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1060,
+        300
+      ],
+      "id": "c7f04123-3055-4e46-912c-2abc6259939e",
+      "name": "Opcional, FiltroPersonalizado1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5e22b82b-6d37-4ada-ae79-69e1ffc59a6f",
+              "name": "id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "05aa4e40-fdd4-4c4a-a4c0-6b4445df3287",
+              "name": "name",
+              "value": "={{ $json.x_name }}",
+              "type": "string"
+            },
+            {
+              "id": "480d9047-49b1-4939-b4be-e5e96d129bae",
+              "name": "x_studio_log_estadoanterior",
+              "value": "={{ $json.x_studio_log_estadoanterior }}",
+              "type": "string"
+            },
+            {
+              "id": "e90b8dda-76c7-4a6e-ae3a-e0ff77769f0c",
+              "name": "x_studio_log_estadonuevo",
+              "value": "={{ $json.x_studio_log_estadonuevo }}",
+              "type": "string"
+            },
+            {
+              "id": "8b2ea811-5591-4135-932c-b2c79fbfe64b",
+              "name": "x_studio_log_fecha_y_hora",
+              "value": "={{ $json.x_studio_log_fecha_y_hora }}",
+              "type": "string"
+            },
+            {
+              "id": "722e68ee-383a-4c50-a57a-f6af3a2b12d7",
+              "name": "x_studio_log_numerodeserie",
+              "value": "={{ $json.x_studio_log_numerodeserie }}",
+              "type": "string"
+            },
+            {
+              "id": "3366dc4b-1982-4122-a630-79c68c455163",
+              "name": "x_studio_log_tag",
+              "value": "={{ $json.x_studio_log_tag }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        420
+      ],
+      "id": "d474d705-8f40-43b2-a181-693b11e9e3e8",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "=Variable_sheets_varios"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        300
+      ],
+      "id": "278d504f-a896-47d8-be9f-0be3bc4b262b",
+      "name": "Supabase5",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "=Variable_sheets_varios"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "={{ $('Supabase7').item.json.Texto }}\nEl equipo con el TAG: {{ $('Edit Fields1').item.json.x_studio_log_tag }} y N/S: {{ $('Edit Fields1').item.json.x_studio_log_numerodeserie }};Paso del estado\"{{ $('Edit Fields1').item.json.x_studio_log_estadoanterior }}\" a \"{{ $('Edit Fields1').item.json.x_studio_log_estadonuevo }}\""
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        0,
+        420
+      ],
+      "id": "5e65db33-e056-4a52-937e-5732445ec347",
+      "name": "Supabase6",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "=Variable_sheets_varios"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        420
+      ],
+      "id": "d4046cf6-e67e-4786-ada7-cb3d53167a8e",
+      "name": "Supabase7",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "Var-Control-Documentario",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "keyValue": "=Variable_sheets_varios"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        180
+      ],
+      "id": "4585edec-11d7-4ad3-819a-905a3518c42c",
+      "name": "Supabase8",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Var-Control-Documentario",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "variable",
+              "condition": "eq",
+              "keyValue": "=Variable_sheets_varios"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Texto",
+              "fieldValue": "= "
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        300
+      ],
+      "id": "b481bf27-3022-46ec-a14f-6c7c98ca791c",
+      "name": "Supabase9",
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "ZvkTz1mTFoOcPh6G",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        180
+      ],
+      "id": "b3b916cf-d8d2-466e-81ad-e2111d510cf8",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Tomamos el texto de entrada desde n8n\nconst inputText = $input.first().json.Texto || \"\";\n\n// Objeto para agrupar tags por estado final\nconst estadosAgrupados = {};\n\n// Mapa de traducción de estados a frases\nconst estadoAFraza = {\n    \"Sin empezar\": \"Se realiza el desmontaje de\",\n    \"Calibrado\": \"Se realiza la calibración de\",\n    \"🔴 Montado, no conexionado\": \"Se realiza el montaje de\",\n    \"🟡 Montado conexionado, no probado\": \"Se realiza el conexionado de\",\n    \"🟢 Precomisionado, ok\": \"Se realiza el precomisionado de\"\n};\n\n// Orden deseado\nconst ordenEstados = [\n    \"Sin empezar\",\n    \"Calibrado\",\n    \"🔴 Montado, no conexionado\",\n    \"🟡 Montado conexionado, no probado\",\n    \"🟢 Precomisionado, ok\"\n];\n\n// Separar cada línea\nconst lines = inputText.split('\\n').filter(l => l.trim() !== '');\n\n// Procesar cada línea\nfor (const line of lines) {\n    // Extraer el tag\n    const tagMatch = line.match(/TAG:\\s*(.*?)\\s+y/);\n    const tag = tagMatch ? tagMatch[1] : 'sin_tag';\n\n    // Extraer el estado final (después de 'a \"')\n    const estadoMatch = line.match(/a\\s*\"([^\"]+)\"/);\n    const estadoFinal = estadoMatch ? estadoMatch[1] : 'Sin Estado';\n\n    // Agrupar por estado final\n    if (!estadosAgrupados[estadoFinal]) {\n        estadosAgrupados[estadoFinal] = [];\n    }\n    estadosAgrupados[estadoFinal].push(tag);\n}\n\n// Construir el resultado final en el orden deseado\nconst resultados = [];\nfor (const estado of ordenEstados) {\n    if (estadosAgrupados[estado] && estadosAgrupados[estado].length > 0) {\n        const frase = estadoAFraza[estado];\n        resultados.push(`${frase} (${estadosAgrupados[estado].length} equipos): ${estadosAgrupados[estado].join(', ')}`);\n    }\n}\n\n// Concatenamos todo en un solo string con saltos de línea\nconst resultadoFinal = resultados.join('\\n');\n\n// Retornamos como un único item\nreturn [{ json: { message: resultadoFinal } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        180
+      ],
+      "id": "625e628c-854d-41c5-87a5-8b4b87132ab6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over all input items\nfor (const item of $input.all()) {\n    if (item.json.x_studio_log_estadoanterior === \"Sin Instalar\") {\n        item.json.x_studio_log_estadoanterior = \"Sin Instalar\";\n    } else if (item.json.x_studio_log_estadoanterior === \"Instalado, sin probar\") {\n        item.json.x_studio_log_estadoanterior = \"🔴 Montado, no conexionado\";\n    } else if (item.json.x_studio_log_estadoanterior === \"Probado, falla\") {\n        item.json.x_studio_log_estadoanterior = \"🟡 Montado conexionado, no probado\";\n    } else if (item.json.x_studio_log_estadoanterior === \"Probado, listo\") {\n        item.json.x_studio_log_estadoanterior = \"🟢 Precomisionado, ok\";\n    }\n}\nfor (const item of $input.all()) {\n    if (item.json.x_studio_log_estadonuevo === \"Sin Instalar\") {\n        item.json.x_studio_log_estadonuevo = \"Sin Instalar\";\n    } else if (item.json.x_studio_log_estadonuevo === \"Instalado, sin probar\") {\n        item.json.x_studio_log_estadonuevo = \"🔴 Montado, no conexionado\";\n    } else if (item.json.x_studio_log_estadonuevo === \"Montado, no conexionado\") {\n        item.json.x_studio_log_estadonuevo = \"🔴 Montado, no conexionado\"; \n    }  else if (item.json.x_studio_log_estadonuevo === \"Probado, falla\") {\n        item.json.x_studio_log_estadonuevo = \"🟡 Montado conexionado, no probado\";\n    } else if (item.json.x_studio_log_estadonuevo === \"Probado, listo\") {\n        item.json.x_studio_log_estadonuevo = \"🟢 Precomisionado, ok\";\n    }\n}\n// Return the modified items\nreturn $input.all();\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -500,
+        420
+      ],
+      "id": "4216738a-fe93-4dc2-83b0-d0d4936440bc",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Iteramos sobre todos los items\nfor (const item of $input.all()) {\n    // Tomamos la fecha de Odoo\n    let createDateUTC = item.json.create_date; // ej: \"2025-09-22 11:10:25\"\n    \n    if (createDateUTC) {\n        // Convertimos a formato ISO\n        createDateUTC = createDateUTC.replace(' ', 'T');\n\n        // Convertimos a hora Argentina\n        const createDateArgentina = DateTime.fromISO(createDateUTC, { zone: 'utc' }) // Odoo guarda en UTC\n            .setZone('America/Argentina/Buenos_Aires') // convertir a Argentina\n            .toFormat(\"yyyy-MM-dd HH:mm:ss\");\n\n        // Agregamos la nueva propiedad al item\n        item.json.create_date_arg = createDateArgentina;\n    } else {\n        // Si no hay fecha, ponemos null\n        item.json.create_date_arg = null;\n    }\n}\n\n// Devolvemos todos los items con la nueva propiedad\nreturn $input.all();\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -800,
+        640
+      ],
+      "id": "28a75a09-ec95-45de-ad0d-7ff80c48fec5",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1520,
+        440
+      ],
+      "id": "50b31a05-0c91-4e13-b261-7431ddbcd88d",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1vSOdaOhmDfKsMNzOEhS5Odh-ns0uHpdQH6u1tPFyzZA/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2100414345,
+          "mode": "list",
+          "cachedResultName": "TestIngresos-N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=2100414345"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Descripción de la tarea": "={{ $json.message }}",
+            "Lugar de trabajo": "Planta",
+            "Hora Inicio": "8:00:00 ",
+            "Hora Fin": "17:00:00 ",
+            "Categoría": "Interno"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Fecha \n(mes/día/año)",
+              "displayName": "Fecha \n(mes/día/año)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Se autocompleta \n(solo aclarar si es Feriado)",
+              "displayName": "Se autocompleta \n(solo aclarar si es Feriado)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Descripción de la tarea",
+              "displayName": "Descripción de la tarea",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lugar de trabajo",
+              "displayName": "Lugar de trabajo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hora Inicio",
+              "displayName": "Hora Inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hora Fin",
+              "displayName": "Hora Fin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Horas extra\n(pasadas a Hs normales)",
+              "displayName": "Horas extra\n(pasadas a Hs normales)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Horas normales",
+              "displayName": "Horas normales",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Total Horas",
+              "displayName": "Total Horas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Equipo de trabajo",
+              "displayName": "Equipo de trabajo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Categoría",
+              "displayName": "Categoría",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e03dc142-3534-4142-bfab-8e1f2883c130",
+      "name": "Google Sheets",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "limit": 100,
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_registro_relacionado",
+            "x_studio_log_ubicacionfinal",
+            "x_studio_log_tag"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.startOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.minus({ days: 1 }).startOf('day').setZone('UTC').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        540
+      ],
+      "id": "87a99c80-265b-4f69-9ccc-955eef140424",
+      "name": "Odoo",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "=x_historial_de_estados",
+        "operation": "getAll",
+        "limit": 100,
+        "options": {
+          "fieldsList": [
+            "x_name",
+            "x_studio_log_estadoanterior",
+            "x_studio_log_estadonuevo",
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_registro_relacionado",
+            "x_studio_log_ubicacionfinal",
+            "x_studio_log_tag"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "lesserOrEqual",
+              "value": "={{ $now.minus({ days: 1 }).setZone('America/Argentina/Buenos_Aires').endOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            },
+            {
+              "fieldName": "x_studio_log_fecha_y_hora",
+              "operator": "greaterOrEqual",
+              "value": "={{ $now.minus({ days: 1 }).setZone('America/Argentina/Buenos_Aires').startOf('day').toFormat(\"yyyy-MM-dd'T'HH:mm:ss\") }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        380
+      ],
+      "id": "0362a21a-d7a2-4977-8b6b-8578ca6ff0eb",
+      "name": "Odoo2",
+      "credentials": {
+        "odooApi": {
+          "id": "ooGIuWHb1pyZFMBG",
+          "name": "Odoo account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Odoo1": [
+      {
+        "json": {
+          "id": 32,
+          "x_name": "LOG/0015 - S-T-01SF1111 - 2025-08-21 19:06:52",
+          "x_studio_log_estadoanterior": "Probado, falla",
+          "x_studio_log_estadonuevo": "Probado, listo",
+          "x_studio_log_fecha_y_hora": "2025-08-21 19:06:52",
+          "x_studio_log_registro_relacionado": [
+            8702,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_ubicacionfinal": [
+            8,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_numerodeserie": "PR-0476-000001",
+          "x_studio_log_tag": "S-T-01SF1111"
+        }
+      },
+      {
+        "json": {
+          "id": 33,
+          "x_name": "LOG/0016 - S-T-01SF1111 - 2025-08-21 19:06:56",
+          "x_studio_log_estadoanterior": "Probado, listo",
+          "x_studio_log_estadonuevo": "Probado, falla",
+          "x_studio_log_fecha_y_hora": "2025-08-21 19:06:56",
+          "x_studio_log_registro_relacionado": [
+            8702,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_ubicacionfinal": [
+            8,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_numerodeserie": "PR-0476-000001",
+          "x_studio_log_tag": "S-T-01SF1111"
+        }
+      },
+      {
+        "json": {
+          "id": 34,
+          "x_name": "LOG/0017 - S-T-01SF1111 - 2025-08-21 19:06:59",
+          "x_studio_log_estadoanterior": "Probado, falla",
+          "x_studio_log_estadonuevo": "Montado, no conexionado",
+          "x_studio_log_fecha_y_hora": "2025-08-21 19:06:59",
+          "x_studio_log_registro_relacionado": [
+            8702,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_ubicacionfinal": [
+            8,
+            "TREE/Existencias"
+          ],
+          "x_studio_log_numerodeserie": "PR-0476-000001",
+          "x_studio_log_tag": "S-T-01SF1111"
+        }
+      }
+    ]
+  },
+  "repo_name": "n8n-backup",
+  "repo_owner": "SimonTeralv",
+  "repo_path": "",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-25T13:20:39.000Z",
+  "versionId": "dbd80fb8-b36c-4f02-b415-de2a4bc81fd6"
+}

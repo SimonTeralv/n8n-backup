@@ -28,7 +28,7 @@
         [],
         [
           {
-            "node": "Google Sheets",
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
@@ -99,12 +99,23 @@
           }
         ]
       ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-09-23T19:46:02.059Z",
   "id": "uxnQRiMfi4fnffHW",
   "meta": null,
-  "name": "HistorialEstadosSheets",
+  "name": "PR-0476-HistorialEstadosSheets",
   "nodes": [
     {
       "parameters": {
@@ -120,7 +131,8 @@
             "x_studio_log_tag",
             "create_date",
             "write_date",
-            "x_studio_log_fecha_y_hora"
+            "x_studio_log_fecha_y_hora",
+            "x_studio_log_categ_id"
           ]
         },
         "filterRequest": {
@@ -186,8 +198,7 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
               "id": "Log_TAG",
@@ -196,8 +207,7 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
               "id": "Log_EstadoAnterior",
@@ -206,8 +216,7 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
               "id": "Log_EstadoNuevo",
@@ -216,8 +225,7 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             },
             {
               "id": "Created on",
@@ -226,8 +234,7 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
+              "canBeUsedToMatch": true
             }
           ],
           "attemptToConvertTypes": false,
@@ -238,8 +245,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        220,
-        -200
+        360,
+        -180
       ],
       "id": "e2d73b08-9011-4884-a448-0ebb51ff5a53",
       "name": "Google Sheets",
@@ -269,7 +276,7 @@
         "authentication": "serviceAccount",
         "documentId": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=928345597#gid=928345597",
           "mode": "url"
         },
         "sheetName": {
@@ -310,7 +317,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Creamos un array con todas las Descripción válidas de Sheets\nconst descripcionList = items\n  .map(item => {\n    const desc = item.json.Descripción;\n    if (!desc || desc === \"[undefined]\") return null;\n    return desc.toString().trim().toLowerCase();\n  })\n  .filter(desc => desc); // eliminamos null/undefined\n\n// Filtramos los registros de Odoo que NO existen en Sheets y que tengan x_name válido\nconst notInSheets = items\n  .map(item => item.json)\n  .filter(json => {\n    const x_name = json.x_name;\n    if (!x_name || x_name === \"[undefined]\") return false; // descartamos undefined\n    return !descripcionList.includes(x_name.toString().trim().toLowerCase());\n  })\n  .map(json => {\n    // Convertimos create_date a hora Argentina y mantenemos formato YYYY-MM-DD HH:mm:ss\n    let create_date_arg = null;\n    if (json.create_date) {\n      const dateUTC = new Date(json.create_date + 'Z'); // UTC\n      // Convertimos a hora Argentina usando toLocaleString\n      const argDate = new Date(dateUTC.toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' }));\n      const yyyy = argDate.getFullYear();\n      const MM = String(argDate.getMonth() + 1).padStart(2, '0');\n      const dd = String(argDate.getDate()).padStart(2, '0');\n      const hh = String(argDate.getHours()).padStart(2, '0');\n      const mm = String(argDate.getMinutes()).padStart(2, '0');\n      const ss = String(argDate.getSeconds()).padStart(2, '0');\n      create_date_arg = `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;\n    }\n\n    return {\n      json: {\n        id: json.id,\n        x_name: json.x_name,\n        x_studio_log_estadoanterior: json.x_studio_log_estadoanterior,\n        x_studio_log_estadonuevo: json.x_studio_log_estadonuevo,\n        x_studio_log_tag: json.x_studio_log_tag,\n        create_date: json.create_date,\n        write_date: json.write_date,\n        x_studio_log_fecha_y_hora: json.x_studio_log_fecha_y_hora,\n        create_date_arg: create_date_arg\n      }\n    };\n  });\n\nreturn notInSheets;\n"
+        "jsCode": "// Creamos un array con todas las Descripción válidas de Sheets\nconst descripcionList = items\n  .map(item => {\n    const desc = item.json.Descripción;\n    if (!desc || desc === \"[undefined]\") return null;\n    return desc.toString().trim().toLowerCase();\n  })\n  .filter(desc => desc); // eliminamos null/undefined\n\n// Filtramos los registros de Odoo que NO existen en Sheets y que tengan x_name válido\nconst notInSheets = items\n  .map(item => item.json)\n  .filter(json => {\n    const x_name = json.x_name;\n    if (!x_name || x_name === \"[undefined]\") return false; // descartamos undefined\n    return !descripcionList.includes(x_name.toString().trim().toLowerCase());\n  })\n  .map(json => {\n    // Convertimos create_date a hora Argentina y mantenemos formato YYYY-MM-DD HH:mm:ss\n    let create_date_arg = null;\n    if (json.create_date) {\n      const dateUTC = new Date(json.create_date + 'Z'); // UTC\n      // Convertimos a hora Argentina usando toLocaleString\n      const argDate = new Date(dateUTC.toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' }));\n      const yyyy = argDate.getFullYear();\n      const MM = String(argDate.getMonth() + 1).padStart(2, '0');\n      const dd = String(argDate.getDate()).padStart(2, '0');\n      const hh = String(argDate.getHours()).padStart(2, '0');\n      const mm = String(argDate.getMinutes()).padStart(2, '0');\n      const ss = String(argDate.getSeconds()).padStart(2, '0');\n      create_date_arg = `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;\n    }\n\n    return {\n      json: {\n        id: json.id,\n        x_name: json.x_name,\n        x_studio_log_estadoanterior: json.x_studio_log_estadoanterior,\n        x_studio_log_estadonuevo: json.x_studio_log_estadonuevo,\n        x_studio_log_tag: json.x_studio_log_tag,\n        create_date: json.create_date,\n        write_date: json.write_date,\n        x_studio_log_fecha_y_hora: json.x_studio_log_fecha_y_hora,\n        create_date_arg: create_date_arg,\n        x_studio_log_categ_id: json.x_studio_log_categ_id\n      }\n    };\n  });\n\nreturn notInSheets;\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -410,6 +417,118 @@
           "name": "Odoo account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1369918086,
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit#gid=1369918086"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Descripción": "={{ $json.x_name }}",
+            "Log_TAG": "={{ $json.x_studio_log_tag }}",
+            "Log_EstadoAnterior": "={{ $json.x_studio_log_estadoanterior }}",
+            "Log_EstadoNuevo": "={{ $json.x_studio_log_estadonuevo }}",
+            "Created on": "={{ $json.create_date_arg }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Descripción",
+              "displayName": "Descripción",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_TAG",
+              "displayName": "Log_TAG",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_EstadoAnterior",
+              "displayName": "Log_EstadoAnterior",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_EstadoNuevo",
+              "displayName": "Log_EstadoNuevo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Created on",
+              "displayName": "Created on",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        360,
+        -340
+      ],
+      "id": "79c933cc-2ac6-4285-ac20-1abef1a38dd2",
+      "name": "Google Sheets1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fVogXXZQhTIUJMyk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        -180
+      ],
+      "id": "06259500-3fbc-42c2-8dd0-7cfc9d9d4d99",
+      "name": "Wait",
+      "webhookId": "0d065cbb-df16-4894-adee-ed87c9c720f9"
     }
   ],
   "pinData": {
@@ -1341,6 +1460,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-24T14:05:21.000Z",
-  "versionId": "76b2f584-a7e9-4c10-93b8-1be4c38fee4b"
+  "updatedAt": "2025-09-25T14:43:31.000Z",
+  "versionId": "7ee8f8e3-9e00-4c61-8419-e74e0ea27f98"
 }

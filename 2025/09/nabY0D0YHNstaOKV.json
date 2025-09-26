@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Test": {
       "main": [
@@ -177,7 +177,7 @@
   "createdAt": "2025-09-24T11:36:24.034Z",
   "id": "nabY0D0YHNstaOKV",
   "meta": null,
-  "name": "CambiosOdoo2",
+  "name": "PR-0476-CambiosEstadosOdoo",
   "nodes": [
     {
       "parameters": {},
@@ -250,7 +250,7 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=0#gid=0",
           "mode": "url"
         },
         "sheetName": {
@@ -267,10 +267,21 @@
             "Lugar de trabajo": "Planta",
             "Hora Inicio": "8:00:00 ",
             "Hora Fin": "17:00:00 ",
-            "Categoría": "Interno"
+            "Categoría": "Interno",
+            "Fecha": "={{ $now.minus({ days: 1 }).setZone('America/Argentina/Buenos_Aires').endOf('day').toFormat(\"MM-dd-yyyy'\") }}"
           },
           "matchingColumns": [],
           "schema": [
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
             {
               "id": "Descripción de la tarea",
               "displayName": "Descripción de la tarea",
@@ -686,7 +697,7 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=2100414345#gid=2100414345",
+          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=0#gid=0",
           "mode": "url"
         },
         "sheetName": {
@@ -994,9 +1005,13 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-09-24T11:59:27.000Z",
-  "versionId": "cfd36343-a0c0-4b11-94a5-9805063d85e2"
+  "triggerCount": 1,
+  "updatedAt": "2025-09-25T13:23:52.000Z",
+  "versionId": "9d6d8fcc-cfb1-4657-8868-f56e80c66ef7"
 }

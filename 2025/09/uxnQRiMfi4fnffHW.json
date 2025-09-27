@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Odoo": {
       "main": [
@@ -129,10 +129,9 @@
             "x_studio_log_estadoanterior",
             "x_studio_log_estadonuevo",
             "x_studio_log_tag",
-            "create_date",
-            "write_date",
             "x_studio_log_fecha_y_hora",
-            "x_studio_log_categ_id"
+            "x_studio_log_categ_id",
+            "x_studio_log_numerodeserie"
           ]
         },
         "filterRequest": {
@@ -187,7 +186,8 @@
             "Log_TAG": "={{ $json.x_studio_log_tag }}",
             "Log_EstadoAnterior": "={{ $json.x_studio_log_estadoanterior }}",
             "Log_EstadoNuevo": "={{ $json.x_studio_log_estadonuevo }}",
-            "Created on": "={{ $json.create_date_arg }}"
+            "Log_fecha_y_hora": "={{ $json.x_studio_log_fecha_y_hora }}",
+            "Log_Categ_id": "={{ $json.x_studio_log_categ_id[1] }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -228,13 +228,24 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Created on",
-              "displayName": "Created on",
+              "id": "Log_fecha_y_hora",
+              "displayName": "Log_fecha_y_hora",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Log_Categ_id",
+              "displayName": "Log_Categ_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -276,7 +287,7 @@
         "authentication": "serviceAccount",
         "documentId": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=928345597#gid=928345597",
+          "value": "=https://docs.google.com/spreadsheets/d/16zlWqkktvdPiIkmn873AOgoAD3oASl5-l4fVaHpR6hE/edit?gid=1369918086#gid=1369918086",
           "mode": "url"
         },
         "sheetName": {
@@ -517,9 +528,7 @@
       }
     },
     {
-      "parameters": {
-        "amount": 3
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -1460,6 +1469,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-25T14:43:31.000Z",
-  "versionId": "7ee8f8e3-9e00-4c61-8419-e74e0ea27f98"
+  "updatedAt": "2025-09-26T18:00:31.000Z",
+  "versionId": "c94dfc33-ac8b-4eb6-aec7-ece58de3ca46"
 }

@@ -34,7 +34,7 @@
         ],
         [
           {
-            "node": "Code1",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -155,7 +155,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets1",
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -167,6 +167,42 @@
         [
           {
             "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
@@ -452,7 +488,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -340,
+        -280,
         420
       ],
       "id": "5d82d48b-e5c3-4033-86d8-9c470e70b666",
@@ -571,7 +607,7 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        -360,
+        -460,
         180
       ],
       "id": "c6920e36-6649-47f9-bd75-3ca77e1f4756",
@@ -628,7 +664,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -520,
+        -580,
         180
       ],
       "id": "79bb092b-37ec-4f3c-981d-bd67d8a48b39",
@@ -641,7 +677,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -200,
+        -340,
         180
       ],
       "id": "766633e7-d6ab-4f8c-9d65-e2ed847e2453",
@@ -654,7 +690,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -500,
+        -400,
         420
       ],
       "id": "5c22958f-cf14-436d-b600-e723371d1c1b",
@@ -904,7 +940,8 @@
             "x_studio_log_fecha_y_hora",
             "x_studio_log_registro_relacionado",
             "x_studio_log_ubicacionfinal",
-            "x_studio_log_tag"
+            "x_studio_log_tag",
+            "x_studio_log_categ_id"
           ]
         },
         "filterRequest": {
@@ -936,6 +973,132 @@
           "name": "Odoo account"
         }
       }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5583e435-96d7-48fb-9a51-2728d9c39b52"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "0"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "638f2d2e-1a9a-459d-9c7d-342be557906f",
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "PR-0476",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "19eb62f5-f119-4c04-a14b-437b5adf89dc",
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "PR-0507",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -580,
+        420
+      ],
+      "id": "76422e62-84df-423e-b785-78f8d843463b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "395abba1-a696-489f-bfec-374cdddaec0a",
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -200,
+        180
+      ],
+      "id": "5f19002f-08cf-486e-8edb-294f60ef6793",
+      "name": "If"
     }
   ],
   "pinData": {
@@ -1012,6 +1175,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-25T13:23:52.000Z",
-  "versionId": "9d6d8fcc-cfb1-4657-8868-f56e80c66ef7"
+  "updatedAt": "2025-09-26T12:35:50.000Z",
+  "versionId": "cc1e91b5-0496-4af2-a204-3bab73e38e10"
 }

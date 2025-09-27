@@ -34,7 +34,7 @@
         ],
         [
           {
-            "node": "Code1",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -155,7 +155,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets1",
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -167,6 +167,42 @@
         [
           {
             "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
@@ -453,7 +489,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -340,
+        -280,
         420
       ],
       "id": "d474d705-8f40-43b2-a181-693b11e9e3e8",
@@ -642,7 +678,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -200,
+        -240,
         180
       ],
       "id": "625e628c-854d-41c5-87a5-8b4b87132ab6",
@@ -655,7 +691,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -500,
+        -420,
         420
       ],
       "id": "4216738a-fe93-4dc2-83b0-d0d4936440bc",
@@ -905,7 +941,8 @@
             "x_studio_log_fecha_y_hora",
             "x_studio_log_registro_relacionado",
             "x_studio_log_ubicacionfinal",
-            "x_studio_log_tag"
+            "x_studio_log_tag",
+            "x_studio_log_categ_id"
           ]
         },
         "filterRequest": {
@@ -937,6 +974,132 @@
           "name": "Odoo account"
         }
       }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5583e435-96d7-48fb-9a51-2728d9c39b52"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "0"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "638f2d2e-1a9a-459d-9c7d-342be557906f",
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "PR-0476",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "19eb62f5-f119-4c04-a14b-437b5adf89dc",
+                    "leftValue": "={{ Array.isArray($json.x_studio_log_categ_id) && $json.x_studio_log_categ_id.length > 1 ? $json.x_studio_log_categ_id[1] : null }}",
+                    "rightValue": "PR-0507",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2"
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -620,
+        420
+      ],
+      "id": "9e60cf7a-92ef-42b4-a12b-21f0f3778086",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "395abba1-a696-489f-bfec-374cdddaec0a",
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -120,
+        180
+      ],
+      "id": "34efee30-a3f3-45d1-9e7c-6dc2283bb9ac",
+      "name": "If"
     }
   ],
   "pinData": {
@@ -1013,6 +1176,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-25T13:20:39.000Z",
-  "versionId": "dbd80fb8-b36c-4f02-b415-de2a4bc81fd6"
+  "updatedAt": "2025-09-26T12:36:06.000Z",
+  "versionId": "ffab2ae6-a007-4f09-969e-93b74a45d001"
 }

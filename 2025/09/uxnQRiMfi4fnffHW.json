@@ -186,8 +186,8 @@
             "Log_TAG": "={{ $json.x_studio_log_tag }}",
             "Log_EstadoAnterior": "={{ $json.x_studio_log_estadoanterior }}",
             "Log_EstadoNuevo": "={{ $json.x_studio_log_estadonuevo }}",
-            "Log_fecha_y_hora": "={{ $json.x_studio_log_fecha_y_hora }}",
-            "Log_Categ_id": "={{ $json.x_studio_log_categ_id[1] }}"
+            "Log_Categ_id": "={{ $json.x_studio_log_categ_id[1] }}",
+            "Log_Fecha y hora": "={{ $json.x_studio_log_fecha_y_hora }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -228,8 +228,8 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Log_fecha_y_hora",
-              "displayName": "Log_fecha_y_hora",
+              "id": "Log_Fecha y hora",
+              "displayName": "Log_Fecha y hora",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1469,6 +1469,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-09-26T18:00:31.000Z",
-  "versionId": "c94dfc33-ac8b-4eb6-aec7-ece58de3ca46"
+  "updatedAt": "2025-09-29T12:34:00.000Z",
+  "versionId": "12daf1cb-c737-4f8b-97cf-dfcbc9c837a6"
 }
